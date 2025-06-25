@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pntrmln - Főoldal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Color+Emoji&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        var magyar = false;
+        function changeText(){
+            if (!magyar) {
+                document.getElementById("ct").innerHTML = '<i class="fa fa-wrench"></i> Weboldal fejlesztés alatt <i class="fa fa-wrench"></i>';
+                magyar = true;
+            } else {
+                document.getElementById("ct").innerHTML = '<i class="fa fa-wrench"></i> Website is under construction! <i class="fa fa-wrench"></i>';
+                magyar = false;
+            }
+            setTimeout(changeText, 2000);
+        }
+    </script>
+    <style>
+        body{
+            background-color: #191919;
+        }
+        h1{
+            font-family: "Fira Sans", sans-serif;
+            text-align: center;
+            color: white;
+            vertical-align: middle;
+        }
+        div{
+        height: 100vh;
+        margin-top: calc(100vh / 2 - 150px);
+        text-align: center;
+        }
+    </style>
+</head>
+<body onload="changeText()">
+    <div>
+        <img src="media/working.gif" width="15%">
+        <h1 id="ct"><i class="fa fa-wrench"></i> Website is under construction! <i class="fa fa-wrench"></i></h1>
+    </div>
+</body>
+</html>
