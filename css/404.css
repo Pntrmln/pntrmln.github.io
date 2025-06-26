@@ -1,0 +1,23 @@
+body{
+    background-color: #191919;
+    overflow-y: hidden;
+    user-select: none;
+}
+h1, p{
+    font-family: "Fira Sans", sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 120px;
+}
+p{
+    font-size: 48px;
+}
+div{
+    height: 100vh;
+    margin-top: calc(100vh / 2 - 100px);
+    text-align: center;
+}
+h1{
+    color: #191919;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
