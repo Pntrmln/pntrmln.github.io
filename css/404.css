@@ -1,16 +1,12 @@
-body{
-    background-color: #191919;
+body, button{
+    background-color: #191919 !important;
     overflow-y: hidden;
     user-select: none;
 }
-h1, p{
-    font-family: "Fira Sans", sans-serif;
+h1, p, button{
+    font-family: "Fira Sans", sans-serif !important;
     text-align: center;
     vertical-align: middle;
-    font-size: 120px;
-}
-p{
-    font-size: 48px;
 }
 div{
     height: 100vh;
@@ -20,4 +16,5 @@ div{
 h1{
     color: #191919;
     text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+    font-size: 120px;
 }
