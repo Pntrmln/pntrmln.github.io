@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/all.css">
     <script src="js/all.js"></script>
+    <script src="js/privacy.js"></script>
 </head>
 <body onload="checkMobile()">
     <nav class="navbar">
@@ -36,25 +37,28 @@
             <hr style="color: red;">
             <h3><span lang="hu">Hogyan kapcsolhatom ki az adatok mentését?</span><span lang="en">How can I disable saving the data?</span></h3>
             <p>
-                <span lang="hu">A lenti 'Ne mentsen' gombra kattintással semmilyen további adat nem lesz mentve, kivéve az,
-                hogy úgy döntöttél, hogy lemondasz az adatok mentéséről. Ezzel a jelenleg már mentésre került
-                adatok nem lesznek törölve. Ezeket az adatokat manuálisan a böngésződ beállításaiban törölheted ki.
-                A 'Segítség' gombra kattintva megnézheted, hogy a Google Chrome böngészőben hogyan tudod kitörölni
-                az adataidat.
+                <span lang="hu">A lenti 'Adatok törlése' gombbal az eddig mentett beállításaidat törölheted.
+                A 'Ne mentsen' gombra kattintva pedig megadhatod a böngészőnek, hogy a további preferenciáidat ne mentse.
+                Ha a jelenleg már mentett adataidat meg szeretnéd tartani, akkor csak erre a gombra kattints!
+                Ha azt szeretnéd, hogy az oldal törölje az összes beállítást, és ne mentsen tovább, akkor balról jobbra
+                haladva kattints a gombokra. Ezzel csak az az adat lesz mentve, hogy te úgy döntöttél, hogy nem kívánod az
+                adataid mentését az oldalon.
                 </span>
-                <span lang="en">By pressing the 'Do not save' button down below no other data will be saved, except
-                your choice, that you cancel the data saving. By doing this, the already saved data will not be deleted.
-                These data can be deleted manually in your browser's settings. You can view how to delete the data on a 
-                Google Chrome browser using the 'Help' button.
+                <span lang="en">By pressing the 'Delete data' button down below, you can delete all your settings.
+                The 'Do not save' button tells the browser, that you do not want to save your future preferences.
+                If you want to keep your already saved data, then just press this button!
+                If you want to make the website delete all your settings, and don't save anymore, then
+                press the buttons in a left to right order. By doing this, the only data that will be saved is that
+                you made the choice, that you wish not to save the data on the website. 
                 </span>
             </p>
             <span lang="hu">
+                <button class="btn btn-success" style="margin-right: 10px;" onclick="deleteStorage()">Adatok törlése</button>
                 <button class="btn btn-danger" style="margin-right: 10px;" onclick="doNotSave()">Ne mentsen</button>
-                <button class="btn btn-primary" onclick="window.open('https://support.google.com/chrome/answer/2392709?hl=hu&co=GENIE.Platform%3DDesktop&oco=0#zippy=')">Segítség</button>
             </span>
             <span lang="en">
+                <button class="btn btn-success" style="margin-right: 10px;" onclick="deleteStorage()">Delete data</button>
                 <button class="btn btn-danger" style="margin-right: 10px;" onclick="doNotSave()">Do not save</button>
-                <button class="btn btn-primary" onclick="window.open('https://support.google.com/chrome/answer/2392709?hl=en&co=GENIE.Platform%3DDesktop&oco=0#zippy=')">Help</button>
             </span>
             <hr style="color: red">
             <h3><span lang="hu">További információra van szükséged?</span><span lang="en">Need more information?</span></h3>
