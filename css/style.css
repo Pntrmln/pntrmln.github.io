@@ -1,0 +1,32 @@
+/* #kek-feher{
+    height: 20px;
+    width: 100px;
+    border-radius: 5px;
+    background: linear-gradient(to right, white 50%, blue 50%);
+}
+#themes{
+    display: flex;
+} */
+#konbg{
+    background-image: url(../media/yui-btn.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.std_redir_btn{
+    height: 64px;
+    width: 64px;
+    vertical-align: top;
+    margin-left: 20px;
+    border: 1px solid red;
+    border-radius: 10px;
+}
+.std_redir_btn:hover{
+    background-color: #DADADA;
+}
+#nothing-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
