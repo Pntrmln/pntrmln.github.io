@@ -1,0 +1,83 @@
+body{
+    background-color: #191919;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+h1, h2, h3, h4, h5, h6, p, a, th, td, li{
+    font-family: "Fira Sans", sans-serif;
+    color: white;
+}
+nav{
+    background-color: #464646;
+    border-bottom: 1px solid red;
+}
+.fa-language{
+    color: white;
+}
+#gh{
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+}
+#main_a{
+    text-decoration: none;
+}
+.navbar {
+    position: relative;
+    overflow: hidden;
+    padding: 30px !important;
+}
+footer{
+    background-color: #464646;
+    bottom: 0;
+    border-top: 1px solid red;
+    padding: 10px;
+}
+main {
+    flex: 1;
+}
+::selection{
+    background-color: red;
+    color: black;
+}
+:-moz-selection{
+    background-color: red;
+    color: black;
+}
+#rc{
+    border-left: 1px solid red;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+li{
+    padding: 10px;
+}
+footer h6{
+    margin: 0;
+}
+#settings{
+    width: 800px;
+    position: absolute;
+    height: 600px;
+    z-index: 99999999999999 !important;
+    background-color: #464646;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    display: none;
+}
+#settings h3{
+    margin-top: 10px;
+    text-align: center;
+}
+#settings p{
+    margin-left: 30px;
+}
+#settings button{
+    margin-left: 10px;
+}
