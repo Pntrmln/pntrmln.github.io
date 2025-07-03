@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animék amiket megnéztem</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Color+Emoji&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/anime.css">    
     <script src="js/all.js"></script>
+    <script src="js/anime.js"></script>
+    <!---Anime fontok-->
+    <link href="https://db.onlinewebfonts.com/c/520f03efe23f38d1285d821e56387c66?family=CCWallScrawler+Bold+Italic" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/ditty" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/coinage-caps-kruger-gray" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/tt-ramillas-trl" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/5f16a4773a8a064e3fb29ecb648ffcf5?family=Reforma+Grotesk+W01+Demi" rel="stylesheet">
 </head>
-<body onload="checkMobile()">
+<body onload="checkMobileB()">
     <nav class="navbar">
         <a href="contact.html" class="nav-list"><span lang="hu">Kapcsolat</span><span lang="en">Contacts</span></a>
         <a href="index.html" id="main_a"><h3 id="n_main">Pntrmln<br>
@@ -22,15 +30,129 @@
     </nav>
     <main>
         <div class="text-center mt-3">
-            <p>
-                <span lang="hu">Ez az oldal hamarosan elkészül, és itt lesz megtalálható az összes anime amit már megnéztem.</span>
-                <span lang="en">This site will soon be finished, after that you can find here all the animes I watched.</span>
-            </p>
-            <p>
-                <span lang="hu">Addig is, az alábbi gombbal elérhető a régi Google Spreadsheets dokumentum:</span>
-                <span lang="en">Until then, you can find the old Google Spreadsheets document using this button:</span>
-            </p>
-            <button class="btn btn-success" onclick="window.open('https://docs.google.com/spreadsheets/d/1A4zf1haw7FAmnDj7GgGDCcbopBg_aLjbNC8nYe1xPpo/')"><span lang="hu">Megnézem</span><span lang="en">View</span></button>
+            <h2 class="mt-4"><span lang="hu">Animék amiket megnéztem</span><span lang="en">Animes I watched</span></h2>
+            <div class="alert alert-warning" role="alert">
+                <span lang="hu">
+                    <b>FIGYELEM!</b> <br> Úgy néz ki, hogy az oldalt telefonról nézed.
+                    Mivel a telefonos felület még fejlesztés alatt áll, így a jelenlegi oldalon lehet,
+                    hogy a szövegek elcsúsznak. <br>
+                    A korábbi Google Spreadsheets dokumentumot <a href="https://docs.google.com/spreadsheets/d/1A4zf1haw7FAmnDj7GgGDCcbopBg_aLjbNC8nYe1xPpo/edit?gid=0#gid=0" class="alert-link">itt</a> tudod elérni.
+                </span>
+                <span lang="en">
+                    <b>WARNING!</b><br>
+                    It looks like you're using a mobile device. Since the mobile interface
+                    is still under development, the texts on this page may not appear where 
+                    they should be. <br>
+                    You can find the old Google Spreadsheets document <a href="https://docs.google.com/spreadsheets/d/1A4zf1haw7FAmnDj7GgGDCcbopBg_aLjbNC8nYe1xPpo/edit?gid=0#gid=0" class="alert-link">here</a>.
+                </span>
+            </div>
+            <div style="margin: 50px;" id="for_pc">
+                <hr style="color: red">
+                 <table class="table">
+                    <tr>
+                        <th><span lang="hu">Dátum</span><span lang="en">Date</span></th>
+                        <th><span lang="hu">Cím</span><span lang="en">Title</span></th>
+                        <th><span lang="hu">Műfaj</span><span lang="en">Genre</span></th>
+                        <th><span lang="hu">Nyelv <i class="fa-regular fa-circle-info" title="Jelmagyarázat az oldal alján!"></i></span><span lang="en">Language <i class="fa-regular fa-circle-info" title="Legend at the bottom of the page!"></i></span></th>
+                        <th><span lang="hu">Várok-e valamire?</span><span lang="en">Am I waiting for anything?</span></th>
+                    </tr>
+                    <tbody class="table-group-divider">
+                    <tr>
+                        <td><span lang="hu">2024 vége</span><span lang="en">The end of 2024</span></td>
+                        <td><span lang="hu">Bújj, bújj, szellem!<br><span id="jpn">(学校の怪談)</span></span><span lang="en">Ghost Stories<br><span id="jpn">(学校の怪談)</span></span></td>
+                        <td><span lang="hu">Fekete humor / horror-vígjáték</span><span lang="en">Black humor / horror comedy</span></td>
+                        <td><img src="https://flagcdn.com/20x15/us.png" srcset="https://flagcdn.com/40x30/us.png 2x, https://flagcdn.com/60x45/us.png 3x" width="20" height="15" alt="United States">&#128483;&#65039;</td>
+                        <td><i class="fa-solid fa-empty-set"></i></td>
+                    </tr>
+                    <tr>
+                        <td>2025.01. - 2025.02.</td>
+                        <td id="nana">NANA</td>
+                        <td><span lang="hu">Dráma, zene, romantikus (Shōjo)</span><span lang="en">Drama, music, romance (Shōjo)</span></td>
+                        <td><img src="https://flagcdn.com/20x15/us.png" srcset="https://flagcdn.com/40x30/us.png 2x, https://flagcdn.com/60x45/us.png 3x" width="20" height="15" alt="United States">&#128483;&#65039;</td>
+                        <td><i class="fa-solid fa-empty-set"></i></td>
+                    </tr>
+                    <tr>
+                        <td>2025.02. - 2025.03.05.</td>
+                        <td><span id="aot">Attack on Titan</span><br><span id="jpn">(進撃の巨人)</span></td>
+                        <td><span lang="hu">Akció, posztapokaliptikus (Shōnen)</span><span lang="en">Action, post-apocalyptic (Shōnen)</span></td>
+                        <td><img src="https://flagcdn.com/20x15/us.png" srcset="https://flagcdn.com/40x30/us.png 2x, https://flagcdn.com/60x45/us.png 3x" width="20" height="15" alt="United States">&#128483;&#65039;</td>
+                        <td><i class="fa-solid fa-empty-set"></i></td>
+                    </tr>
+                    <tr>
+                        <td>2025.03.08. - 2025.03.16.</td>
+                        <td><span lang="hu"><span id="deathnote">dEATh noTe</span> — A halállista</span><span lang="en"><span id="deathnote">dEATh noTe</span></span><br><span id="jpn">(デスノート)</span></td>
+                        <td><span lang="hu">Rejtély, pszichológiai thriller (Shōnen)</span><span lang="en">Mystery, psychological thriller (Shōnen)</span></td>
+                        <td><img src="https://flagcdn.com/20x15/us.png" srcset="https://flagcdn.com/40x30/us.png 2x, https://flagcdn.com/60x45/us.png 3x" width="20" height="15" alt="United States">&#128483;&#65039;</td>
+                        <td><i class="fa-solid fa-empty-set"></i></td>
+                    </tr>
+                    <tr>
+                        <td>2025.03.21. - 2025.04.24. <br>「S01-S03」</td>
+                        <td><span id="re">Re</span><span class="zero" id="kettospont">:</span><span class="zero">ZE</span><span class="zero" id="ro">RO</span><br id="rbr"><span id="rezero_title">- Starting Life in Another World - </span><br><span id="jpn">(Re:ゼロから始める異世界生活)</span></td>
+                        <td><span lang="hu">Kaland, dark fantasy (Isekai)</span><span lang="en">Adventure, dark fantasy (Isekai)</span></td>
+                        <td><img src="https://flagcdn.com/20x15/us.png" srcset="https://flagcdn.com/40x30/us.png 2x, https://flagcdn.com/60x45/us.png 3x" width="20" height="15" alt="United States">&#128483;&#65039;</td>
+                        <td><span lang="hu">Igen, 4. évad.</span><span lang="en">Yes, Season 4.</span></td>
+                    </tr>
+                    <tr>
+                        <td>2025.04.25. - 2025.06.03. <br></td>
+                        <td><span id="k_on">けいおん!</span><br>K-On!, K-On!!, K-On! the Movie <br><span id="jpn">(けいおん!, けいおん!!, 映画けいおん!)</span></td>
+                        <td><span lang="hu">Slice of life, vígjáték, zene (Seinen)</span><span lang="en">Slice of life, comedy, music (Seinen)</span></td>
+                        <td><img src="https://flagcdn.com/20x15/us.png" srcset="https://flagcdn.com/40x30/us.png 2x, https://flagcdn.com/60x45/us.png 3x" width="20" height="15" alt="United States">&#128483;&#65039;</td>
+                        <td><i class="fa-solid fa-empty-set"></i></td>
+                    </tr>
+                    <tr>
+                        <td>2025.06.08. - 2025.06.09.</td>
+                        <td>Chainsaw Man<br><span id="jpn">(チェンソーマン)</span></td>
+                        <td><span lang="hu">Akció, horror-vígjáték (Shōnen)</span><span lang="en">Action, horror comedy (Shōnen)</span></td>
+                        <td><img src="https://flagcdn.com/20x15/us.png" srcset="https://flagcdn.com/40x30/us.png 2x, https://flagcdn.com/60x45/us.png 3x" width="20" height="15" alt="United States">&#128483;&#65039;</td>
+                        <td><span lang="hu">Igen, Chainsaw Man – The Movie: Reze Arc</span><span lang="en">Yes, Chainsaw Man – The Movie: Reze Arc</span></td>
+                    </tr>
+                    <tr>
+                        <td>2025.06.10. - 2025.06.13.</td>
+                        <td><span id="bocchi">BOCCHI THE ROCK</span><br><span id="jpn">(ぼっち・ざ・ろっく！)</span></td>
+                        <td><span lang="hu">Vígjáték, zene (Seinen)</span><span lang="en">Comedy, music (Seinen)</span></td>
+                        <td><img src="https://flagcdn.com/20x15/jp.png" srcset="https://flagcdn.com/40x30/jp.png 2x, https://flagcdn.com/60x45/jp.png 3x" width="20" height="15" alt="Japan">&#128483;&#65039; + <img src="https://flagcdn.com/20x15/us.png" srcset="https://flagcdn.com/40x30/us.png 2x, https://flagcdn.com/60x45/us.png 3x" width="20" height="15" alt="United States"> <i class="fa-solid fa-subtitles"></i>
+                        <td><span lang="hu">Igen, 2. évad.</span><span lang="en">Yes, Season 2.</span></td>
+                    </tr>
+                </table>
+                <hr style="color: red">
+                <h5><span lang="hu">Jelmagyarázat:</span><span lang="en">Legend:</span></h5>
+                <ul id="jelmagyarazat">
+                    <li>
+                        <img src="https://flagcdn.com/20x15/jp.png" srcset="https://flagcdn.com/40x30/jp.png 2x, https://flagcdn.com/60x45/jp.png 3x" width="20" height="15" alt="Japan">
+                        = <span lang="hu">Japán</span><span lang="en">Japanese</span>
+                    </li>
+                    <li>
+                        <img src="https://flagcdn.com/20x15/us.png" srcset="https://flagcdn.com/40x30/us.png 2x, https://flagcdn.com/60x45/us.png 3x" width="20" height="15" alt="United States">
+                        = <span lang="hu">Angol (amerikai)</span><span lang="en">English (American)</span>
+                    </li>
+                    <li><span id="speak">&#128483;&#65039;</span> = <span lang="hu">Szinkronos</span><span lang="en">Dubbed</span></li>
+                    <li><i class="fa-solid fa-subtitles"></i> = <span lang="hu">Feliratos</span><span lang="en">Subtitles</span></li>
+                </ul>
+            </div>
+            <div id="for_mobile">
+                <p>
+                    <span lang="hu">
+                        Az "Animék amiket megnéztem" oldal jelenleg még nem elérhető telefonra.
+                        Ha meg szeretnéd nézni az animéket, akkor fordítsd el a telefonod 90 fokkal,
+                        vagy használd az alábbi gombot, hogy meglátogasd a korábbi, Google Spreadsheets
+                        verziót, amely a telefonos felhasználói felület elkészültéig ugyanúgy frissül: 
+                    </span>
+                    <span lang="en">
+                        The "Animes I watched" site is currently not available for mobile 
+                        devices. If you want to see the animes, rotate your phone by 90 degrees
+                        or use the button down below, that takes you to the old Google Spreadsheets
+                        document, which is still updating until the mobile user interface is finished.
+                    </span>
+                </p>
+                <span lang="hu"><button class="btn btn-success" onclick="window.open('https://docs.google.com/spreadsheets/d/1A4zf1haw7FAmnDj7GgGDCcbopBg_aLjbNC8nYe1xPpo/edit?gid=0#gid=0')">Meglátogatom</button></span>
+                <span lang="en"><button class="btn btn-success" onclick="window.open('https://docs.google.com/spreadsheets/d/1A4zf1haw7FAmnDj7GgGDCcbopBg_aLjbNC8nYe1xPpo/edit?gid=0#gid=0')">Visit</button></span>
+                <br>
+                <br>
+                <p>
+                    <span lang="hu">Ha az oldal elforgatás után nem frissül, kattints erre a gombra: <button class="btn btn-primary" onclick="window.location.reload()">Frissítés</button></span>
+                    <span lang="en">If the site is not loading after rotating your phone, click this button: <button class="btn btn-primary" onclick="window.location.reload()">Reload</button></span>
+                </p>
+            </div>
         </div>
         <div id="settings" class="text-center">
             <h3>Beállítások</h3>
@@ -43,6 +165,15 @@
         <h6><span lang="hu">Készítette: Pntrmln, 2025</span><span lang="en">Created by Pntrmln, 2025</span></h6>
         <a href="privacy.html"><span lang="hu">Adatvédelem</span><span lang="en">Privacy</span></a>
     </footer>
+    <script>
+        $(function() {
+            window.addEventListener("orientationchange resize", function() {
+                console.log("fasz");
+                $("#for_mobile").hide();
+                $("#for_pc").show();
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>
