@@ -1,6 +1,8 @@
 var magyar = true;
 $(document).ready(function() {
     $('span[lang]').hide();
+    console.log(localStorage.getItem('nyelv'));
+    console.log(localStorage.getItem('save'));
     if (localStorage.getItem('nyelv') == 'angol') {
         $('span[lang="en"]').show();
     } else {
@@ -22,7 +24,9 @@ function languageChange(){
             document.title = "Home";
         }
         magyar = false;
-        localStorage.setItem('nyelv', 'angol');
+        if (!localStorage.getItem('save') == 'false' || localStorage.getItem('save') == null) {
+            localStorage.setItem('nyelv', 'angol');
+        }
     } else {
         $('span[lang="hu"]').show();
         if (oldal == 'anime.html') {
@@ -35,7 +39,9 @@ function languageChange(){
             document.title = "Főoldal";
         }
         magyar = true;
-        localStorage.setItem('nyelv', 'magyar');
+        if (!localStorage.getItem('save') == 'false' || localStorage.getItem('save') == null) {
+            localStorage.setItem('nyelv', 'magyar');
+        }
     }
 }
 function Settings(allapot, e){
@@ -48,6 +54,8 @@ function Settings(allapot, e){
 }
 function checkMobile(){
     if (navigator.userAgentData.mobile) {
-        $("footer > h6").hide();
+        $("footer > a").eq(0).html('<i class="fa-solid fa-gear"></i>');
+        $("footer > a").eq(1).html('<i class="fa-solid fa-lock"></i>');
+        $("footer > a").eq(0).attr("onclick", "event.preventDefault()");  
     }
 }
