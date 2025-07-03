@@ -1,0 +1,74 @@
+#jelmagyarazat li{
+    padding: 0;
+}
+#nana{
+    font-family: "CCWallScrawler Bold Italic";
+    color: #e00988;
+}
+#aot{
+    font-family: 'Ditty', sans-serif;
+    font-size: larger;
+    background: linear-gradient(to bottom, #eaeaea, #a2a0a3);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@font-face {
+    font-family: "Death Note";
+    src: url('../media/death_font_ver1_0.ttf');
+}
+#deathnote{
+    font-family: "Death Note";
+}
+.zero{
+    font-family: 'Coinage Caps Kruger Gray', sans-serif;
+    vertical-align: auto;
+}
+#ro, #kettospont{
+    vertical-align: -2px;
+}
+#re{
+    font-family: 'TT Ramillas Trl', sans-serif;
+    color: #6d699f;
+    vertical-align: -2px;
+    font-weight: 500;
+}
+#rezero_title{
+    font-family: "Reforma Grotesk W01 Demi";
+}
+#rbr{
+    display: block;
+    content: "";
+    margin-top: -10px;
+}
+@font-face {
+    font-family: "K-On";
+    src: url('../media/keifont.ttf');
+}
+#k_on{
+    font-family: "K-On";
+    font-size: large;
+    color: #e4000b;
+    -webkit-text-stroke: 0.5px #fcfbbd;
+}
+#jpn{
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Bocchi1";
+    src: url('../media/Thugolatz-MVyxv.ttf');
+}
+#bocchi{
+    font-family: "Bocchi1";
+    font-size: large;
+    color: #fdb816;
+}
+.fa-subtitles{
+    vertical-align: -2px;
+}
+#for_mobile{
+    display: none;
+}
+.alert{
+    display: none;
+}
