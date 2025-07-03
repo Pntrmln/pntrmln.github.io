@@ -30,3 +30,11 @@
     color: white;
     flex-direction: column;
 }
+#index_for_mobile{
+    display: none;
+}
+@media only screen and (max-width: 370px) {
+    .std_redir_btn {
+        margin-left: 2px;
+  }
+}
