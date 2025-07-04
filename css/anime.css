@@ -72,6 +72,11 @@
 .alert{
     display: none;
 }
+@media only screen and (max-width: 1508px) {
+    .alert {
+        display: block;
+    }
+}
 table{
     border-collapse: collapse;
     border-spacing: 0;
