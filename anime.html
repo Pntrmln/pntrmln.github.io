@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/anime.css">    
     <script src="js/all.js"></script>
-    <script src="js/anime.js"></script>
     <!---Anime fontok-->
     <link href="https://db.onlinewebfonts.com/c/520f03efe23f38d1285d821e56387c66?family=CCWallScrawler+Bold+Italic" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/ditty" rel="stylesheet">
@@ -21,7 +20,7 @@
     <link href="https://fonts.cdnfonts.com/css/tt-ramillas-trl" rel="stylesheet">
     <link href="https://db.onlinewebfonts.com/c/5f16a4773a8a064e3fb29ecb648ffcf5?family=Reforma+Grotesk+W01+Demi" rel="stylesheet">
 </head>
-<body onload="checkMobile()">
+<body onload="checkMobileB()">
     <nav class="navbar">
         <a href="contact.html" class="nav-list"><span lang="hu">Kapcsolat</span><span lang="en">Contacts</span></a>
         <a href="index.html" id="main_a"><h3 id="n_main">Pntrmln<br>
@@ -30,22 +29,7 @@
     </nav>
     <main>
         <div class="text-center mt-3">
-            <h2 class="mt-4"><span lang="hu">Animék amiket megnéztem</span><span lang="en">Animes I watched</span></h2>
-            <div class="alert alert-warning" role="alert">
-                <span lang="hu">
-                    <b>FIGYELEM!</b> <br> Úgy néz ki, hogy az oldalt telefonról nézed.
-                    Mivel a telefonos felület még fejlesztés alatt áll, így a jelenlegi oldalon lehet,
-                    hogy a szövegek elcsúsznak. <br>
-                    A korábbi Google Spreadsheets dokumentumot <a href="https://docs.google.com/spreadsheets/d/1A4zf1haw7FAmnDj7GgGDCcbopBg_aLjbNC8nYe1xPpo/edit?gid=0#gid=0" class="alert-link">itt</a> tudod elérni.
-                </span>
-                <span lang="en">
-                    <b>WARNING!</b><br>
-                    It looks like you're using a mobile device. Since the mobile interface
-                    is still under development, the texts on this page may not appear where 
-                    they should be. <br>
-                    You can find the old Google Spreadsheets document <a href="https://docs.google.com/spreadsheets/d/1A4zf1haw7FAmnDj7GgGDCcbopBg_aLjbNC8nYe1xPpo/edit?gid=0#gid=0" class="alert-link">here</a>.
-                </span>
-            </div>
+            <h2 class="mt-5"><span lang="hu">Animék amiket megnéztem</span><span lang="en">Animes I watched</span></h2>
             <div style="margin: 50px;" id="for_pc">
                 <hr style="color: red">
                 <div id="tdiv">
@@ -116,6 +100,15 @@
                     </tr>
                 </table>
                 </div>
+                <br>
+                <div class="alert alert-warning" role="alert">
+                    <span lang="hu">
+                        A táblázat görgethető!
+                    </span>
+                    <span lang="en">
+                        The table is scrollable!
+                    </span>
+                </div>
                 <hr style="color: red">
                 <h5><span lang="hu">Jelmagyarázat:</span><span lang="en">Legend:</span></h5>
                 <ul id="jelmagyarazat">
@@ -131,30 +124,6 @@
                     <li><i class="fa-solid fa-subtitles"></i> = <span lang="hu">Feliratos</span><span lang="en">Subtitles</span></li>
                 </ul>
             </div>
-            <div id="for_mobile">
-                <p>
-                    <span lang="hu">
-                        Az "Animék amiket megnéztem" oldal jelenleg még nem elérhető telefonra.
-                        Ha meg szeretnéd nézni az animéket, akkor fordítsd el a telefonod 90 fokkal,
-                        vagy használd az alábbi gombot, hogy meglátogasd a korábbi, Google Spreadsheets
-                        verziót, amely a telefonos felhasználói felület elkészültéig ugyanúgy frissül: 
-                    </span>
-                    <span lang="en">
-                        The "Animes I watched" site is currently not available for mobile 
-                        devices. If you want to see the animes, rotate your phone by 90 degrees
-                        or use the button down below, that takes you to the old Google Spreadsheets
-                        document, which is still updating until the mobile user interface is finished.
-                    </span>
-                </p>
-                <span lang="hu"><button class="btn btn-success" onclick="window.open('https://docs.google.com/spreadsheets/d/1A4zf1haw7FAmnDj7GgGDCcbopBg_aLjbNC8nYe1xPpo/edit?gid=0#gid=0')">Meglátogatom</button></span>
-                <span lang="en"><button class="btn btn-success" onclick="window.open('https://docs.google.com/spreadsheets/d/1A4zf1haw7FAmnDj7GgGDCcbopBg_aLjbNC8nYe1xPpo/edit?gid=0#gid=0')">Visit</button></span>
-                <br>
-                <br>
-                <p>
-                    <span lang="hu">Ha az oldal elforgatás után nem frissül, kattints erre a gombra: <button class="btn btn-primary" onclick="window.location.reload()">Frissítés</button></span>
-                    <span lang="en">If the site is not loading after rotating your phone, click this button: <button class="btn btn-primary" onclick="window.location.reload()">Reload</button></span>
-                </p>
-            </div>
         </div>
         <div id="settings" class="text-center">
             <h3>Beállítások</h3>
@@ -167,15 +136,6 @@
         <h6><span lang="hu">Készítette: Pntrmln, 2025</span><span lang="en">Created by Pntrmln, 2025</span></h6>
         <a href="privacy.html"><span lang="hu">Adatvédelem</span><span lang="en">Privacy</span></a>
     </footer>
-    <script>
-        $(function() {
-            window.addEventListener("orientationchange resize", function() {
-                console.log("fasz");
-                $("#for_mobile").hide();
-                $("#for_pc").show();
-            });
-        });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>
