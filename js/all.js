@@ -52,8 +52,9 @@ function Settings(allapot, e){
         $("#settings").hide();
     }
 }
-function checkMobile(){
+function checkMobileB(){
     if (navigator.userAgentData.mobile) {
+        $("nav > a").eq(0).html('<i class="fa-solid fa-envelope"></i>')
         $("footer > a").eq(0).html('<i class="fa-solid fa-gear"></i>');
         $("footer > a").eq(1).html('<i class="fa-solid fa-lock"></i>');
         $("footer > a").eq(0).attr("onclick", "event.preventDefault()");  
