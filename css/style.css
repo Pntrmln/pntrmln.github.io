@@ -1,12 +1,3 @@
-/* #kek-feher{
-    height: 20px;
-    width: 100px;
-    border-radius: 5px;
-    background: linear-gradient(to right, white 50%, blue 50%);
-}
-#themes{
-    display: flex;
-} */
 #konbg{
     background-image: url(../media/yui-btn.png);
     background-repeat: no-repeat;
@@ -20,8 +11,12 @@
     border: 1px solid red;
     border-radius: 10px;
 }
+@keyframes btn_hover {
+    from {background-color: white;}
+    to {background-color: #c4c4c4;}
+}
 .std_redir_btn:hover{
-    background-color: #DADADA;
+    animation: btn_hover 0.5s forwards;
 }
 #nothing-div{
     display: flex;
@@ -33,8 +28,24 @@
 #index_for_mobile{
     display: none;
 }
+#legkisebb{
+    display: none;
+}
 @media only screen and (max-width: 370px) {
     .std_redir_btn {
         margin-left: 2px;
-  }
+    }
+}
+@media only screen and (max-width: 800px) {
+    #index_for_mobile{
+        display: block;
+    }
+    #rc{
+        display: none;
+    }
+}
+@media only screen and (max-width: 300px) {
+    #legkisebb {
+        display: block;
+    }
 }
