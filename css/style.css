@@ -43,6 +43,9 @@
     #rc{
         display: none;
     }
+    #index_for_mobile #nothing-div{
+        margin-top: 3rem;
+    }
 }
 @media only screen and (max-width: 300px) {
     #legkisebb {
