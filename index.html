@@ -15,7 +15,7 @@
     <script src="js/all.js"></script>
     <script src="js/index.js"></script>
 </head>
-<body onload="checkMobile()">
+<body onload="checkSettings()">
     <nav class="navbar">
         <a href="contact.html" class="nav-list"><span lang="hu">Kapcsolat</span><span lang="en">Contacts</span></a>
         <a href="" id="main_a"><h3 id="n_main">Pntrmln<br>
@@ -40,6 +40,7 @@
                 <ul id="redir_btns">
                     <li><button id="konbg" class="std_redir_btn" onclick="Redir('anime')"></button>
                         <button class="fa-brands fa-spotify fa-2x std_redir_btn" onclick="Redir('spotify')"></button>
+                        <span id="legkisebb"><br></span>
                         <button class="fa-brands fa-instagram fa-2x std_redir_btn" onclick="Redir('instagram')"></button>
                         <button class="fa-brands fa-github fa-2x std_redir_btn" onclick="Redir('github')"></button>
                     </li>
@@ -61,15 +62,16 @@
                 <h3><span lang="hu">HAMAROSAN</span><span lang="en">SOON</span></h3>
             </div>
         </div>
-        <div id="settings" class="text-center">
+        <!-- <div id="settings" class="text-center">
             <h3>Beállítások</h3>
-            <h4>Hamarosan érkezik!</h4>
+            <h5 class="mb-5">Szabd testre ezt az oldalt!</h5>
+            <div id="menupont">
+                <p>Az oldal elemeinek elrendezése:</p>
+                <button id="desbtn" class="btn btn-secondary" onclick="changeDesign()">Függőleges</button>
+                <p class="desc">Megváltoztatja a 'Főoldal' és a 'Kapcsolatok' oldal elrendezését.</p>
+            </div>
             <button class="btn btn-danger" onclick="Settings('off', event)">Kilépés</button>
-            <!-- <div id="themes">
-                <p>Témák:</p>
-                <button id="kek-feher" onclick="changeTheme('kf')"></button>
-            </div> -->
-        </div>
+        </div> -->
     </main>
     <footer class="navbar">
         <a href="" onclick="Settings('on', event)"><span lang="hu">Beállítások</span><span lang="en">Settings</span></a>
