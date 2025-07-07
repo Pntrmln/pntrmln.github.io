@@ -4,3 +4,25 @@ main{
     justify-content: center;
     align-items: center;
 }
+#viz_des{
+    display: none;
+}
+#fuggo_des ul{
+    display: flex;
+}
+#fuggo_des li{
+    padding-right: 55px;
+    margin-left: 50px;
+    border-right: 1px solid red;
+}
+#last_e{
+    border-right: none !important;
+}
+@media only screen and (max-width: 600px) {
+    #viz_des{
+        display: block;
+    }
+    #fuggo_des{
+        display: none;
+    }
+}
