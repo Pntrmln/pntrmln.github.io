@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/contact.css">
     <script src="js/all.js"></script>
 </head>
-<body onload="checkMobileB()">
+<body onload="checkSettings()">
     <nav class="navbar">
         <a href="" class="nav-list"><span lang="hu">Kapcsolat</span><span lang="en">Contacts</span></a>
         <a href="index.html" id="main_a"><h3 id="n_main">Pntrmln<br>
@@ -25,18 +25,22 @@
         <div class="text-center mt-3">
             <h1><span lang="hu">Kapcsolat</span><span lang="en">Contacts</span></h1>
             <h3><span lang="hu">Az alábbi módokon érhetsz el:</span><span lang="en">You can contact me via:</span></h3>
-            <ul>
-                <li><i class="fa-solid fa-envelope fa-2x"></i><br>contact@pntrmln.xyz</li>
-                <hr style="color: red;">
-                <li><i class="fa-brands fa-discord fa-2x"></i><br>pntrmln</li>
-                <hr style="color: red;">
-                <li><i class="fa-brands fa-instagram fa-2x"></i><br>pinter.hun</li>
-            </ul>
-        </div>
-        <div id="settings" class="text-center">
-            <h3>Beállítások</h3>
-            <h4>Hamarosan érkezik!</h4>
-            <button class="btn btn-danger" onclick="Settings('off', event)">Kilépés</button>
+            <div id="viz_des">
+                <ul>
+                    <li><i class="fa-solid fa-envelope fa-2x"></i><br>contact@pntrmln.xyz</li>
+                    <hr style="color: red;">
+                    <li><i class="fa-brands fa-discord fa-2x"></i><br>pntrmln</li>
+                    <hr style="color: red;">
+                    <li><i class="fa-brands fa-instagram fa-2x"></i><br>pinter.hun</li>
+                </ul>
+            </div>
+            <div id="fuggo_des" class="mt-5">
+                <ul>
+                    <li><i class="fa-brands fa-discord fa-2x"></i><br>pntrmln</li>
+                    <li><i class="fa-solid fa-envelope fa-2x"></i><br>contact@pntrmln.xyz</li>
+                    <li id="last_e"><i class="fa-brands fa-instagram fa-2x"></i><br>pinter.hun</li>
+                </ul>
+            </div>
         </div>
     </main>
      <footer class="navbar">
