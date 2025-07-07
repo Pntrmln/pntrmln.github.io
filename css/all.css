@@ -63,23 +63,26 @@ footer h6{
     width: 800px;
     position: absolute;
     height: 600px;
-    z-index: 99999999999999 !important;
     background-color: #464646;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: left;
     display: none;
+    border: 1px solid red;
 }
 #settings h3{
     margin-top: 10px;
-    text-align: center;
 }
 #settings p{
     margin-left: 30px;
 }
-#settings button{
-    margin-left: 10px;
+#settings .btn-danger{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    left: 0;
+    margin-left: 46%;
 }
 #main_a, footer h6 {
     position: absolute;
@@ -107,4 +110,28 @@ td{
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #8B8B8B; 
+}
+@keyframes link_hover {
+    from {color: white;}
+    to {color: red;}
+}
+a:hover, .fa-language:hover, #n_main:hover{
+    animation: link_hover 0.5s forwards;
+}
+#menupont{
+    display: flex;
+    margin-right: auto;
+}
+#menupont button{
+    margin-top: -7px;
+    height: 100%;
+    margin-left: 10px;
+}
+.desc{
+    font-size: small;
+}
+@media only screen and (max-width: 800px) {
+    #settings{
+        display: none !important;
+    }
 }
