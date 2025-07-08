@@ -1,6 +1,5 @@
 var magyar = true;
 var oldal = location.href.split("/").slice(-1);
-console.log(oldal);
 $(document).ready(function() {
     $('span[lang]').hide();
     console.log(localStorage.getItem('nyelv'));
@@ -64,7 +63,7 @@ function checkMobileB(){
 }
 var d_count = 0;
 function checkSettings(){
-    if (oldal == "index.html") {
+    if (oldal == "index.html" || oldal == '') {
         checkMobile();
     }
     checkMobileB();
