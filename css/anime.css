@@ -86,3 +86,9 @@ table{
 #tdiv{
     overflow-x: auto;
 }
+#evangelion{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    display: inline-block;
+    transform: scaleX(0.79);
+}
