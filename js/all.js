@@ -67,7 +67,7 @@ function checkMobileB(){
 }
 var d_count = 0;
 function checkSettings(){
-    if (oldal == "index.html" || oldal == null) {
+    if (oldal == "index.html" || oldal == '') {
         checkMobile();
         timeWrite();
     }
