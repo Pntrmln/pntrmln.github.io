@@ -20,6 +20,8 @@ function languageChange(){
             document.title = "Contacts";
         } else if (oldal == 'privacy.html'){
             document.title = "Privacy";
+        } else if (oldal == 'japanese.html') {
+            document.title = "Learning Japanese";
         } else {
             document.title = "Home";
         }
@@ -35,6 +37,8 @@ function languageChange(){
             document.title = "Kapcsolat";
         } else if (oldal == 'privacy.html'){
             document.title = "Adatvédelem";
+        } else if (oldal == 'japanese.html'){
+            document.title = "Japán tanulás";
         } else {
             document.title = "Főoldal";
         }
@@ -63,8 +67,9 @@ function checkMobileB(){
 }
 var d_count = 0;
 function checkSettings(){
-    if (oldal == "index.html" || oldal == '') {
+    if (oldal == "index.html") {
         checkMobile();
+        timeWrite();
     }
     checkMobileB();
     console.log(localStorage.getItem('des'));
