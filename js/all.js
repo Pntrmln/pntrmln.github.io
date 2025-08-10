@@ -47,6 +47,9 @@ function languageChange(){
             localStorage.setItem('nyelv', 'magyar');
         }
     }
+    if (oldal == 'index.html' || oldal == '') {
+        checkLang();
+    }
 }
 function Settings(allapot, e){
     e.preventDefault()
@@ -70,6 +73,7 @@ function checkSettings(){
     if (oldal == "index.html" || oldal == '') {
         checkMobile();
         timeWrite();
+        checkLang();
     }
     checkMobileB();
     console.log(localStorage.getItem('des'));
