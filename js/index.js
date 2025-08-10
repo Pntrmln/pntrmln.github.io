@@ -73,3 +73,13 @@ function timeWrite(){
     }
     $(".ekor").text(jelenlegi_ev - 2008);
 }
+function checkLang(){
+    let nyelvek = navigator.languages;
+    if (!nyelvek.includes('hu') && !nyelvek.includes('hu-HU')){
+        if (localStorage.getItem('nyelv') == 'magyar') {
+            $("#langalert").show();
+        } else {
+            $("#langalert").hide();
+        }
+    }
+}
