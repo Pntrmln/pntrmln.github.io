@@ -1,0 +1,67 @@
+.column{
+    width: 50%;
+    background-color: #464646;
+}
+#fcm{
+    border-right: 1px solid red;
+}
+.column h4{
+    margin-top: 10px;
+}
+#tantargyak{
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); 
+}
+#fajlkezelo{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 85px;
+    background-color: #464646;
+    z-index: 2;
+}
+#fajlkezelo h3{
+    text-align: center;
+}
+iframe{
+    height: 200px;
+    display: flex; 
+    justify-content: flex-start;
+}
+section h4{
+    background-color: #464646;
+    width: 100vw;
+}
+section i, #fajlkezelo h3 i{
+    float: right;
+    padding-right: 10px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    background-color: #464646;
+    z-index: 1;
+    margin-top: -10px;
+    padding-right: 25px;
+}
+button a{
+    text-decoration: none;
+    animation: none !important;
+}
+button{
+    margin-right: 5px;
+}
+#figyelem{
+    color: red;
+    font-weight: bold;
+}
+.column p{
+    margin-top: 20px;
+}
