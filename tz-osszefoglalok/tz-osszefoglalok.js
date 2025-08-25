@@ -26,35 +26,38 @@ var oldal = location.href.split("/").slice(-1);
 var utolso = '';
 var bezarva = true;
 var auto_close = false;
+oldal = oldal.toString().slice(0, -5); // .html levágása
 function createFileExplorer(lecke){
-    if (bezarva) {
-        let html_code = "";
-        html_code += '<div id="fajlkezelo"> <h3>Fájlkezelő <i class="fa-solid fa-xmark" onclick="closeFileExplorer()"></i></h3> <div class="row"> <div class="column text-center"> <iframe src=';
-        
-        oldal = oldal.toString().slice(0, -5); // .html levágása
-
-        html_code += '"' + oldal + "/"; // tortenelem vagy magyar
-        html_code += lecke.innerHTML + '.pdf"'; // A lecke neve -> ez alapján megtalálja a fájlt
-        html_code += 'height="100%" width="100%" frameBorder="0" scrolling="auto"></iframe> <h5>Előnézet</h5> </div> <div class="column text-center">';
-        html_code += '<h4>Témazáró címe:<br>' + lecke.innerHTML + "</h4>";
-        html_code += '<button class="btn btn-primary" onclick="window.open(&#39;' + oldal + "/" + lecke.innerHTML + '.pdf&#39;)"><i class="fa-solid fa-file-pdf"></i> Megnyitás</button>';
-        html_code += '<button class="btn btn-success"><i class="fa-solid fa-arrow-down-to-line"></i><a href=';
-        if (oldal == 'tortenelem') { // download link megszerzése
-            html_code += tlink[lecke.innerHTML];
+    if (navigator.userAgentData.mobile) {
+        window.open(oldal + "/" + lecke.innerHTML + ".pdf");
+    }
+    else {
+        if (bezarva) {
+            let html_code = "";
+            html_code += '<div id="fajlkezelo"> <h3>Fájlkezelő <i class="fa-solid fa-xmark" onclick="closeFileExplorer()"></i></h3> <div class="row"> <div class="column text-center"> <iframe src=';
+            html_code += '"' + oldal + "/"; // tortenelem vagy magyar
+            html_code += lecke.innerHTML + '.pdf"'; // A lecke neve -> ez alapján megtalálja a fájlt
+            html_code += 'height="100%" width="100%" frameBorder="0" scrolling="auto"></iframe> <h5>Előnézet</h5> </div> <div class="column text-center">';
+            html_code += '<h4>Témazáró címe:<br>' + lecke.innerHTML + "</h4>";
+            html_code += '<button class="btn btn-primary" onclick="window.open(&#39;' + oldal + "/" + lecke.innerHTML + '.pdf&#39;)"><i class="fa-solid fa-file-pdf"></i> Megnyitás</button>';
+            html_code += '<button class="btn btn-success"><i class="fa-solid fa-arrow-down-to-line"></i><a href=';
+            if (oldal == 'tortenelem') { // download link megszerzése
+                html_code += tlink[lecke.innerHTML];
+            } else {
+                html_code += mlink[lecke.innerHTML];
+            }
+            html_code += '> Letöltés</a></button>';
+            html_code += '<p><span id="figyelem">FIGYELEM!</span> <br>A témazáró napjáig több, újabb verzió jelenhet meg, <br>így nem ajánlott semelyik fájl letöltése.</p>'
+            html_code += '</div></div></div>'
+            $("footer").before(html_code);
+            // Egyéb:
+            bezarva = false;
+            oldal = location.href.split("/").slice(-1);
         } else {
-            html_code += mlink[lecke.innerHTML];
+            utolso = lecke;
+            auto_close = true;
+            closeFileExplorer();
         }
-        html_code += '> Letöltés</a></button>';
-        html_code += '<p><span id="figyelem">FIGYELEM!</span> <br>A témazáró napjáig több, újabb verzió jelenhet meg, <br>így nem ajánlott semelyik fájl letöltése.</p>'
-        html_code += '</div></div></div>'
-        $("footer").before(html_code);
-        // Egyéb:
-        bezarva = false;
-        oldal = location.href.split("/").slice(-1);
-    } else {
-        utolso = lecke;
-        auto_close = true;
-        closeFileExplorer();
     }
 }
 function closeFileExplorer(){
