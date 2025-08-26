@@ -99,5 +99,5 @@ function showDropdown(tanev){
     }
 }
 if (navigator.userAgentData.mobile) {
-    $(".dropdown-content").css("font-size", "14px");
+    $("<style>.dropdown-content h5 {padding-left: 5px;}</style>").appendTo("head");
 }
