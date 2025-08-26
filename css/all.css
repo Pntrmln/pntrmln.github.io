@@ -5,7 +5,7 @@ body{
     flex-direction: column;
     overflow-x: hidden;
 }
-h1, h2, h3, h4, h5, h6, p, a, th, td, li{
+h1, h2, h3, h4, h5, h6, p, a, th, td, li, select, option{
     font-family: "Fira Sans", sans-serif;
     color: white;
 }
@@ -82,6 +82,7 @@ footer h6{
     bottom: 0;
     margin-bottom: 10px;
     left: 0;
+    width: 80px;
     margin-left: 46%;
 }
 #main_a, footer h6 {
@@ -121,11 +122,22 @@ a:hover, .fa-language:hover, #n_main:hover{
 #menupont{
     display: flex;
     margin-right: auto;
+    flex-wrap: wrap;
 }
 #menupont button{
     margin-top: -7px;
     height: 100%;
+    width: 108px;
     margin-left: 10px;
+}
+#menupont input{
+    border-radius: 8px;
+    width: 108px;
+    height: 40px;
+    margin-top: -7px;
+    margin-left: 139px;
+    border: none;
+    padding: 0;
 }
 .desc{
     font-size: small;
