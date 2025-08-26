@@ -55,3 +55,9 @@
 #langalert{
     margin-top: -15px;
 }
+*{
+    overflow-x: hidden;
+}
+i{
+    overflow-y: hidden;
+}
