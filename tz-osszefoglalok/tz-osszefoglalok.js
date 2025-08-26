@@ -52,13 +52,14 @@ function createFileExplorer(lecke){
             $("footer").before(html_code);
             // Egyéb:
             bezarva = false;
-            oldal = location.href.split("/").slice(-1);
         } else {
             utolso = lecke;
             auto_close = true;
             closeFileExplorer();
         }
     }
+    oldal = location.href.split("/").slice(-1);
+    oldal = oldal.toString().slice(0, -5);
 }
 function closeFileExplorer(){
     $("#fajlkezelo").remove();
@@ -96,4 +97,7 @@ function showDropdown(tanev){
         $("#" + tanev + "sect").css("overflow-x", "hidden");
         $("#" + tanev + "sect").css("height", "345px");
     }
+}
+if (navigator.userAgentData.mobile) {
+    $(".dropdown-content").css("font-size", "14px");
 }
