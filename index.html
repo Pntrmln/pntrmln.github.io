@@ -12,10 +12,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/all.js"></script>
     <script src="js/index.js"></script>
 </head>
-<body onload="checkSettings()">
+<body onload="checkSettings()"> <!--onload="window.location.href='construction.html'-->
     <nav class="navbar">
         <a href="contact.html" class="nav-list"><span lang="hu">Kapcsolat</span><span lang="en">Contacts</span></a>
         <a href="" id="main_a"><h3 id="n_main">Pntrmln<br>
@@ -69,14 +68,18 @@
             </div>
         </div>
         <!-- <div id="settings" class="text-center">
-            <h3>Beállítások</h3>
-            <h5 class="mb-5">Szabd testre ezt az oldalt!</h5>
+            <h3><span lang="hu">Beállítások</span><span lang="en">Settings</span></h3>
+            <h5 class="mb-5"><span lang="hu">Szabd testre ezt az oldalt!</span><span lang="en">Customize this site!</span></h5>
             <div id="menupont">
-                <p>Az oldal elemeinek elrendezése:</p>
-                <button id="desbtn" class="btn btn-secondary" onclick="changeDesign()">Függőleges</button>
-                <p class="desc">Megváltoztatja a 'Főoldal' és a 'Kapcsolatok' oldal elrendezését.</p>
+                <p><span lang="hu">Az oldal elemeinek elrendezése:</span><span lang="en">The layout of the elements:&emsp;&emsp;&#8201;</span></p>
+                <button id="desbtn" class="btn btn-secondary" onclick="changeDesign()"><span lang="hu">Függőleges</span><span lang="en">Vertical</span></button>
+                <p class="desc"><span lang="hu">Megváltoztatja a "Főoldal" és a "Kapcsolatok" oldal elrendezését.</span><span lang="en">Changes the layout on the "Home" and "Contacts" pages.</span></p>
+                <br>
+                <p><span lang="hu">Az oldal színe:</span><span lang="en">Color of site:&ensp;&#8201;</span></p>
+                <input type="color" value="#ff0000" id="color_changer">
+                <p class="desc"><span lang="hu">Megváltoztatja az oldal másodlagos (alapból piros) színét.</span><span lang="en">Changes the website's secondary (originally red) color.</span></p>
             </div>
-            <button class="btn btn-danger" onclick="Settings('off', event)">Kilépés</button>
+            <button class="btn btn-danger" onclick="Settings('off', event)"><span lang="hu">Kilépés</span><span lang="en">Quit</span></button>
         </div> -->
     </main>
     <footer class="navbar">
@@ -84,6 +87,7 @@
         <h6><span lang="hu">Készítette: Pntrmln, 2025</span><span lang="en">Created by Pntrmln, 2025</span></h6>
         <a href="privacy.html"><span lang="hu">Adatvédelem</span><span lang="en">Privacy</span></a>
     </footer>
+    <script src="js/all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>
