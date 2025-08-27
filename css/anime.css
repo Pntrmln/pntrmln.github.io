@@ -52,7 +52,7 @@
     -webkit-text-stroke: 0.5px #fcfbbd;
 }
 #jpn{
-    font-weight: 600;
+    font-weight: bolder;
 }
 @font-face {
     font-family: "Bocchi1";
@@ -88,4 +88,35 @@ table{
     font-weight: bold;
     display: inline-block;
     transform: scaleX(0.79);
+}
+td p{
+    color: black;
+}
+@font-face {
+    font-family: 'Lycoris Recoil';
+    src: url(../media/Neuropol\ X\ Rg.otf);
+}
+#lycoris{
+    font-family: 'Lycoris Recoil';
+    display: inline-block;
+    transform: scaleX(0.79);
+}
+#ly1{
+    color: #f25b62;
+}
+#ly2{
+    color: #0db9ad;
+}
+#llogo{
+    height: 15px;
+    width: 20px;
+    margin-bottom: 2px;
+}
+.fa-closed-captioning{
+    font-size: 130%;
+    position: relative;
+    top: 2px;
+}
+#manga_ent{
+    color: black; 
 }
