@@ -5,8 +5,10 @@ body{
 h1{
     font-family: "Fira Sans", sans-serif;
     text-align: center;
-    color: white;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+    color: #191919;
     vertical-align: middle;
+    font-size: 60px;
 }
 div{
     height: 100vh;
@@ -15,20 +17,28 @@ div{
 }
 img{
     width: 15%;
+    user-select: none;
 }
 @media only screen and (max-width: 800px) {
     img{
         width: 20%;
     }
+    h1{
+        font-size: 50px;
+    }
 }
 @media only screen and (max-width: 500px) {
     img{
         width: 30%;
+        font-size: 40px;
     }
 }
 @media only screen and (max-width: 300px) {
     img{
         width: 45%;
+    }
+    h1{
+        font-size: 38px;
     }
 }
 
