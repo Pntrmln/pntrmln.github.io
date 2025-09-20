@@ -14,13 +14,18 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/index.js"></script>
 </head>
-<body onload="checkSettings()"> <!--onload="window.location.href='construction.html'-->
+<body onload="window.location.href='construction.html'"> <!--onload="window.location.href='construction.html'"-->
     <nav class="navbar">
-        <a href="contact.html" class="nav-list"><span lang="hu">Kapcsolat</span><span lang="en">Contacts</span></a>
+        <a><i class="fa-solid fa-bars fa-2x" onclick="showMenu()" title="Menü"></i></a>
         <a href="" id="main_a"><h3 id="n_main">Pntrmln<br>
         <p id="gh">.xyz</p></h3></a>
         <a><i class="fa-solid fa-language fa-2x" onclick="languageChange()" title="English | Magyar"></i></a>
     </nav>
+    <div class="navbar text-center" id="menupontok">
+        <a href="social.html"><i class="fa-solid fa-users"></i><br><p class="mpont_pc">Közösségi média</p></a>
+        <a href="anime.html"><img src="media/yui-btn.png" alt=""><br><p class="mpont_pc">Animék</p></a>
+        <a href="tz-osszefoglalok/index.html"><i class="fa-solid fa-file"></i><br><p class="mpont_pc">TZ összefoglalók</p></a>
+    </div>
     <main class="text-center mt-3">
         <div class="alert alert-warning" id="langalert" role="alert">
             <span lang="hu">
@@ -28,7 +33,7 @@
                 You can change the language in the upper right corner!
             </span>
         </div>
-        <h1><span lang="hu">Üdv az oldalon!</span><span lang="en">Welcome to the site!</span></h1>
+        <h1 id="mh1"><span lang="hu">Üdv az oldalon!</span><span lang="en">Welcome to the site!</span></h1>
         <div class="row mt-5">
             <div class="col" id="rolam-div">
                 <h3><span lang="hu">Rólam:</span><span lang="en">About me:</span></h3>
@@ -40,15 +45,6 @@
                 <ul>
                     <li><span lang="hu">Gitározás <span id="gido_hu"></span></span><span lang="en">Playing the guitar <span id="gido_en"></span></span></li>
                     <li><span lang="hu" id="jpn_tan">Japán tanulás <span id="jido_hu"></span></span><span lang="en" id="jpn_tan">Learning Japanese <span id="jido_en"></span></span></li>
-                </ul>
-                <h5><span lang="hu">További információ:</span><span lang="en">Additional information:</span></h5>
-                <ul id="redir_btns">
-                    <li><button id="konbg" class="std_redir_btn" onclick="Redir('anime')"></button>
-                        <button class="fa-brands fa-spotify fa-2x std_redir_btn" onclick="Redir('spotify')"></button>
-                        <span id="legkisebb"><br></span>
-                        <button class="fa-brands fa-instagram fa-2x std_redir_btn" onclick="Redir('instagram')"></button>
-                        <button class="fa-brands fa-github fa-2x std_redir_btn" onclick="Redir('github')"></button>
-                    </li>
                 </ul>
             </div>
                 <div class="col" id="rc">
@@ -82,10 +78,13 @@
             <button class="btn btn-danger" onclick="Settings('off', event)"><span lang="hu">Kilépés</span><span lang="en">Quit</span></button>
         </div> -->
     </main>
-    <footer class="navbar">
-        <a href="" onclick="Settings('on', event)"><span lang="hu">Beállítások</span><span lang="en">Settings</span></a>
-        <h6><span lang="hu">Készítette: Pntrmln, 2025</span><span lang="en">Created by Pntrmln, 2025</span></h6>
-        <a href="privacy.html"><span lang="hu">Adatvédelem</span><span lang="en">Privacy</span></a>
+    <footer>
+        <h6><span lang="hu">Készítette: Pintér Milán, 2025</span><span lang="en">Created by Milán Pintér, 2025</span></h6>
+        <div class="navbar" id="footer_nav">
+            <a href="" onclick="Settings('on', event)"><i class="fa-solid fa-gear"></i></a>
+            <a href="contact.html"><i class="fa-solid fa-envelope"></i></a>
+            <a href="privacy.html"><i class="fa-solid fa-lock"></i></a>
+        </div>
     </footer>
     <script src="js/all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>

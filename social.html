@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kapcsolat</title>
+    <title>Közösségi média</title>
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/social.css">
+    <script src="js/social.js"></script>
     <script src="js/all.js"></script>
 </head>
 <body onload="window.location.href='construction.html'">
@@ -28,22 +30,31 @@
     </div>
     <main>
         <div class="text-center">
-            <h1 id="mh1"><span lang="hu">Kapcsolat</span><span lang="en">Contacts</span></h1>
-            <h3><span lang="hu">Az alábbi módokon érhetsz el:</span><span lang="en">You can contact me via:</span></h3>
+            <h1 id="mh1"><span lang="hu">Közösségi média</span><span lang="en">Social media</span></h1>
+            <h3><span lang="hu">Kattints az oldalaim megtekintéséhez:</span><span lang="en">Click to view my sites:</span></h3>
             <div id="viz_des" class="mb-5">
                 <ul>
-                    <li><i class="fa-solid fa-envelope fa-2x"></i><br>contact@pntrmln.xyz</li>
+                    <li onclick="Redir('discord')"><i class="fa-brands fa-discord fa-2x"></i><br>Discord</li>
                     <hr style="color: red;">
-                    <li><i class="fa-brands fa-discord fa-2x"></i><br>pntrmln</li>
+                    <li onclick="Redir('github')"><i class="fa-brands fa-github fa-2x"></i><br>GitHub</li>
                     <hr style="color: red;">
-                    <li><i class="fa-brands fa-instagram fa-2x"></i><br>pinter.hun</li>
+                    <li onclick="Redir('spotify')"><i class="fa-brands fa-spotify fa-2x"></i><br>Spotify</li>
+                    <hr style="color: red;">
+                    <li onclick="Redir('steam')"><i class="fa-brands fa-steam fa-2x"></i><br>Steam</li>
+                    <hr style="color: red;">
+                    <li onclick="Redir('instagram')"><i class="fa-brands fa-instagram fa-2x"></i><br>Instagram</li>
+                    <hr style="color: red;">
+                    <li onclick="Redir('bunpro')"><img src="media/bunpro-logo3.png" alt="bunpro-logo"><br>Bunpro</li>
                 </ul>
             </div>
             <div id="fuggo_des">
                 <ul>
-                    <li><i class="fa-brands fa-discord fa-2x"></i><br>pntrmln</li>
-                    <li><i class="fa-solid fa-envelope fa-2x"></i><br>contact@pntrmln.xyz</li>
-                    <li id="last_e"><i class="fa-brands fa-instagram fa-2x"></i><br>pinter.hun</li>
+                    <li onclick="Redir('discord')"><i class="fa-brands fa-discord fa-2x"></i><br>Discord</li>
+                    <li onclick="Redir('github')"><i class="fa-brands fa-github fa-2x"></i><br>GitHub</li>
+                    <li onclick="Redir('spotify')"><i class="fa-brands fa-spotify fa-2x"></i><br>Spotify</li>
+                    <li onclick="Redir('steam')"><i class="fa-brands fa-steam fa-2x"></i><br>Steam</li>
+                    <li onclick="Redir('instagram')"><i class="fa-brands fa-instagram fa-2x"></i><br>Instagram</li>
+                    <li id="last_e" onclick="Redir('bunpro')"><img src="media/bunpro-logo3.png" alt="bunpro-logo"><br>Bunpro</li>
                 </ul>
             </div>
         </div>
