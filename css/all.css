@@ -13,7 +13,7 @@ nav{
     background-color: #464646;
     border-bottom: 1px solid red;
 }
-.fa-language{
+.fa-language, .fa-bars{
     color: white;
 }
 #gh{
@@ -116,7 +116,7 @@ td{
     from {color: white;}
     to {color: red;}
 }
-a:hover, .fa-language:hover, #n_main:hover{
+a:hover, .fa-language:hover, #n_main:hover, .fa-bars:hover{
     animation: link_hover 0.5s forwards;
 }
 #menupont{
@@ -149,4 +149,37 @@ a:hover, .fa-language:hover, #n_main:hover{
 }
 .alert{
     display: none;
+}
+#footer_nav{
+    height: 50px;
+    padding-left: 45% !important;
+    padding-right: 45% !important;
+}
+#menupontok{
+    background-color: #464646;
+    height: 100px;
+    display: none;
+}
+#menupontok a{
+    margin-top: -8px;
+}
+main h1{
+    margin-top: 15vh;
+}
+#menupontok .fa-solid{
+    font-size: 26px;
+}
+@media only screen and (max-width: 400px) {
+    #menupontok p{
+        display: none;
+    }
+    #menupontok .fa-solid{
+        margin-top: 10px;
+    }
+}
+@media only screen and (max-width: 620px) {
+    #footer_nav{
+        padding-left: 40% !important;
+        padding-right: 40% !important;
+    }
 }

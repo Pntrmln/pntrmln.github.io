@@ -66,9 +66,6 @@
 .fa-subtitles{
     vertical-align: -2px;
 }
-#for_mobile{
-    display: none;
-}
 @media only screen and (max-width: 1508px) {
     .alert {
         display: block;
@@ -119,4 +116,7 @@ td p{
 }
 #manga_ent{
     color: black; 
+}
+main h2{
+    margin-top: 10vh;
 }
