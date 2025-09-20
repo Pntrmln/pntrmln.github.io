@@ -11,7 +11,9 @@ var tlink = {
     "Árpád-ház":["https://drive.google.com/uc?export=download&id=1dG4ZYfO5ELLppTjlRZA-xdFZsalmmUU4"],
     "Honfoglalás":["https://drive.google.com/uc?export=download&id=1gGvcl3PyTI2RJqVtHbLkvraNZ1TAbHvs"],
     "A középkor":["https://drive.google.com/uc?export=download&id=1Jy_RtCEHepLczYP6EskhovINdPlyBX_6"],
-    "Az ókori Róma":["https://drive.google.com/uc?export=download&id=1PRG9IxN9b0JA-KqdBm6R7oAVou9OklIm"]
+    "Az ókori Róma":["https://drive.google.com/uc?export=download&id=1PRG9IxN9b0JA-KqdBm6R7oAVou9OklIm"],
+    // 2025/26
+    "A dualizmus kora":["https://drive.google.com/uc?export=download&id=1gldhgGZ997nCquT98BcFNIi9a7Ngrpq5"]
 };
 // MAGYAR DOWNLOAD LINKEK
 var mlink = {
@@ -95,7 +97,7 @@ function showDropdown(tanev){
     if ($(".dropdown-content h5").length > 9) {
         $("#" + tanev + "sect").css("overflow-y", "scroll");
         $("#" + tanev + "sect").css("overflow-x", "hidden");
-        $("#" + tanev + "sect").css("height", "345px");
+        $("#" + tanev + "sect").css("height", "310px");
     }
 }
 if (navigator.userAgentData.mobile) {
