@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta property="og:image" content="">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TZ összefoglalók</title>
@@ -25,7 +24,7 @@
     </nav>
     <div class="navbar text-center" id="menupontok">
         <a href="../social.html"><i class="fa-solid fa-users"></i><br><p class="mpont_pc">Közösségi média</p></a>
-        <a href="../anime.html"><img src="../media/yui-btn.png" alt="" data-no-preview><br><p class="mpont_pc">Animék</p></a>
+        <a href="../anime.html"><img id="yui_image" alt=""><br><p class="mpont_pc">Animék</p></a>
         <a href="../tz-osszefoglalok/index.html"><i class="fa-solid fa-file"></i><br><p class="mpont_pc">TZ összefoglalók</p></a>
     </div>
     <main>
@@ -47,8 +46,9 @@
             <a href="../privacy.html"><i class="fa-solid fa-lock"></i></a>
         </div>
     </footer>
+    <script>
+        $("#yui_image").attr("src", "../media/yui-btn.png");
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
-
 </html>
-
