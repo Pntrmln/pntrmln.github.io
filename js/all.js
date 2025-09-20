@@ -1,5 +1,8 @@
 var magyar = true;
 var oldal = location.href.split("/").slice(-1);
+if (localStorage.getItem('csik_szin') == null) {
+    localStorage.setItem('csik_szin', "#ff0000");
+}
 console.log(localStorage.getItem('nyelv'));
 console.log(localStorage.getItem('save'));
 function showCorrectLang(){
@@ -24,6 +27,12 @@ function languageChange(){
             document.title = "Privacy";
         } else if (oldal == 'japanese.html') {
             document.title = "Learning Japanese";
+        } else if (oldal == 'tortenelem') {
+            document.title = "History";
+        } else if (oldal == 'magyar') {
+            document.title = "Hungarian";
+        } else if (oldal == 'social.html') {
+            document.title = "Social media";
         } else {
             document.title = "Home";
         }
@@ -41,6 +50,12 @@ function languageChange(){
             document.title = "Adatvédelem";
         } else if (oldal == 'japanese.html'){
             document.title = "Japán tanulás";
+        } else if (oldal == 'tortenelem') {
+            document.title = "Történelem";
+        } else if (oldal == 'magyar') {
+            document.title = "Magyar";
+        } else if (oldal == 'social.html') {
+            document.title = "Közösségi média";
         } else {
             document.title = "Főoldal";
         }
@@ -55,8 +70,18 @@ function languageChange(){
 }
 function Settings(allapot, e){
     e.preventDefault()
+    let irany = localStorage.getItem('des');
+    var gombszoveg;
+    var gombszoveg_en;
+    if (irany == "víz"){
+        gombszoveg = "Vízszintes";
+        gombszoveg_en = "Horizontal";
+    } else {
+        gombszoveg = "Függőleges";
+        gombszoveg_en = "Vertical";
+    }
     if (allapot == 'on'){
-        $("footer").before('<div id="settings" class="text-center"> <h3><span lang="hu">Beállítások</span><span lang="en">Settings</span></h3> <h5 class="mb-5"><span lang="hu">Szabd testre ezt az oldalt!</span><span lang="en">Customize this site!</span></h5> <div id="menupont"> <p><span lang="hu">Az oldal elemeinek elrendezése:</span><span lang="en">The layout of the elements:&emsp;&emsp;&#8201;</span></p> <button id="desbtn" class="btn btn-secondary" onclick="changeDesign()"><span lang="hu">Függőleges</span><span lang="en">Vertical</span></button> <p class="desc"><span lang="hu">Megváltoztatja a "Főoldal" és a "Kapcsolatok" oldal elrendezését.</span><span lang="en">Changes the layout on the "Home" and "Contacts" pages.</span></p> <br> <p><span lang="hu">Az oldal színe:</span><span lang="en">Color of site:&ensp;&#8201;</span></p> <input type="color" value="#ff0000" id="color_changer"> <p class="desc"><span lang="hu">Megváltoztatja az oldal másodlagos (alapból piros) színét.</span><span lang="en">Changes the website&#39;s secondary (originally red) color.</span></p> </div> <button class="btn btn-danger" onclick="Settings(&#39;off&#39;, event)"><span lang="hu">Kilépés</span><span lang="en">Quit</span></button> </div>') // &#39;off&#39;
+        $("footer").before('<div id="settings" class="text-center"> <h3><span lang="hu">Beállítások</span><span lang="en">Settings</span></h3> <h5 class="mb-5"><span lang="hu">Szabd testre ezt az oldalt!</span><span lang="en">Customize this site!</span></h5> <div id="menupont"> <p><span lang="hu">Az oldal elemeinek elrendezése:</span><span lang="en">The layout of the elements:&emsp;&emsp;&#8201;</span></p> <button id="desbtn" class="btn btn-secondary" onclick="changeDesign()"><span lang="hu">' + gombszoveg + '</span><span lang="en">' + gombszoveg_en + '</span></button> <p class="desc"><span lang="hu">Megváltoztatja a "Főoldal" és a "Kapcsolatok" oldal elrendezését.</span><span lang="en">Changes the layout on the "Home" and "Contacts" pages.</span></p> <br> <p><span lang="hu">Az oldal színe:</span><span lang="en">Color of site:&ensp;&#8201;</span></p> <input type="color" value="#ff0000" id="color_changer"> <p class="desc"><span lang="hu">Megváltoztatja az oldal másodlagos (alapból piros) színét.</span><span lang="en">Changes the website&#39;s secondary (originally red) color.</span></p> </div> <button class="btn btn-danger" onclick="Settings(&#39;off&#39;, event)"><span lang="hu">Kilépés</span><span lang="en">Quit</span></button> </div>'); // &#39;off&#39;
         $("#settings").show();
         changeColor();
         showCorrectLang();
@@ -66,10 +91,21 @@ function Settings(allapot, e){
 }
 function checkMobileB(){
     if (navigator.userAgentData.mobile) {
-        $("nav > a").eq(0).html('<i class="fa-solid fa-envelope"></i>')
-        $("footer > a").eq(0).html('<i class="fa-solid fa-gear"></i>');
-        $("footer > a").eq(1).html('<i class="fa-solid fa-lock"></i>');
-        $("footer > a").eq(0).attr("onclick", "event.preventDefault()");  
+        $('<style>#footer_nav{padding: 0 !important; margin-top: 10px}footer h6{width:100%}</style>').appendTo("head");
+        $(".mpont_pc").css("display", "none");
+        $("#menupontok a").css("margin-top", "5px");
+        if (oldal == "anime.html") {
+            $("#tablazaton_kivul").css("margin", "0");
+            $("#tablazaton_kivul").css("margin-left", "50px");
+            $("#tablazaton_kivul").css("margin-right", "50px");
+            $("#mh2").css("margin-top", "120px");
+        }
+        if (oldal == "contact.html" || oldal == "social.html") {
+            $("main").css("margin-top", "0");
+        }
+        if (oldal == "tortenelem" || oldal == "magyar") {
+            $("#mh1").css("margin-top", "15vh")
+        }
     }
 }
 var d_count = 0;
@@ -119,7 +155,7 @@ function changeToHor(){
         $("#index_for_mobile").show();
         $("#index_for_mobile > #nothing-div").addClass("mt-5");
     }
-    if (oldal == "contact.html") {
+    if (oldal == "contact.html" || oldal == "social.html") {
         $("#fuggo_des").hide();
         $("#viz_des").show();
     }
@@ -144,3 +180,53 @@ $(document).on("input", "#color_changer", function() {
     }
     changeColor();
 });
+var menu_count = 0;
+function showMenu(){    // A telefonos UI 360x800-ra van tervezve!
+    menu_count += 1;
+    if (menu_count % 2 != 0) {
+        if (!navigator.userAgentData.mobile) {
+            if (oldal == "index.html" || oldal == '' || oldal == "contact.html" || oldal == "privacy.html" || oldal == "social.html") {
+                $("#mh1").css("margin-top", "5.4vh");
+            } else if (oldal == "anime.html"){
+                $("#mh2").css("margin-top", "-1.2vh");
+            } else {
+                $("#mh1").css("margin-top", "0.4vh");
+            }
+            $("#menupontok").css("display", "flex");
+        } else {
+            if (oldal == "index.html" || oldal == '' || oldal == "social.html") {
+                $("#mh1").css("margin-top", "5.5%");
+            } else if (oldal == "anime.html"){
+                $("#mh2").css("margin-top", "2.5vh");
+            } else if (oldal == "privacy.html") {
+                $("#mh1").css("margin-top", "7.9%")
+            } else if (oldal == "contact.html"){
+                $("#mh1").css("margin-top", "6.3%");
+            } else if (oldal == "tortenelem" || oldal == "magyar"){
+                $("#mh1").css("margin-top", "2.5vh");
+            } else {
+                $("#mh1").css("margin-top", "-5%");
+            }
+            $("#menupontok").css("display", "flex");
+        }
+    } else {
+            if (oldal == "index.html" || oldal == '' || oldal == "contact.html" || oldal == "privacy.html" || oldal == "social.html") {
+                $("#mh1").css("margin-top", "15vh");
+            } else if (oldal == "anime.html"){
+                if (!navigator.userAgentData.mobile) {
+                    $("#mh2").css("margin-top", "10vh");
+                } else {
+                    $("#mh2").css("margin-top", "120px");
+                }
+           } else if (oldal == "tortenelem" || oldal == "magyar"){
+                if (!navigator.userAgentData.mobile) {
+                    $("#mh1").css("margin-top", "10vh");
+                } else {
+                    $("#mh1").css("margin-top", "15vh");
+                }
+           } else {
+                $("#mh1").css("margin-top", "10vh");
+            }
+        $("#menupontok").css("display", "none");
+    }
+}        
