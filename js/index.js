@@ -1,5 +1,5 @@
 function checkMobile(){
-    if (navigator.userAgentData.mobile) {
+    if (mobil()) {
         if (window.innerHeight > window.innerWidth) {
             $("#rc").hide();
             $("#index_for_mobile").show();
@@ -8,6 +8,8 @@ function checkMobile(){
             $("#index_for_mobile > #nothing-div").addClass("mt-5 mb-5");
             $("*").css("overflow-x", "hidden");
             $("i").css("overflow-y", "hidden");
+            $("main").removeClass("mt-3");
+            $("#langalert").css("margin-top", "0px");
             checkMobileB();
         } else {
             $("#index_for_mobile").hide();
