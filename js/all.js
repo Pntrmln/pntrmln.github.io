@@ -188,85 +188,12 @@ $(document).on("input", "#color_changer", function() {
     changeColor();
 });
 var menu_count = 0;
-function showMenu(){    // A telefonos UI 360x800-ra van tervezve! | PC UI: 1920x1080 és böngésző fullscreen
+function showMenu(){
     menu_count += 1;
-    let magassag = window.innerHeight;
-    // Arc böngésző:
-    let mh1 = 5.4;
-    let mh2 = -1.2;
-    let egyeb = 0.4;
-    if (magassag != 1040) { // Ha nem Arc
-        if (magassag == 995) { // Firefox
-            mh1 -= 0.45;
-            mh2 -= 0.45;
-            egyeb -= 0.45;
-        } else if (magassag == 991) { // Chrome
-            mh1 -= 0.50;
-            mh2 -= 0.51;
-            egyeb -= 0.50;
-        } else { // Edge
-            mh1 -= 0.40;
-            mh2 -= 0.40;
-            egyeb -= 0.40;
-        }
-    }
-    let tmh1 = 5.5; // szazalek -> 3.05 min
-    let tmh2 = 2.5; // vh -> 0.25 add
-    let tmh1priv = 7.9; // szazalek -> 10 min
-    let tmh1cont = 6.3; // szazalek -> 3.18 min
-    let tmh1tz = 2.5; // vh -> 1.16 min
-    if (fooldal && window.innerHeight == 733 || !fooldal && window.innerHeight == 711) {
-        tmh1 -= 3.05;
-        tmh2 += 0.25;
-        tmh1priv -= 10;
-        tmh1cont -= 3.18;
-        tmh1tz -= 1.16;
-    }
     if (menu_count % 2 != 0) {
-        if (!mobil()) {
-            if (oldal == "index.html" || oldal == '' || oldal == "contact.html" || oldal == "privacy.html" || oldal == "social.html") {
-                $("#mh1").css("margin-top", mh1 + "vh");
-            } else if (oldal == "anime.html"){
-                $("#mh2").css("margin-top", mh2 + "vh");
-            } else {
-                $("#mh1").css("margin-top", egyeb + "vh");
-            }
-            $("#menupontok").css("display", "flex");
-        } else {
-            if (oldal == "index.html" || oldal == '' || oldal == "social.html") {
-                $("#mh1").css("margin-top", tmh1 + "%");
-            } else if (oldal == "anime.html"){
-                $("#mh2").css("margin-top", tmh2 + "vh");
-            } else if (oldal == "privacy.html") {
-                $("#mh1").css("margin-top", tmh1priv + "%")
-            } else if (oldal == "contact.html"){
-                $("#mh1").css("margin-top", tmh1cont + "%");
-            } else if (oldal == "tortenelem" || oldal == "magyar"){
-                $("#mh1").css("margin-top", tmh1tz + "vh");
-            } else {
-                $("#mh1").css("margin-top", "-5%");
-            }
-        }
-            $("#menupontok").css("display", "flex");
+        $("#menupontok").css("display", "flex");
     } else {
-        if (oldal == "index.html" || oldal == '' || oldal == "contact.html" || oldal == "privacy.html" || oldal == "social.html") {
-            $("#mh1").css("margin-top", "15vh");
-        } else if (oldal == "anime.html"){
-            if (!mobil()) {
-                $("#mh2").css("margin-top", "10vh");
-            } else {
-                $("#mh2").css("margin-top", "120px");
-            }
-        } else if (oldal == "tortenelem" || oldal == "magyar"){
-            if (!mobil()) {
-                $("#mh1").css("margin-top", "10vh");
-            } else {
-                $("#mh1").css("margin-top", "15vh");
-            }
-        } else {
-            $("#mh1").css("margin-top", "10vh");
-        }
-    $("#menupontok").css("display", "none");
+        $("#menupontok").css("display", "none");
     }
 }
 $("#yui_image").attr("src", "media/yui-btn.png");

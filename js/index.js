@@ -10,6 +10,7 @@ function checkMobile(){
             $("i").css("overflow-y", "hidden");
             $("main").removeClass("mt-3");
             $("#langalert").css("margin-top", "0px");
+            $("#menupontok").css("top", "100px");
             checkMobileB();
         } else {
             $("#index_for_mobile").hide();
