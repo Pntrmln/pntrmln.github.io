@@ -30,7 +30,7 @@ var bezarva = true;
 var auto_close = false;
 oldal = oldal.toString().slice(0, -5); // .html levágása
 function createFileExplorer(lecke){
-    if (navigator.userAgentData.mobile) {
+    if (mobil()) {
         window.open(oldal + "/" + lecke.innerHTML + ".pdf");
     }
     else {
@@ -100,6 +100,7 @@ function showDropdown(tanev){
         $("#" + tanev + "sect").css("height", "310px");
     }
 }
-if (navigator.userAgentData.mobile) {
+if (mobil()) {
     $("<style>.dropdown-content h5 {padding-left: 5px;}</style>").appendTo("head");
 }
+$("#yui_image").attr("src", "../media/yui-btn.png");
