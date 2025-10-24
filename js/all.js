@@ -98,8 +98,6 @@ function Settings(allapot, e){
         }
         changeColor();
         showCorrectLang();
-    } else {
-        $("#settings").hide();
     }
 }
 function checkMobileB(){
