@@ -52,7 +52,8 @@
     -webkit-text-stroke: 0.5px #fcfbbd;
 }
 #jpn{
-    font-weight: bolder;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
 }
 @font-face {
     font-family: "Bocchi1";
@@ -119,4 +120,45 @@ td p{
 }
 main h2{
     margin-top: 10vh;
+}
+@font-face {
+    font-family: 'Rock is a Ladys Modesty 1';
+    src: url(../media/Wedding\ Text\ Std\ Regular.otf);
+}
+@font-face {
+    font-family: 'Rock is a Ladys Modesty 2';
+    src: url(../media/Giambattista\ Two\ Script.ttf);
+}
+#ladymoda{
+    font-family: 'Rock is a Ladys Modesty 1';
+    font-size: xx-large;
+    color: #ffd908;
+}
+.ladymodb{
+    font-family: 'Rock is a Ladys Modesty 2';
+    color: #fdfdfd;
+    display: block;
+    margin-top: -8px;
+}
+#ladymodc{
+    color: #ffd908;
+    font-size: large;
+}
+.circle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    z-index: -1000000;
+}
+.circle::before {
+    content: "";
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: black;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1000000000;
 }
