@@ -94,13 +94,36 @@ function showDropdown(tanev){
         $("#ktnh4").html('Korábbi tanévek:<i class="fa-solid fa-caret-up"></i>');
         $("#ktn_content").css("display", "block");
     }
-    if ($(".dropdown-content h5").length > 9) {
+    if ($("#ktn_content > h5").length > 9) {
         $("#" + tanev + "sect").css("overflow-y", "scroll");
         $("#" + tanev + "sect").css("overflow-x", "hidden");
-        $("#" + tanev + "sect").css("height", "310px");
+        let alapheight = 310;
+        alapheight -= $("#jtn_content > h5").length * 30;
+        $("#ktnsect").css("height", alapheight + "px");
     }
 }
 if (mobil()) {
     $("<style>.dropdown-content h5 {padding-left: 5px;}</style>").appendTo("head");
+    $(".dropdown-content").css("padding-right", "0");
+    $("#fsect").css("margin-bottom", "20px");
+    $(".dropdown > h4").css("padding-left", "25px");
+    $(".dropdown-content > h5").css("padding", "20px 0");
+    $(".dropdown-content > h5").css("margin", "0 20px");
+    $("<style>*{-ms-overflow-style: none;scrollbar-width: none;}html::webkit-scrollbar, body::webkit-scrollbar{display:none;}</style>").appendTo("head");
+    $(".dropdown-content").each(function() {
+        var $h5s = $(this).children("h5");
+        $h5s.css({
+            "padding": "20px 10px",
+            "border-bottom": "1px solid red",
+            "box-sizing": "border-box",
+            "display": "block"
+        });
+        if ($h5s.length > 1) {
+            $h5s.last().css("border-bottom", "none");
+        }
+        if ($h5s.length === 1) {
+            $h5s.css("border-bottom", "none");
+        }
+    });
 }
 $("#yui_image").attr("src", "../media/yui-btn.png");
