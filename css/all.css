@@ -144,7 +144,27 @@ a:hover, .fa-language:hover, #n_main:hover, .fa-bars:hover{
 }
 @media only screen and (max-width: 800px) {
     #settings{
-        display: none !important;
+        width: calc(100vw - 20px) !important;
+        height: 600px;
+    }
+    #menupont{
+        display: block;
+    }
+    #menupont input{
+        margin: 0;
+    }
+    #menupont button{
+        margin-left: 0;
+    }
+    #menupont p{
+        margin: 0;
+        padding: 10px;
+    }
+    #settings .btn-danger{
+        position: relative;
+        margin: 0;
+        width: 108px;
+        margin-top: 80px;
     }
 }
 .alert{
