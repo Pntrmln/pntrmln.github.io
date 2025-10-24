@@ -88,6 +88,14 @@ function Settings(allapot, e){
     if (allapot == 'on'){
         $("footer").before('<div id="settings" class="text-center"> <h3><span lang="hu">Beállítások</span><span lang="en">Settings</span></h3> <h5 class="mb-5"><span lang="hu">Szabd testre ezt az oldalt!</span><span lang="en">Customize this site!</span></h5> <div id="menupont"> <p><span lang="hu">Az oldal elemeinek elrendezése:</span><span lang="en">The layout of the elements:&emsp;&emsp;&#8201;</span></p> <button id="desbtn" class="btn btn-secondary" onclick="changeDesign()"><span lang="hu">' + gombszoveg + '</span><span lang="en">' + gombszoveg_en + '</span></button> <p class="desc"><span lang="hu">Megváltoztatja a "Főoldal" és a "Kapcsolatok" oldal elrendezését.</span><span lang="en">Changes the layout on the "Home" and "Contacts" pages.</span></p> <br> <p><span lang="hu">Az oldal színe:</span><span lang="en">Color of site:&ensp;&#8201;</span></p> <input type="color" value="#ff0000" id="color_changer"> <p class="desc"><span lang="hu">Megváltoztatja az oldal másodlagos (alapból piros) színét.</span><span lang="en">Changes the website&#39;s secondary (originally red) color.</span></p> </div> <button class="btn btn-danger" onclick="Settings(&#39;off&#39;, event)"><span lang="hu">Kilépés</span><span lang="en">Quit</span></button> </div>'); // &#39;off&#39;
         $("#settings").show();
+        if (mobil()){
+            $("#settings > h5").removeClass("mb-5");
+            $("#menupont > p").eq(0).remove();
+            $("#menupont > p").eq(0).remove();
+            $("#menupont > button").remove();
+            $("#menupont > br").remove();
+            $("#settings").css("height", "350px");
+        }
         changeColor();
         showCorrectLang();
     } else {
@@ -98,7 +106,6 @@ function checkMobileB(){
     if (mobil()) {
         $('<style>#footer_nav{padding: 0 !important; margin-top: 10px}footer h6{width:100%}</style>').appendTo("head");
         $(".mpont_pc").css("display", "none");
-        $("#menupontok a").css("margin-top", "5px");
         if (oldal == "anime.html") {
             $("#tablazaton_kivul").css("margin", "0");
             $("#tablazaton_kivul").css("margin-left", "50px");
