@@ -1,3 +1,9 @@
+// Navbar betöltése
+$("nav").html('<a><i class="fa-solid fa-bars fa-2x" onclick="showMenu()" title="Menü"></i></a> <a href="../index.html" id="main_a"><h3 id="n_main">Pntrmln<br> <p id="gh">.hu</p></h3></a> <a><i class="fa-solid fa-language fa-2x" onclick="languageChange()" title="English | Magyar"></i></a>');
+$("#menupontok").remove();
+$("nav").after(' <div class="navbar text-center" id="menupontok"> <a href="../social.html"> <i class="fa-solid fa-users"> </i> <br> <p class="mpont_pc"> <span lang="hu">Linkek és kapcsolat</span> <span lang="en">Links and contact</span> </p> </a> <a href="../anime.html"> <img id="yui_image" alt=""> <br> <p class="mpont_pc"> <span lang="hu">Animék</span> <span lang="en">Animes</span> </p> </a> <a href="../tz-osszefoglalok/index.html"> <i class="fa-solid fa-file"> </i> <br> <p class="mpont_pc"> <span lang="hu">Összefoglalók</span> <span lang="en">Exam PDFs</span> </p> </a></div>');// Footer betöltése
+$("footer").html('<h6><span lang="hu">Készítette: Pintér Milán, 2025</span><span lang="en">Created by Milán Pintér, 2025</span></h6> <div class="navbar" id="footer_nav"> <a href="" onclick="Settings(&#39;on&#39;, event)"><i class="fa-solid fa-gear"></i></a> <a href="../privacy.html"><i class="fa-solid fa-lock"></i></a> </div>');
+
 // TÖRI DOWNLOAD LINKEK
 var tlink = {
     "A nemzetállamok kora":["https://drive.google.com/uc?export=download&id=11UbLwLDbA_-Qg8vyG-C_dgVGg-0NxKf6"],
@@ -13,7 +19,8 @@ var tlink = {
     "A középkor":["https://drive.google.com/uc?export=download&id=1Jy_RtCEHepLczYP6EskhovINdPlyBX_6"],
     "Az ókori Róma":["https://drive.google.com/uc?export=download&id=1PRG9IxN9b0JA-KqdBm6R7oAVou9OklIm"],
     // 2025/26
-    "A dualizmus kora":["https://drive.google.com/uc?export=download&id=1gldhgGZ997nCquT98BcFNIi9a7Ngrpq5"]
+    "A dualizmus kora":["https://drive.google.com/uc?export=download&id=1gldhgGZ997nCquT98BcFNIi9a7Ngrpq5"],
+    "Az I. világháború és következményei":["https://drive.google.com/uc?export=download&id=1H9Jv8kRaYc-oeGhP5hM5vsiuq0XdlUae"]
 };
 // MAGYAR DOWNLOAD LINKEK
 var mlink = {
