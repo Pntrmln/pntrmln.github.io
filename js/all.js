@@ -1,3 +1,8 @@
+// Navbar betöltése
+$("nav").append(' <a><i class="fa-solid fa-bars fa-2x" onclick="showMenu()" title="Menü"></i></a> <a href="index.html" id="main_a"><h3 id="n_main">Pntrmln<br> <p id="gh">.hu</p></h3></a> <a><i class="fa-solid fa-language fa-2x" onclick="languageChange()" title="English | Magyar"></i></a>')
+$("nav").after(' <div class="navbar text-center" id="menupontok"> <a href="social.html"> <i class="fa-solid fa-users"> </i> <br> <p class="mpont_pc"><span lang="hu">Linkek és kapcsolat</span><span lang="en">Links and contact</span></p> </a> <a href="anime.html"> <img id="yui_image" alt=""> <br> <p class="mpont_pc"><span lang="hu">Animék</span><span lang="en">Animes</span></p> </a> <a href="tz-osszefoglalok/index.html"> <i class="fa-solid fa-file"> </i> <br> <p class="mpont_pc"><span lang="hu">Összefoglalók</span><span lang="en">Exam PDFs</span></p> </a></div>');
+// Footer betöltése
+$("footer").append('<h6><span lang="hu">Készítette: Pintér Milán, 2025</span><span lang="en">Created by Milán Pintér, 2025</span></h6> <div class="navbar" id="footer_nav"> <a href="" onclick="Settings(&#39;on&#39;, event)"><i class="fa-solid fa-gear"></i></a> <a href="privacy.html"><i class="fa-solid fa-lock"></i></a> </div>')
 var magyar = true;
 var oldal = location.href.split("/").slice(-1);
 window.mobil = function() {
@@ -10,6 +15,7 @@ if (localStorage.getItem('csik_szin') == null) {
 }
 console.log(localStorage.getItem('nyelv'));
 console.log(localStorage.getItem('save'));
+
 function showCorrectLang(){
     $(document).ready(function() {
         $('span[lang]').hide();
@@ -37,7 +43,7 @@ function languageChange(){
         } else if (oldal == 'magyar') {
             document.title = "Hungarian";
         } else if (oldal == 'social.html') {
-            document.title = "Social media";
+            document.title = "Links and social";
         } else {
             document.title = "Home";
         }
@@ -60,7 +66,7 @@ function languageChange(){
         } else if (oldal == 'magyar') {
             document.title = "Magyar";
         } else if (oldal == 'social.html') {
-            document.title = "Közösségi média";
+            document.title = "Linkek és kapcsolat";
         } else {
             document.title = "Főoldal";
         }
@@ -86,7 +92,7 @@ function Settings(allapot, e){
         gombszoveg_en = "Vertical";
     }
     if (allapot == 'on'){
-        $("footer").before('<div id="settings" class="text-center"> <h3><span lang="hu">Beállítások</span><span lang="en">Settings</span></h3> <h5 class="mb-5"><span lang="hu">Szabd testre ezt az oldalt!</span><span lang="en">Customize this site!</span></h5> <div id="menupont"> <p><span lang="hu">Az oldal elemeinek elrendezése:</span><span lang="en">The layout of the elements:&emsp;&emsp;&#8201;</span></p> <button id="desbtn" class="btn btn-secondary" onclick="changeDesign()"><span lang="hu">' + gombszoveg + '</span><span lang="en">' + gombszoveg_en + '</span></button> <p class="desc"><span lang="hu">Megváltoztatja a "Főoldal" és a "Kapcsolatok" oldal elrendezését.</span><span lang="en">Changes the layout on the "Home" and "Contacts" pages.</span></p> <br> <p><span lang="hu">Az oldal színe:</span><span lang="en">Color of site:&ensp;&#8201;</span></p> <input type="color" value="#ff0000" id="color_changer"> <p class="desc"><span lang="hu">Megváltoztatja az oldal másodlagos (alapból piros) színét.</span><span lang="en">Changes the website&#39;s secondary (originally red) color.</span></p> </div> <button class="btn btn-danger" onclick="Settings(&#39;off&#39;, event)"><span lang="hu">Kilépés</span><span lang="en">Quit</span></button> </div>'); // &#39;off&#39;
+        $("footer").before('<div id="settings" class="text-center"> <h3><span lang="hu">Beállítások</span><span lang="en">Settings</span></h3> <h5 class="mb-5"><span lang="hu">Szabd testre ezt az oldalt!</span><span lang="en">Customize this site!</span></h5> <div id="menupont"> <p><span lang="hu">Az oldal elemeinek elrendezése:</span><span lang="en">The layout of the elements:&emsp;&emsp;&#8201;</span></p> <button id="desbtn" class="btn btn-secondary" onclick="changeDesign()"><span lang="hu">' + gombszoveg + '</span><span lang="en">' + gombszoveg_en + '</span></button> <p class="desc"><span lang="hu">Megváltoztatja több oldal elrendezését.&emsp;&emsp;</span><span lang="en">Changes the layout of multiple pages.&emsp;&emsp;&emsp;</span></p><br> <p><span lang="hu">Az oldal színe:</span><span lang="en">Color of site:&ensp;&#8201;</span></p> <input type="color" value="#ff0000" id="color_changer"> <p class="desc"><span lang="hu">Megváltoztatja az oldal másodlagos (alapból piros) színét.</span><span lang="en">Changes the website&#39;s secondary (originally red) color.</span></p> </div> <button class="btn btn-danger" onclick="Settings(&#39;off&#39;, event)"><span lang="hu">Kilépés</span><span lang="en">Quit</span></button> </div>'); // &#39;off&#39;
         $("#settings").show();
         if (mobil()){
             $("#settings > h5").removeClass("mb-5");
@@ -181,7 +187,10 @@ function changeColor(){
     if (customcss_set) { // LAG ELLEN -> NE LEGYEN KURVA SOK STYLE ELEMENT
         $("head > style").eq(-1).remove();
     }
-    $('<style>@keyframes link_hover { from {color: white;} to {color: ' + szin + ';}}::selection{ background-color: ' + szin + '; color: black;}:-moz-selection{ background-color:' + szin + '; color: black;} button { border: none !important;} .std_redir_btn { border: 1px solid ' + szin + ' !important;} .alert { border: none; } table, tr, td { border-color: #dee2e6 !important;} .table-group-divider { border-color: #000 !important;}</style>').appendTo("head");
+    if (oldal != '404.html'){
+        $('<style>::selection{background-color: ' + szin + '; color: black;}:-moz-selection{ background-color:' + szin + '; color: black;} button { border: none !important;} .alert { border: none; } table, tr, td { border-color: #dee2e6 !important;} .table-group-divider { border-color: #000 !important;}</style>').appendTo("head");
+    }
+    $("body").get(0).style.setProperty("--beallitott_szin", szin);
     if (!customcss_set) {
         customcss_set = true;
     }
@@ -199,8 +208,18 @@ function showMenu(){
     menu_count += 1;
     if (menu_count % 2 != 0) {
         $("#menupontok").css("display", "flex");
+        if (mobil()){
+            $("#langalert").css("margin-top", $("#menupontok").outerHeight() + "px");
+        } else {
+            $("#langalert").css("margin-top", $("#menupontok").outerHeight()-15 + "px");
+        }
     } else {
         $("#menupontok").css("display", "none");
+        if (!mobil()){
+            $("#langalert").css("margin-top", "-15px");
+        } else {
+            $("#langalert").css("margin-top", "0");
+        }
     }
 }
 $("#yui_image").attr("src", "media/yui-btn.png");

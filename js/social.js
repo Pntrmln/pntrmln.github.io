@@ -7,11 +7,13 @@ function Redir(site){
     } else if (site == 'github') {
         window.open("https://github.com/pntrmln");
     } else if (site == 'discord') {
-        window.open('https://discord.com/channels/@me');
+        window.open('https://pastebin.com/GuSNScK9', '_blank');
     } else if (site == 'steam') {
         window.open('https://steamcommunity.com/id/pntrmln/');
     } else if (site == 'bunpro') {
         window.open('https://bunpro.jp/share/Pntrmln');
+    } else if (site == 'mail') {
+        window.location.href = "mailto:contact@pntrmln.hu";
     } else {
         window.location.href = "404.html";
     }
