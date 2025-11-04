@@ -23,6 +23,7 @@
 .zero{
     font-family: 'Coinage Caps Kruger Gray', sans-serif;
     vertical-align: auto;
+    font-size: x-large;
 }
 #ro, #kettospont{
     vertical-align: -2px;
@@ -32,14 +33,14 @@
     color: #6d699f;
     vertical-align: -2px;
     font-weight: 500;
+    font-size: x-large;
 }
 #rezero_title{
     font-family: "Reforma Grotesk W01 Demi";
-}
-#rbr{
     display: block;
-    content: "";
+    font-size: small;
     margin-top: -10px;
+    margin-left: 60px;
 }
 @font-face {
     font-family: "K-On";
@@ -161,4 +162,18 @@ main h2{
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: -1000000000;
+}
+#nhk{
+    font-family: "BlackGrotesk W08 Italic";
+    color: #e36f18;
+}
+#nhk2{
+    font-size: 40px;
+    display: block;
+    margin-top: -20px;
+    margin-bottom: 0;
+}
+#nhktd #jpn{
+    display: block;
+    margin-top: -10px;
 }

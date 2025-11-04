@@ -112,12 +112,22 @@ td{
 ::-webkit-scrollbar-thumb:hover {
   background: #8B8B8B; 
 }
+:root{
+    --beallitott_szin: red;
+}
 @keyframes link_hover {
     from {color: white;}
-    to {color: red;}
+    to {color: var(--beallitott_szin);}
+}
+@keyframes link_unhover {
+    from {color: var(--beallitott_szin);}
+    to {color: white;}
 }
 a:hover, .fa-language:hover, #n_main:hover, .fa-bars:hover{
     animation: link_hover 0.5s forwards;
+}
+a:not(:hover), .fa-language:not(:hover), #n_main:not(:hover), .fa-bars:not(:hover){
+    animation: link_unhover 0.5s forwards;
 }
 #menupont{
     display: flex;
@@ -172,8 +182,8 @@ a:hover, .fa-language:hover, #n_main:hover, .fa-bars:hover{
 }
 #footer_nav{
     height: 50px;
-    padding-left: 45% !important;
-    padding-right: 45% !important;
+    padding-left: 48% !important;
+    padding-right: 48% !important;
 }
 #menupontok{
     background-color: #464646;

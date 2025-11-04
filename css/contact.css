@@ -25,3 +25,11 @@ main{
         display: none;
     }
 }
+#alahuzas li {
+    text-decoration: underline;
+    text-decoration-color: white;
+    transition: text-decoration-color 0.5s;
+}
+#alahuzas li:hover {
+  text-decoration-color: var(--beallitott_szin);
+}

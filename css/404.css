@@ -15,6 +15,9 @@ div{
 }
 h1{
     color: #191919;
-    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
-    font-size: 120px;
+    text-shadow: -1px 0 var(--beallitott_szin), 0 1px var(--beallitott_szin), 1px 0 var(--beallitott_szin), 0 -1px var(--beallitott_szin);
+    font-size: 120px !important;
+}
+button{
+    border: 1px solid var(--beallitott_szin) !important;
 }
