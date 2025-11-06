@@ -33,3 +33,6 @@ main{
 #alahuzas li:hover {
   text-decoration-color: var(--beallitott_szin);
 }
+#bnp{
+    user-select: none;
+}

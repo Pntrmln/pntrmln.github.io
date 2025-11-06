@@ -78,6 +78,7 @@ table{
     border-spacing: 0;
     width: 100%;
     min-width: 1400px;
+    user-select: none;
 }
 #tdiv{
     overflow-x: auto;

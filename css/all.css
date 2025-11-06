@@ -218,3 +218,6 @@ main h1{
         padding-right: 40% !important;
     }
 }
+br{
+    user-select: none;
+}
