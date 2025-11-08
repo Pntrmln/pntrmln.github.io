@@ -32,6 +32,7 @@ var mlink = {
 }
 // Változók a Fájlkezelő kezeléséhez
 var oldal = location.href.split("/").slice(-1);
+console.log(oldal);
 var utolso = '';
 var bezarva = true;
 var auto_close = false;
@@ -133,4 +134,5 @@ if (mobil()) {
         }
     });
 }
+
 $("#yui_image").attr("src", "../media/yui-btn.png");
