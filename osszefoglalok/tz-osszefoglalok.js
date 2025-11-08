@@ -31,12 +31,13 @@ var mlink = {
     "Csokonai költészete":["https://drive.google.com/uc?export=download&id=1cIgaR2ZWg7NEzTCblmravW81uMQsBZKe"]
 }
 // Változók a Fájlkezelő kezeléséhez
-var oldal = location.href.split("/").slice(-1);
-console.log(oldal);
+var oldal = location.href.split("/").slice(-1).toString();
 var utolso = '';
 var bezarva = true;
 var auto_close = false;
-oldal = oldal.toString().slice(0, -5); // .html levágása
+if (oldal.endsWith("html")){
+    oldal = oldal.slice(0, -5); // .html levágása
+} 
 function createFileExplorer(lecke){
     if (mobil()) {
         window.open(oldal + "/" + lecke.innerHTML + ".pdf");
@@ -69,7 +70,9 @@ function createFileExplorer(lecke){
         }
     }
     oldal = location.href.split("/").slice(-1);
-    oldal = oldal.toString().slice(0, -5);
+    if (oldal.endsWith("html")){
+        oldal = oldal.slice(0, -5);
+    } 
 }
 function closeFileExplorer(){
     $("#fajlkezelo").remove();
@@ -134,5 +137,4 @@ if (mobil()) {
         }
     });
 }
-
 $("#yui_image").attr("src", "../media/yui-btn.png");
