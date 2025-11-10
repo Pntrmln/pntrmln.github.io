@@ -69,10 +69,6 @@ function createFileExplorer(lecke){
             closeFileExplorer();
         }
     }
-    oldal = location.href.split("/").slice(-1);
-    if (oldal.endsWith("html")){
-        oldal = oldal.slice(0, -5);
-    } 
 }
 function closeFileExplorer(){
     $("#fajlkezelo").remove();
