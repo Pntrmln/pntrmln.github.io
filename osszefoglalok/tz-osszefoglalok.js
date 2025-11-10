@@ -28,7 +28,9 @@ var mlink = {
     "A szöveg":["https://drive.google.com/uc?export=download&id=15Prp--ESpPQBSCjAvJQMVYfSAnDF-Jac"],
     "A romantika kora":["https://drive.google.com/uc?export=download&id=1Nb6RnCpxmBEWxpCl5NOa2pg211M6tmE7"],
     "A felvilágosodás kora":["https://drive.google.com/uc?export=download&id=1h6ZNqAvhZsDm-7mG-mFXLnbhRTPtBkez"],
-    "Csokonai költészete":["https://drive.google.com/uc?export=download&id=1cIgaR2ZWg7NEzTCblmravW81uMQsBZKe"]
+    "Csokonai költészete":["https://drive.google.com/uc?export=download&id=1cIgaR2ZWg7NEzTCblmravW81uMQsBZKe"],
+    // 2025/26
+    "Magyar belső vizsga":["https://drive.google.com/uc?export=download&id=10zCplxXMvxoHjtXunnWto-O-rTKPMwO6"]
 }
 // Változók a Fájlkezelő kezeléséhez
 var oldal = location.href.split("/").slice(-1).toString();
