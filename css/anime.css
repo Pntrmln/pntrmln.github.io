@@ -4,6 +4,7 @@
 #nana{
     font-family: "CCWallScrawler Bold Italic";
     color: #e00988;
+    font-size: large;
 }
 #aot{
     font-family: 'Ditty', sans-serif;
@@ -12,6 +13,7 @@
     -webkit-background-clip: text;
             background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: larger;
 }
 @font-face {
     font-family: "Death Note";
@@ -19,6 +21,7 @@
 }
 #deathnote{
     font-family: "Death Note";
+    font-size: large;
 }
 .zero{
     font-family: 'Coinage Caps Kruger Gray', sans-serif;
@@ -48,7 +51,7 @@
 }
 #k_on{
     font-family: "K-On";
-    font-size: large;
+    font-size: larger;
     color: #e4000b;
     -webkit-text-stroke: 0.5px #fcfbbd;
 }
@@ -56,13 +59,16 @@
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 700;
 }
+#chmn{
+    width: 50%;
+}
 @font-face {
     font-family: "Bocchi1";
     src: url('../media/Thugolatz-MVyxv.ttf');
 }
 #bocchi{
     font-family: "Bocchi1";
-    font-size: large;
+    font-size: larger;
     color: #fdb816;
 }
 .fa-subtitles{
@@ -88,6 +94,15 @@ table{
     font-weight: bold;
     display: inline-block;
     transform: scaleX(0.79);
+}
+#eva1{
+    display: block;
+    margin-right: 40px;
+}
+#eva2{
+    font-size: x-large;
+    display: block;
+    margin-top: -40px;
 }
 td p{
     color: black;
@@ -123,46 +138,41 @@ td p{
 main h2{
     margin-top: 10vh;
 }
-@font-face {
-    font-family: 'Rock is a Ladys Modesty 1';
-    src: url(../media/Wedding\ Text\ Std\ Regular.otf);
+#rialm{
+    width: 50%;
 }
-@font-face {
-    font-family: 'Rock is a Ladys Modesty 2';
-    src: url(../media/Giambattista\ Two\ Script.ttf);
+#tmra{
+    font-family: "MotoyaExOkai W5";
 }
-#ladymoda{
-    font-family: 'Rock is a Ladys Modesty 1';
-    font-size: xx-large;
-    color: #ffd908;
+#cmt{
+    margin-right: 100px;
 }
-.ladymodb{
-    font-family: 'Rock is a Ladys Modesty 2';
-    color: #fdfdfd;
+#cmm{
     display: block;
+    margin-right: 100px;
     margin-top: -8px;
 }
-#ladymodc{
-    color: #ffd908;
-    font-size: large;
+#cmt, #cmm{
+    font-size: xx-small;
 }
-.circle {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    z-index: -1000000;
+#cmr{
+    display: block;
+    margin-top: -30px;
+    font-size: x-large;
+    margin-left: 5px;
 }
-.circle::before {
-    content: "";
-    position: absolute;
-    top: 36%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    background: black;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1000000000;
+#cma{
+    font-size: xx-small;
+    display: block;
+    margin-left: 100px;
+    margin-top: -25px;
+}
+#cmmtd #jpn{
+    display: block;
+    margin-top: -20px;
+}
+#cmmtd #chmn{
+    width: 60%;
 }
 #nhk{
     font-family: "BlackGrotesk W08 Italic";
@@ -177,4 +187,24 @@ main h2{
 #nhktd #jpn{
     display: block;
     margin-top: -10px;
+}
+#dinthef{
+    font-family: "Europa Grotesk SH DemBol";
+    font-size: large;
+    word-spacing: 3px;
+}
+#dif1{
+    color: #00a7e0;
+}
+#dif2{
+    color: #ff3f1a;
+}
+@font-face {
+    font-family: 'Trigun';
+    src: url(../media/Trigun.ttf);
+}
+#trigun{
+    font-family: "Trigun";
+    font-size: x-large;
+    color: #c7010b;
 }
