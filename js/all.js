@@ -3,7 +3,7 @@ $("nav").append(' <a><i class="fa-solid fa-bars fa-2x" onclick="showMenu()" titl
 $("nav").after(' <div class="navbar text-center" id="menupontok"> <a href="social.html"> <i class="fa-solid fa-users"> </i> <br> <p class="mpont_pc"><span lang="hu">Linkek és kapcsolat</span><span lang="en">Links and contact</span></p> </a> <a href="anime.html"> <img id="yui_image" alt=""> <br> <p class="mpont_pc"><span lang="hu">Animék</span><span lang="en">Animes</span></p> </a> <a href="osszefoglalok/index.html"> <i class="fa-solid fa-file"> </i> <br> <p class="mpont_pc"><span lang="hu">Összefoglalók</span><span lang="en">Exam PDFs</span></p> </a></div>');
 // Footer betöltése
 $("footer").append('<h6><span lang="hu">Készítette: Pintér Milán, 2025</span><span lang="en">Created by Milán Pintér, 2025</span></h6> <div class="navbar" id="footer_nav"> <a href="" onclick="Settings(&#39;on&#39;, event)"><i class="fa-solid fa-gear"></i></a> <a href="privacy.html"><i class="fa-solid fa-lock"></i></a> </div>')
-var magyar = true;
+var magyar;
 var oldal = location.href.split("/").slice(-1).toString();
 if (oldal.endsWith("html")){
     oldal = oldal.slice(0, -5); // .html levágása
@@ -25,8 +25,10 @@ function showCorrectLang(){
         $('span[lang]').hide();
         if (localStorage.getItem('nyelv') == 'angol') {
             $('span[lang="en"]').show();
+            magyar = false;
         } else {
             $('span[lang="hu"]').show();
+            magyar = true;
         }
     });
 }
