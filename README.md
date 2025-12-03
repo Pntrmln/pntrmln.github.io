@@ -8,6 +8,7 @@ Tekintsd meg a weboldalam a www.pntrmln.hu oldalon!
 - A 'Linkek és kapcsolat' oldalon a 'Discord' link nem pastebin oldalra fog átvinni.
 - JavaScript betöltetlenségével kapcsolatos visszajelzés
 - (AI gomb -> kérdés feltétele az összefoglaló dokumentummal kapcsolatban)
+- (Reklámok az weboldalon, bejelentkezés rendszer)
 #### Előfizetés rendszer bevezetése, ami az alábbiakkal jár:
 - Az összefoglalókat az előfizetők hamarabb megkapják, az oldalra szokásosan csak a témazáró előtt max. 2-3 nappal kerül ki.
 - Az előfizetők hozzáférnek egy folyamatosan bővülő fájllistához, amelyek segítenek elsajátítani a tananyagot.
