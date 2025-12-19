@@ -5,9 +5,11 @@ Tekintsd meg a weboldalam a www.pntrmln.hu oldalon!
 ## V1.4-es változások (2026. január-február)
 - A változások folyamatosan fognak kikerülni, a V1.4.[x] verziószámok alatt.
 #### Lokáció és funkcionalitásbeli változtatások:
-- Az 'Anime' oldal helyét átveszi a 'Japán' oldal. Az 'Anime' oldal a továbbiakban már nem lesz elérhető. Helyette a MAL oldalam lesz elérhető.
+- Az 'Anime' oldal helyét átveszi a 'Japán' oldal. Az 'Anime' oldal továbbra is elérhető lesz ezen oldalról.
 - A 'Linkek és kapcsolat' oldalon a 'Discord' link nem pastebin oldalra fog átvinni.
 - JavaScript betöltetlenségével kapcsolatos visszajelzés
+- Shortcutok az oldalon
+- Bugfixek
 - (AI gomb -> kérdés feltétele az összefoglaló dokumentummal kapcsolatban)
 - (Reklámok az weboldalon, bejelentkezés rendszer)
 #### Előfizetés rendszer bevezetése, ami az alábbiakkal jár:
