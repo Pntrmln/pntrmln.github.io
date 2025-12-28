@@ -5,8 +5,8 @@ body{
     flex-direction: column;
     overflow-x: hidden;
 }
-h1, h2, h3, h4, h5, h6, p, a, th, td, li, select, option{
-    font-family: "Fira Sans", sans-serif;
+h1, h2, h3, h4, h5, h6, p, a, th, td, li, select, option, button{
+    font-family: "Fira Sans", sans-serif !important;
     color: white;
 }
 nav{
@@ -178,7 +178,13 @@ a:not(:hover), .fa-language:not(:hover), #n_main:not(:hover), .fa-bars:not(:hove
     }
 }
 .alert{
-    display: none;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 40px; 
+    border-radius: 10px;
+    width: 80vw;
 }
 #footer_nav{
     height: 50px;

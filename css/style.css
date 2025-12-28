@@ -37,5 +37,14 @@
     }
 }
 #langalert{
+    display: none;
     margin-top: -15px;
+    height: 80px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999999;
+}
+#mh1{
+    margin-top: 17vh;
 }
