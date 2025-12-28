@@ -41,4 +41,31 @@ img{
         font-size: 38px;
     }
 }
-
+audio{
+    display: none;
+}
+.fa-play, .fa-pause{
+    color: var(--beallitott_szin);    
+    margin-top: 3px;
+}
+#apdiv{
+    width: 80vw;
+    height: 40px;
+    border: 1px solid var(--beallitott_szin);
+    margin: auto;
+    display: none;
+    border-radius: 10px;
+}
+#apdiv p{
+    font-size: x-large;
+}
+.column {
+  float: left;
+  height: 40px;
+}
+.left {
+  width: 90%;
+}
+.right {
+  width: 10%;
+}
