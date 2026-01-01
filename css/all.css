@@ -9,6 +9,14 @@ h1, h2, h3, h4, h5, h6, p, a, th, td, li, select, option, button{
     font-family: "Fira Sans", sans-serif !important;
     color: white;
 }
+.alert p{
+    color: var(--bs-warning-text-emphasis);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
 nav{
     background-color: #464646;
     border-bottom: 1px solid red;
@@ -60,6 +68,7 @@ footer h6{
     margin: 0;
 }
 #settings{
+    z-index: 9999999999;
     width: 800px;
     position: absolute;
     height: 600px;
@@ -178,7 +187,8 @@ a:not(:hover), .fa-language:not(:hover), #n_main:not(:hover), .fa-bars:not(:hove
     }
 }
 .alert{
-    display: flex; 
+    display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
