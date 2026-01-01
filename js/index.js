@@ -67,9 +67,9 @@ function checkLang(){
     let nyelvek = navigator.languages;
     if (!nyelvek.includes('hu') && !nyelvek.includes('hu-HU')){
         if (localStorage.getItem('nyelv') == 'magyar') {
-            $("#langalert").show();
+            $("#langalert").css("display", "flex");
         } else {
-            $("#langalert").hide();
+            $("#langalert").css("display", "none");
         }
     }
 }
