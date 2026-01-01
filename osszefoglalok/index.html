@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TZ összefoglalók</title>
+    <title>Összefoglalók</title>
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,15 +31,7 @@
     <footer>
     </footer>
     <script src="../js/all.js"></script>
-    <script>
-        // Navbar betöltése
-        $("nav").html('<a><i class="fa-solid fa-bars fa-2x" onclick="showMenu()" title="Menü"></i></a> <a href="../index.html" id="main_a"><h3 id="n_main">Pntrmln<br> <p id="gh">.hu</p></h3></a> <a><i class="fa-solid fa-language fa-2x" onclick="languageChange()" title="English | Magyar"></i></a>');
-        $("#menupontok").remove();
-        $("nav").after(' <div class="navbar text-center" id="menupontok"> <a href="../social.html"> <i class="fa-solid fa-users"> </i> <br> <p class="mpont_pc"> <span lang="hu">Linkek és kapcsolat</span> <span lang="en">Links and contact</span> </p> </a> <a href="../anime.html"> <img id="yui_image" alt=""> <br> <p class="mpont_pc"> <span lang="hu">Animék</span> <span lang="en">Animes</span> </p> </a> <a href="../osszefoglalok/index.html"> <i class="fa-solid fa-file"> </i> <br> <p class="mpont_pc"> <span lang="hu">Összefoglalók</span> <span lang="en">Exam PDFs</span> </p> </a></div>');        // Footer betöltése
-        $("footer").html('<h6><span lang="hu">Készítette: Pintér Milán, 2025</span><span lang="en">Created by Milán Pintér, 2025</span></h6> <div class="navbar" id="footer_nav"> <a href="" onclick="Settings(&#39;on&#39;, event)"><i class="fa-solid fa-gear"></i></a> <a href="../privacy.html"><i class="fa-solid fa-lock"></i></a> </div>');
-
-        $("#yui_image").attr("src", "../media/yui-btn.png");
-    </script>
+    <script src="../js/other.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>
