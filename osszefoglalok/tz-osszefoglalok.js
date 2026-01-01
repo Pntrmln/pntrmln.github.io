@@ -112,7 +112,6 @@ if (mobil()) {
     $(".dropdown > h4").css("padding-left", "25px");
     $(".dropdown-content > h5").css("padding", "20px 0");
     $(".dropdown-content > h5").css("margin", "0 20px");
-    $("<style>*{-ms-overflow-style: none;scrollbar-width: none;}html::webkit-scrollbar, body::webkit-scrollbar{display:none;}</style>").appendTo("head");
     $(".dropdown-content").each(function() {
         var $h5s = $(this).children("h5");
         $h5s.css({
