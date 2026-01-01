@@ -1,9 +1,3 @@
-// Navbar betöltése
-$("nav").html('<a><i class="fa-solid fa-bars fa-2x" onclick="showMenu()" title="Menü"></i></a> <a href="../index.html" id="main_a"><h3 id="n_main">Pntrmln<br> <p id="gh">.hu</p></h3></a> <a><i class="fa-solid fa-language fa-2x" onclick="languageChange()" title="English | Magyar"></i></a>');
-$("#menupontok").remove();
-$("nav").after(' <div class="navbar text-center" id="menupontok"> <a href="../social.html"> <i class="fa-solid fa-users"> </i> <br> <p class="mpont_pc"> <span lang="hu">Linkek és kapcsolat</span> <span lang="en">Links and contact</span> </p> </a> <a href="../anime.html"> <img id="yui_image" alt=""> <br> <p class="mpont_pc"> <span lang="hu">Animék</span> <span lang="en">Animes</span> </p> </a> <a href="../osszefoglalok/index.html"> <i class="fa-solid fa-file"> </i> <br> <p class="mpont_pc"> <span lang="hu">Összefoglalók</span> <span lang="en">Exam PDFs</span> </p> </a></div>');// Footer betöltése
-$("footer").html('<h6><span lang="hu">Készítette: Pintér Milán, 2025</span><span lang="en">Created by Milán Pintér, 2025</span></h6> <div class="navbar" id="footer_nav"> <a href="" onclick="Settings(&#39;on&#39;, event)"><i class="fa-solid fa-gear"></i></a> <a href="../privacy.html"><i class="fa-solid fa-lock"></i></a> </div>');
-
 // TÖRI DOWNLOAD LINKEK
 var tlink = {
     "A nemzetállamok kora":["https://drive.google.com/uc?export=download&id=11UbLwLDbA_-Qg8vyG-C_dgVGg-0NxKf6"],
@@ -51,7 +45,7 @@ function createFileExplorer(lecke){
             html_code += '"' + oldal + "/"; // tortenelem vagy magyar
             html_code += lecke.innerHTML + '.pdf"'; // A lecke neve -> ez alapján megtalálja a fájlt
             html_code += 'height="100%" width="100%" frameBorder="0" scrolling="auto"></iframe> <h5>Előnézet</h5> </div> <div class="column text-center">';
-            html_code += '<h4>Témazáró címe:<br>' + lecke.innerHTML + "</h4>";
+            html_code += '<h4>Összefoglaló címe:<br>' + lecke.innerHTML + "</h4>";
             html_code += '<button class="btn btn-primary" onclick="window.open(&#39;' + oldal + "/" + lecke.innerHTML + '.pdf&#39;)"><i class="fa-solid fa-file-pdf"></i> Megnyitás</button>';
             html_code += '<button class="btn btn-success"><i class="fa-solid fa-arrow-down-to-line"></i><a href=';
             if (oldal == 'tortenelem') { // download link megszerzése
