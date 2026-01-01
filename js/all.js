@@ -1,8 +1,8 @@
 // Navbar betöltése
 $("nav").append(' <a><i class="fa-solid fa-bars fa-2x" onclick="showMenu()" title="Menü"></i></a> <a href="index.html" id="main_a"><h3 id="n_main">Pntrmln<br> <p id="gh">.hu</p></h3></a> <a><i class="fa-solid fa-language fa-2x" onclick="languageChange()" title="English | Magyar"></i></a>')
-$("nav").after(' <div class="navbar text-center" id="menupontok"> <a href="social.html"> <i class="fa-solid fa-users"> </i> <br> <p class="mpont_pc"><span lang="hu">Linkek és kapcsolat</span><span lang="en">Links and contact</span></p> </a> <a href="anime.html"> <img id="yui_image" alt=""> <br> <p class="mpont_pc"><span lang="hu">Animék</span><span lang="en">Animes</span></p> </a> <a href="osszefoglalok/index.html"> <i class="fa-solid fa-file"> </i> <br> <p class="mpont_pc"><span lang="hu">Összefoglalók</span><span lang="en">Exam PDFs</span></p> </a></div>');
+$("nav").after(' <div class="navbar text-center" id="menupontok"> <a href="social.html"> <i class="fa-solid fa-users"> </i> <br> <p class="mpont_pc"><span lang="hu">Linkek és kapcsolat</span><span lang="en">Links and contact</span></p> </a> <a href="japanese.html"> <i class="fa-solid fa-torii-gate"></i> <br> <p class="mpont_pc"><span lang="hu">Japán tanulás</span><span lang="en">Learning Japanese</span></p> </a> <a href="osszefoglalok/index.html"> <i class="fa-solid fa-file"> </i> <br> <p class="mpont_pc"><span lang="hu">Összefoglalók</span><span lang="en">Exam PDFs</span></p> </a></div>');
 // Footer betöltése
-$("footer").append('<h6><span lang="hu">Készítette: Pintér Milán, 2025</span><span lang="en">Created by Milán Pintér, 2025</span></h6> <div class="navbar" id="footer_nav"> <a href="" onclick="Settings(&#39;on&#39;, event)"><i class="fa-solid fa-gear"></i></a> <a href="privacy.html"><i class="fa-solid fa-lock"></i></a> </div>')
+$("footer").append('<h6><span lang="hu">Készítette: Pintér Milán, 2026</span><span lang="en">Created by Milán Pintér, 2025</span></h6> <div class="navbar" id="footer_nav"> <a href="" onclick="Settings(&#39;on&#39;, event)"><i class="fa-solid fa-gear"></i></a> <a href="privacy.html"><i class="fa-solid fa-lock"></i></a> </div>')
 var magyar;
 var oldal = location.href.split("/").slice(-1).toString();
 if (oldal.endsWith("html")){
@@ -51,7 +51,12 @@ function languageChange(){
         } else if (oldal == 'social') {
             document.title = "Links and social";
         } else {
-            document.title = "Home";
+            let linkList = location.href.split("/");
+            if (linkList[linkList.length - 2] == "osszefoglalok"){
+                document.title = "Exam PDFs";
+            } else {
+                document.title = "Home";
+            }
         }
         magyar = false;
         if (!localStorage.getItem('save') == 'false' || localStorage.getItem('save') == null) {
@@ -74,15 +79,16 @@ function languageChange(){
         } else if (oldal == 'social') {
             document.title = "Linkek és kapcsolat";
         } else {
-            document.title = "Főoldal";
-        }
+            let linkList = location.href.split("/");
+            if (linkList[linkList.length - 2] == "osszefoglalok"){
+                document.title = "Összefoglalók";
+            } else {
+                document.title = "Főoldal";
+            }        }
         magyar = true;
         if (!localStorage.getItem('save') == 'false' || localStorage.getItem('save') == null) {
             localStorage.setItem('nyelv', 'magyar');
         }
-    }
-    if (oldal == 'index' || oldal == '') {
-        checkLang();
     }
 }
 function Settings(allapot, e){
@@ -218,15 +224,40 @@ function showMenu(){
         if (mobil()){
             $("#langalert").css("margin-top", $("#menupontok").outerHeight() + "px");
         } else {
-            $("#langalert").css("margin-top", $("#menupontok").outerHeight()-15 + "px");
+            $("#langalert").css("margin-top", $("#menupontok").outerHeight()-14 + "px");
         }
     } else {
         $("#menupontok").css("display", "none");
         if (!mobil()){
             $("#langalert").css("margin-top", "-15px");
         } else {
-            $("#langalert").css("margin-top", "0");
+            $("#langalert").css("margin-top", "0px");
         }
     }
 }
+var sdb = 0;
+window.addEventListener("keydown", (event) => {
+    if (event.defaultPrevented) {
+        return;
+    }
+    switch (event.key) {
+        case "l":
+            languageChange();
+            break;
+        case "m":
+            showMenu();
+            break;
+        case "s":
+            if (sdb % 2 == 0){
+                Settings('on', event);
+            } else {
+                Settings('off', event);
+            }
+            sdb++;
+            break;            
+        default:
+            return
+    }
+  event.preventDefault();
+});
 $("#yui_image").attr("src", "media/yui-btn.png");
