@@ -1,0 +1,85 @@
+main{
+    font-weight: normal;
+}
+.prog {
+    display: flex;
+    gap: 10px;
+    justify-content: center; 
+    gap: 10px;
+}
+progress {
+    border: 0;
+    height: 30px;
+    border-radius: 50px;
+}
+progress::-webkit-progress-bar {
+    border: 0;
+    height: 30px;
+    border-radius: 50px;
+}
+progress::-webkit-progress-value {
+    border: 0;
+    height: 30px;
+    border-radius: 50px;
+}
+progress::-moz-progress-bar {
+    border: 0;
+    height: 30px;
+    border-radius: 50px;
+}
+.prog p{
+    margin-top: 3px;
+}
+h5{
+    text-decoration: underline;
+    display: inline-block;
+}
+h5:hover{
+    text-decoration-color: var(--beallitott_szin);
+}
+@font-face {
+    font-family: 'csm-manga';
+    src: url(../media/BigBadBold\ BB\ W00\ Regular.ttf);
+}
+ul li:before {   
+    content: '! ';
+    font-family: 'csm-manga';
+    font-size: 30px;
+}
+li {
+    font-size: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0;
+}
+ul li:hover{
+    color: var(--beallitott_szin);
+}
+.std_redir_btn{
+    height: 64px;
+    width: 60px;
+    border: 1px solid red;
+    border-radius: 10px;
+    background-color: #464646;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#mal{
+    width: 80%;
+}
+#rbtns{
+    display: flex;
+    justify-content: center; /* optional */
+    gap: 10px;
+}
+#fful{
+    list-style-type: disc;
+}
+#fful li::before{
+    font-size: 20px;
+    content: none;
+}
+#fful li{
+    font-size: 16px;
+}
