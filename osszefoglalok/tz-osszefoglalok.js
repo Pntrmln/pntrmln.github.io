@@ -112,6 +112,7 @@ if (mobil()) {
     $(".dropdown > h4").css("padding-left", "25px");
     $(".dropdown-content > h5").css("padding", "20px 0");
     $(".dropdown-content > h5").css("margin", "0 20px");
+    $("footer").css("margin-top", "20px");
     $(".dropdown-content").each(function() {
         var $h5s = $(this).children("h5");
         $h5s.css({

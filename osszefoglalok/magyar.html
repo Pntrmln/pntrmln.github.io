@@ -33,9 +33,9 @@
         <div class="alert alert-warning" role="alert">
             <p>Az összefoglalók kikerülésének módja hamarosan megváltozik. További információért kattints <span style="text-decoration: underline;" onclick="window.open('https://github.com/Pntrmln/pntrmln.github.io/blob/main/README.md')">ide</span>.</p>
         </div>
-        <section class="mt-5 text-center">
-            <div class="dropdown" onclick="showDropdown('jtn')">
-                <h4 id="jtnh4">Jelenlegi tanév:<i class="fa-solid fa-caret-down"></i></h4>
+        <section class="mt-5 text-center" id="fsect">
+            <div class="dropdown">
+                <h4 id="jtnh4" onclick="showDropdown('jtn')">Jelenlegi tanév:<i class="fa-solid fa-caret-down"></i></h4>
                 <div class="dropdown-content" id="jtn_content">
                     <h5 onclick="createFileExplorer(this)">Magyar belső vizsga</h5>
                 </div>

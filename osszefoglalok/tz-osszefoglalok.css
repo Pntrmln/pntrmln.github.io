@@ -1,8 +1,16 @@
 .column{
-    width: 48%;
+    width: 46%;
     background-color: #464646;
     border-radius: 10px;
     margin-right: 10px;
+}
+@media only screen and (max-width: 350px) {
+    #tantargyak div h4{
+        display: none;
+    }
+    .column{
+        width: 44%;
+    }
 }
 #fcm{
     border-right: 1px solid red;
@@ -77,14 +85,10 @@ button{
 main h1{
     margin-top: 10vh;
 }
-#bmc-iframe{
-    min-height: 0 !important;
-    height: 600px !important;
-}
-#bmc-wbtn{
-    border: 1px solid var(--beallitott_szin) !important;
-}
 *{
-    -ms-overflow-style: none;scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
-html::webkit-scrollbar, body::webkit-scrollbar{display:none;}
+html::webkit-scrollbar, body::webkit-scrollbar{
+    display:none;
+}
