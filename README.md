@@ -9,7 +9,7 @@ Tekintsd meg a weboldalam a www.pntrmln.hu oldalon!
 - A 'Linkek és kapcsolat' oldalon a 'Discord' link nem pastebin oldalra fog átvinni.
 - JavaScript betöltetlenségével kapcsolatos visszajelzés
 - ~~Shortcutok az oldalon~~
-- Bugfixek (~~V1.4.1~~, V1.4.2)
+- Bugfixek (~~V1.4.1~~, ~~V1.4.2~~, ~~V1.4.3~~)
 - (AI gomb -> kérdés feltétele az összefoglaló dokumentummal kapcsolatban)
 - (Reklámok a weboldalon, bejelentkezés rendszer)
 #### Előfizetés rendszer bevezetése, ami az alábbiakkal jár:
