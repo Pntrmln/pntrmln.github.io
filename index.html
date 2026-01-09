@@ -3,36 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Összefoglalók</title>
+    <title>Főoldal</title>
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Color+Emoji&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="tz-osszefoglalok.css">
-    <style>#mh1{margin-top: 15vh;}</style>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body onload="window.location.href='construction.html'">
+<body onload="checkSettings()"> <!--onload="window.location.href='construction.html'"-->
     <nav class="navbar">
     </nav>
-    <main>
-        <div class="text-center">
-            <h1 id="mh1">Összefoglalók</h1>
-            <h3>Válassz tantárgyat!</h3>
-
-            <div class="row text-center" id="tantargyak">
-                <div class="column pt-4 pb-4"><a href="tortenelem.html"><i class="fa-solid fa-swords fa-3x"></i></a><h4>Történelem</h4></div>
-                <div class="column pt-4 pb-4"><a href="magyar.html"><i class="fa-solid fa-book-open fa-3x"></i></a><h4>Magyar</h4></div>
+    <main class="text-center mt-3">
+        <div class="alert alert-warning" id="langalert" role="alert">
+                <p>It looks like you're not Hungarian.<br>
+                You can change the language in the upper right corner!</p>
+        </div>
+        <h1 id="mh1"><span lang="hu">Üdv az oldalon!</span><span lang="en">Welcome to the site!</span></h1>
+        <div class="row mt-5">
+            <div class="col" id="rolam-div">
+                <h3><span lang="hu">Rólam:</span><span lang="en">About me:</span></h3>
+                <ul>
+                    <li><span lang="hu"><span class="ekor"></span> éves vagyok.</span><span lang="en">I am <span class="ekor"></span> years old.</span></li>
+                    <li><span lang="hu">Szoftverfejlesztő- és tesztelőnek tanulok.</span><span lang="en">I am studying as a software developer and tester.</span></li>
+                </ul>
+                <h5><span lang="hu">Elfoglaltságaim:</span><span lang="en">My hobbies:</span></h5>
+                <ul>
+                    <li><span lang="hu">Gitározás <span id="gido_hu"></span></span><span lang="en">Playing the guitar <span id="gido_en"></span></span></li>
+                    <li><span lang="hu" id="jpn_tan">Japán tanulás <span id="jido_hu"></span></span><span lang="en" id="jpn_tan">Learning Japanese <span id="jido_en"></span></span></li>
+                </ul>
+            </div>
+                <div class="col" id="rc">
+                <h3><span lang="hu">Projektjeim:</span><span lang="en">My projects:</span></h3>
+                <div id="nothing-div">
+                    <i class="fa-solid fa-empty-set fa-5x"></i>
+                    <h3><span lang="hu">HAMAROSAN</span><span lang="en">SOON</span></h3>
+                </div>
+            </div>
+        </div>
+        <div id="index_for_mobile">
+            <hr style="color: red;">
+            <h3><span lang="hu">Projektjeim:</span><span lang="en">My projects:</span></h3>
+            <div id="nothing-div">
+                <i class="fa-solid fa-empty-set fa-5x"></i>
+                <h3><span lang="hu">HAMAROSAN</span><span lang="en">SOON</span></h3>
             </div>
         </div>
     </main>
     <footer>
     </footer>
-    <script src="../js/all.js"></script>
-    <script src="../js/other.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="js/all.js"></script>
+    <script src="js/index.js"></script>
 </body>
-
 </html>
