@@ -55,23 +55,32 @@ li {
 ul li:hover{
     color: var(--beallitott_szin);
 }
-.std_redir_btn{
+/* MOST KÖZÉPEN, DE GECIS OVERFLOW VAN!!!!!!!!!!!!!!!!!!!!!!!!! */
+#rbtns {
+    display: flex;
+    justify-content: center;   /* centers the whole group */
+    align-items: center;
+    gap: 10px;
+
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.std_redir_btn {
     height: 64px;
-    width: 60px;
+    width: 44%;
+    max-width: 60vw;
+
     border: 1px solid red;
     border-radius: 10px;
     background-color: #464646;
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
 #mal{
-    width: 80%;
-}
-#rbtns{
-    display: flex;
-    justify-content: center; /* optional */
-    gap: 10px;
+    width: 100%;
 }
 #fful{
     list-style-type: disc;
@@ -82,4 +91,13 @@ ul li:hover{
 }
 #fful li{
     font-size: 16px;
+}
+@media only screen and (max-width: 600px) {
+    #jlpt, h1, #genki, ul:last-child{
+        margin-bottom: 50px;
+    }
+    .col{
+        margin-right: 60px;
+        margin-left: 60px;
+    }
 }

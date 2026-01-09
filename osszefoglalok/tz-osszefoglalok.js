@@ -97,13 +97,6 @@ function showDropdown(tanev){
         $("#ktnh4").html('Korábbi tanévek:<i class="fa-solid fa-caret-up"></i>');
         $("#ktn_content").css("display", "block");
     }
-    if ($("#ktn_content > h5").length > 9) {
-        $("#" + tanev + "sect").css("overflow-y", "scroll");
-        $("#" + tanev + "sect").css("overflow-x", "hidden");
-        let alapheight = 310;
-        alapheight -= $("#jtn_content > h5").length * 30;
-        $("#ktnsect").css("height", alapheight + "px");
-    }
 }
 if (mobil()) {
     $("<style>.dropdown-content h5 {padding-left: 5px;}</style>").appendTo("head");
