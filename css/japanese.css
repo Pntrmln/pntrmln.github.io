@@ -1,4 +1,7 @@
 main{
+    overflow-x: hidden;
+}
+main{
     font-weight: normal;
 }
 .prog {
@@ -26,6 +29,9 @@ progress::-moz-progress-bar {
     border: 0;
     height: 30px;
     border-radius: 50px;
+}
+progress::-webkit-progress-value {
+  background: var(--beallitott_szin);
 }
 .prog p{
     margin-top: 3px;
@@ -55,17 +61,15 @@ li {
 ul li:hover{
     color: var(--beallitott_szin);
 }
-/* MOST KÖZÉPEN, DE GECIS OVERFLOW VAN!!!!!!!!!!!!!!!!!!!!!!!!! */
 #rbtns {
     display: flex;
-    justify-content: center;   /* centers the whole group */
+    justify-content: center;
     align-items: center;
     gap: 10px;
 
     width: 60vw;
     margin: 0 auto;
 }
-
 .std_redir_btn {
     height: 64px;
     width: 44%;
