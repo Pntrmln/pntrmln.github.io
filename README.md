@@ -12,12 +12,15 @@ Tekintsd meg a weboldalam a www.pntrmln.hu oldalon!
 - Bugfixek (~~V1.4.1~~, ~~V1.4.2~~, ~~V1.4.3~~)
 - (AI gomb -> kérdés feltétele az összefoglaló dokumentummal kapcsolatban)
 - (Reklámok a weboldalon, bejelentkezés rendszer)
-#### Előfizetés rendszer bevezetése, ami az alábbiakkal jár:
+#### Előfizetés rendszer bevezetése *<sup>1</sup>, ami az alábbiakkal jár:
 - Az összefoglalókat az előfizetők hamarabb megkapják, az oldalra szokásosan csak a témazáró előtt max. 2-3 nappal kerül ki.
-- Az előfizetők hozzáférnek egy folyamatosan bővülő fájllistához, amelyek segítenek elsajátítani a tananyagot.
+- Az előfizetők hozzáférnek egy folyamatosan bővülő fájllistához, amelyek segítenek elsajátítani a tananyagot*<sup>2</sup>.
 - (Reklámmentes a weboldal)
 - Az előfizetés ára: 4$ + ~0.43$ kezelési költség
 - Az előfizetés itt lesz elérhető: https://buymeacoffee.com/pntrmln
+
+*<sup>1</sup> Az előkészületek 2026. január 24. napjával megkezdődtek.
+*<sup>2</sup> A fájllista február végén / március elején lesz elérhető az előfizetőknek.
 
 # EN: My website's source code
 
