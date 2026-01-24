@@ -17,7 +17,7 @@ Tekintsd meg a weboldalam a www.pntrmln.hu oldalon!
 - Az előfizetők hozzáférnek egy folyamatosan bővülő fájllistához, amelyek segítenek elsajátítani a tananyagot (IT rész)*<sup>2</sup>.
 - (Reklámmentes a weboldal)
 - Az előfizetés ára: 4$ + ~0.43$ kezelési költség
-- Az előfizetés itt lesz elérhető: https://buymeacoffee.com/pntrmln
+- Az előfizetés itt elérhető: https://buymeacoffee.com/pntrmln
 
 *<sup>1</sup> Az előkészületek 2026. január 24. napjával megkezdődtek.\
 *<sup>2</sup> A fájllista február végén / március elején lesz elérhető az előfizetőknek.
