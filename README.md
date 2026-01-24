@@ -14,7 +14,7 @@ Tekintsd meg a weboldalam a www.pntrmln.hu oldalon!
 - (Reklámok a weboldalon, bejelentkezés rendszer)
 #### Előfizetés rendszer bevezetése*<sup>1</sup>, ami az alábbiakkal jár:
 - Az összefoglalókat az előfizetők hamarabb megkapják, az oldalra szokásosan csak a témazáró előtt max. 2-3 nappal kerül ki.
-- Az előfizetők hozzáférnek egy folyamatosan bővülő fájllistához, amelyek segítenek elsajátítani a tananyagot*<sup>2</sup>.
+- Az előfizetők hozzáférnek egy folyamatosan bővülő fájllistához, amelyek segítenek elsajátítani a tananyagot (IT rész)*<sup>2</sup>.
 - (Reklámmentes a weboldal)
 - Az előfizetés ára: 4$ + ~0.43$ kezelési költség
 - Az előfizetés itt lesz elérhető: https://buymeacoffee.com/pntrmln
