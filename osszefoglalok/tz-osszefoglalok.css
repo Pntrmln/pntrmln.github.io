@@ -52,9 +52,10 @@
     position: absolute;
     width: 100%;
     bottom: 0;
-    margin-bottom: 85px;
+    margin-bottom: 82px;
     background-color: #464646;
     z-index: 2;
+    border-radius: 10px 10px 0 0;
 }
 #fajlkezelo h3{
     text-align: center;
@@ -71,7 +72,6 @@ section h4{
 }
 section i, #fajlkezelo h3 i{
     float: right;
-    padding-right: 10px;
 }
 .dropdown {
     position: relative;
@@ -111,4 +111,10 @@ button{
 }
 #sor2{
     margin-top: 10px;
+}
+.fa-xmark{
+    margin: 5px 5px 0 0; 
+}
+.column h5, #fajlkezelo h3{
+    margin-top: 5px;
 }

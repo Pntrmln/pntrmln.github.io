@@ -27,31 +27,35 @@
     </div>
     <main>
         <div class="text-center">
+            <div class="alert alert-warning" id="jsalert" role="alert">
+                <p>A JavaScript nem megfelelően töltődött be. /
+                JavaScript is not loaded correctly.</p>
+            </div>
             <h1 id="mh1">Magyar</h1>
-        </div>
-        <div class="alert alert-warning" role="alert">
-            <p>Az összefoglalók kikerülésének módja megváltozott. További információért kattints <span style="text-decoration: underline;" onclick="window.open('https://github.com/Pntrmln/pntrmln.github.io/blob/main/README.md')">ide</span>.</p>
-        </div>
-        <section class="mt-5 text-center" id="fsect">
-            <div class="dropdown">
-                <h4 id="jtnh4" onclick="showDropdown('jtn')">Jelenlegi tanév:<i class="fa-solid fa-caret-down"></i></h4>
-                <div class="dropdown-content" id="jtn_content">
-                    <h5 onclick="createFileExplorer(this)">Magyar belső vizsga</h5>
-                </div>
+            <div class="alert alert-warning" role="alert">
+                <p>Az összefoglalók kikerülésének módja megváltozott. További információért kattints <span style="text-decoration: underline;" onclick="window.open('https://github.com/Pntrmln/pntrmln.github.io/blob/main/README.md')">ide</span>.</p>
             </div>
-        </section>
-        <section class="text-center" id="ktnsect">
-            <div class="dropdown">
-                <h4 id="ktnh4" onclick="showDropdown('ktn')">Korábbi tanévek:<i class="fa-solid fa-caret-down"></i></h4>
-                <div class="dropdown-content" id="ktn_content">
-                    <h5 onclick="createFileExplorer(this)">Magyar költők és műveik</h5>
-                    <h5 onclick="createFileExplorer(this)">A szöveg</h5>
-                    <h5 onclick="createFileExplorer(this)">A romantika kora</h5>
-                    <h5 onclick="createFileExplorer(this)">A felvilágosodás kora</h5>
-                    <h5 onclick="createFileExplorer(this)">Csokonai költészete</h5>
+            <section class="mt-5 text-center" id="fsect">
+                <div class="dropdown">
+                    <h4 id="jtnh4" onclick="showDropdown('jtn')">Jelenlegi tanév:<i class="fa-solid fa-caret-down"></i></h4>
+                    <div class="dropdown-content" id="jtn_content">
+                        <h5 onclick="createFileExplorer(this)">Magyar belső vizsga</h5>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section class="text-center" id="ktnsect">
+                <div class="dropdown">
+                    <h4 id="ktnh4" onclick="showDropdown('ktn')">Korábbi tanévek:<i class="fa-solid fa-caret-down"></i></h4>
+                    <div class="dropdown-content" id="ktn_content">
+                        <h5 onclick="createFileExplorer(this)">Magyar költők és műveik</h5>
+                        <h5 onclick="createFileExplorer(this)">A szöveg</h5>
+                        <h5 onclick="createFileExplorer(this)">A romantika kora</h5>
+                        <h5 onclick="createFileExplorer(this)">A felvilágosodás kora</h5>
+                        <h5 onclick="createFileExplorer(this)">Csokonai költészete</h5>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
     <footer>
     </footer>

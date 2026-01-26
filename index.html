@@ -15,7 +15,11 @@
 <body onload="checkSettings()"> <!--onload="window.location.href='construction.html'"-->
     <nav class="navbar">
     </nav>
-    <main class="text-center mt-3">
+    <main class="text-center">
+        <div class="alert alert-warning" id="jsalert" role="alert">
+            <p>A JavaScript nem megfelelően töltődött be. /
+            JavaScript is not loaded correctly.</p>
+        </div>
         <div class="alert alert-warning" id="langalert" role="alert">
                 <p>It looks like you're not Hungarian.<br>
                 You can change the language in the upper right corner!</p>
@@ -37,8 +41,14 @@
                 <div class="col" id="rc">
                 <h3><span lang="hu">Projektjeim:</span><span lang="en">My projects:</span></h3>
                 <div id="nothing-div">
-                    <i class="fa-solid fa-empty-set fa-5x"></i>
-                    <h3><span lang="hu">HAMAROSAN</span><span lang="en">SOON</span></h3>
+                    <h5><span lang="hu">Féléves (iskolai) projektek</span><span lang="en">Half-year (school) projects</span></h5>
+                    <ul>
+                        <li>PROJECT RLG <button class="btn btn-secondary" onclick="window.open('https://pntrmln.itch.io/project-rlg')"><span lang="hu">Megtekintés</span><span lang="en">See more</span></button></li>
+                    </ul>
+                    <h5><span lang="hu">Saját projektek</span><span lang="en">Personal projects</span></h5>
+                    <ul>
+                        <li><i class="fa-solid fa-empty-set"></i><span lang="hu"> HAMAROSAN</span><span lang="en"> SOON</span></li>
+                    </ul>
                 </div>
             </div>
         </div>

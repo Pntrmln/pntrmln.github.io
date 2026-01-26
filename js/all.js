@@ -2,12 +2,24 @@
 $("nav").append(' <a><i class="fa-solid fa-bars fa-2x" onclick="showMenu()" title="Menü"></i></a> <a href="index.html" id="main_a"><h3 id="n_main">Pntrmln<br> <p id="gh">.hu</p></h3></a> <a><i class="fa-solid fa-language fa-2x" onclick="languageChange()" title="English | Magyar"></i></a>')
 $("nav").after(' <div class="navbar text-center" id="menupontok"> <a href="social.html"> <i class="fa-solid fa-users"> </i> <p class="mpont_pc"><span lang="hu">Linkek és kapcsolat</span><span lang="en">Links and contact</span></p> </a> <a href="japanese.html"> <i class="fa-solid fa-torii-gate"></i>  <p class="mpont_pc"><span lang="hu">Japán tanulás</span><span lang="en">Learning Japanese</span></p> </a> <a href="osszefoglalok/index.html"> <i class="fa-solid fa-file"> </i>  <p class="mpont_pc"><span lang="hu">Összefoglalók</span><span lang="en">Exam PDFs</span></p> </a></div>');
 // Footer betöltése
-$("footer").append('<h6><span lang="hu">Készítette: Pintér Milán, 2026</span><span lang="en">Created by Milán Pintér, 2025</span></h6> <div class="navbar" id="footer_nav"> <a href="" onclick="Settings(&#39;on&#39;, event)"><i class="fa-solid fa-gear"></i></a> <a href="privacy.html"><i class="fa-solid fa-lock"></i></a> </div>')
+$("footer").append('<h6><span lang="hu">Készítette: Pintér Milán, 2026</span><span lang="en">Created by Milán Pintér, 2026</span></h6> <div class="navbar" id="footer_nav"> <a href="" onclick="Settings(&#39;on&#39;, event)"><i class="fa-solid fa-gear"></i></a> <a href="privacy.html"><i class="fa-solid fa-lock"></i></a> </div>')
 var magyar;
 var oldal = location.href.split("/").slice(-1).toString();
-if (oldal.endsWith("html")){
-    oldal = oldal.slice(0, -5); // .html levágása
+var fxd = "";
+if (oldal.includes("?")){
+    for (i of oldal){
+        if (i == "?"){
+            oldal = fxd;
+            break;
+        } else {
+            fxd += i;
+        }
+    }
 }
+if (oldal.endsWith("html")){
+    oldal = oldal.slice(0, -5);
+}
+console.log(oldal);
 var oldalak = ["japanese", "contact", "privacy", "tortenelem", "magyar", "social", "index", ""];
 window.mobil = function() {
   let check = false;
@@ -74,13 +86,14 @@ function languageChange(){
             document.title = "Magyar";
         } else if (oldal == 'social') {
             document.title = "Linkek és kapcsolat";
-        } else {3
+        } else {
             let linkList = location.href.split("/");
             if (linkList[linkList.length - 2] == "osszefoglalok"){
                 document.title = "Összefoglalók";
             } else {
                 document.title = "Főoldal";
-            }        }
+            }        
+        }
         magyar = true;
         if (!localStorage.getItem('save') == 'false' || localStorage.getItem('save') == null) {
             localStorage.setItem('nyelv', 'magyar');
@@ -193,7 +206,6 @@ function changeColor(){
     if (customcss_set) { // LAG ELLEN -> NE LEGYEN KURVA SOK STYLE ELEMENT
         $("head > style").eq(-1).remove();
     }
-    console.log(oldal);
     if (oldalak.includes(oldal[0]) || oldalak.includes(oldal)){
         $('<style>::selection{background-color: ' + szin + '; color: black;}:-moz-selection{ background-color:' + szin + '; color: black;} button { border: none !important;} .alert { border: none; } table, tr, td { border-color: #dee2e6 !important;} .table-group-divider { border-color: #000 !important;}</style>').appendTo("head");
     }
@@ -217,15 +229,20 @@ function showMenu(){
         $("#menupontok").css("display", "flex");
         if (mobil()){
             $("#langalert").css("margin-top", $("#menupontok").outerHeight() + "px");
+            $("#jsalert").css("margin-top", $("#menupontok").outerHeight() + "px");
         } else {
             $("#langalert").css("margin-top", $("#menupontok").outerHeight()-14 + "px");
+            $("#jsalert").css("margin-top", $("#menupontok").outerHeight() + 15 + "px");
         }
     } else {
         $("#menupontok").css("display", "none");
         if (!mobil()){
             $("#langalert").css("margin-top", "-15px");
+            $("#jsalert").css("margin-top", "15px");
+
         } else {
             $("#langalert").css("margin-top", "0px");
+            $("#jsalert").css("margin-top", "0px");
         }
     }
 }
@@ -253,3 +270,4 @@ window.addEventListener("keydown", (event) => {
   event.preventDefault();
 });
 $("#yui_image").attr("src", "media/yui-btn.png");
+$("#jsalert").css("display", "none");

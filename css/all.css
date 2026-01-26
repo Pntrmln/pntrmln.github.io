@@ -79,6 +79,8 @@ footer h6{
     text-align: left;
     display: none;
     border: 1px solid red;
+    border-radius: 10px;
+
 }
 #settings h3{
     margin-top: 10px;
@@ -245,4 +247,7 @@ main h1{
 }
 br{
     user-select: none;
+}
+#jsalert{
+    margin-top: 15px;
 }
