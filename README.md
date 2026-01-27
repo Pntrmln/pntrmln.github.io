@@ -7,9 +7,8 @@ Tekintsd meg a weboldalam a www.pntrmln.hu oldalon!
 #### Lokáció és funkcionalitásbeli változtatások:
 - ~~Az 'Anime' oldal helyét átveszi a 'Japán' oldal. Az 'Anime' megszűnésre fog kerülni. A megnézett animéim a MAL oldalamon lesznek elérhetők.~~
 - A 'Linkek és kapcsolat' oldalon a 'Discord' link nem pastebin oldalra fog átvinni.
-- JavaScript betöltetlenségével kapcsolatos visszajelzés
+- ~~JavaScript betöltetlenségével kapcsolatos visszajelzés~~
 - ~~Shortcutok az oldalon~~
-- Bugfixek (~~V1.4.1~~, ~~V1.4.2~~, ~~V1.4.3~~)
 - (AI gomb -> kérdés feltétele az összefoglaló dokumentummal kapcsolatban)
 - (Reklámok a weboldalon, bejelentkezés rendszer)
 #### Előfizetés rendszer bevezetése*<sup>1</sup>, ami az alábbiakkal jár:
