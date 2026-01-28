@@ -1,25 +1,9 @@
 function checkMobile(){
-    if (mobil()) {
-        if (window.innerHeight > window.innerWidth) {
-            $("#rc").hide();
-            $("#index_for_mobile").show();
-            $("#rolam-div").css("height", "100vh");
-            $("#rolam-div > h5").addClass("mt-5");
-            $("#index_for_mobile > #nothing-div").addClass("mt-5 mb-5");
-            $("*").css("overflow-x", "hidden");
-            $("i").css("overflow-y", "hidden");
-            $("main").removeClass("mt-3");
-            $("#langalert").css("margin-top", "0px");
-            $("#menupontok").css("top", "100px");
-            checkMobileB();
-        } else {
-            $("#index_for_mobile").hide();
-            $(".std_redir_btn").css("margin-left", "2px");
-        }
+    if (!mobil()) {
+        $("#ket_div > hr").hide();
     }
-    // AMÍG A PROJEKTEK NINCSENEK A HELYÉN
     let divMagassag = $("#rolam-div").outerHeight();
-    $("#nothing-div").height(divMagassag);
+    $("#project-div").height(divMagassag);
 }
 function monthDiff(d1, d2) {
     var months;

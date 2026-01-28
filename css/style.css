@@ -7,29 +7,15 @@
     from {background-color: white;}
     to {background-color: #c4c4c4;}
 }
-#nothing-div{
+#project-div{
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     flex-direction: column;
 }
-#index_for_mobile{
-    display: none;
-}
 #legkisebb{
     display: none;
-}
-@media only screen and (max-width: 800px) {
-    #index_for_mobile{
-        display: block;
-    }
-    #rc{
-        display: none;
-    }
-    #index_for_mobile #nothing-div{
-        margin-top: 3rem;
-    }
 }
 @media only screen and (max-width: 300px) {
     #legkisebb {
@@ -47,4 +33,17 @@
 }
 ul li .btn{
     font-size: x-small;
+}
+#ket_div{
+    display: flex;
+}
+@media (max-width: 768px) {
+    #ket_div {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    main{
+        overflow-x: hidden;
+    }
 }
