@@ -24,7 +24,7 @@
 }
 #langalert{
     display: none;
-    margin-top: -15px;
+    margin-top: 15px;
     height: 80px;
     z-index: 9999999;
 }

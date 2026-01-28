@@ -231,13 +231,13 @@ function showMenu(){
             $("#langalert").css("margin-top", $("#menupontok").outerHeight() + "px");
             $("#jsalert").css("margin-top", $("#menupontok").outerHeight() + "px");
         } else {
-            $("#langalert").css("margin-top", $("#menupontok").outerHeight()-14 + "px");
+            $("#langalert").css("margin-top", $("#menupontok").outerHeight() + 15 + "px");
             $("#jsalert").css("margin-top", $("#menupontok").outerHeight() + 15 + "px");
         }
     } else {
         $("#menupontok").css("display", "none");
         if (!mobil()){
-            $("#langalert").css("margin-top", "-15px");
+            $("#langalert").css("margin-top", "15px");
             $("#jsalert").css("margin-top", "15px");
 
         } else {
