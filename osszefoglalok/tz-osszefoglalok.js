@@ -14,7 +14,8 @@ var tlink = {
     "Az ókori Róma":["https://drive.google.com/uc?export=download&id=1PRG9IxN9b0JA-KqdBm6R7oAVou9OklIm"],
     // 2025/26
     "A dualizmus kora":["https://drive.google.com/uc?export=download&id=1gldhgGZ997nCquT98BcFNIi9a7Ngrpq5"],
-    "Az I. világháború és következményei":["https://drive.google.com/uc?export=download&id=1H9Jv8kRaYc-oeGhP5hM5vsiuq0XdlUae"]
+    "Az I. világháború és következményei":["https://drive.google.com/uc?export=download&id=1H9Jv8kRaYc-oeGhP5hM5vsiuq0XdlUae"],
+    "Két világháború között":["https://drive.google.com/uc?export=download&id=1rSpctJ9Z66GWX_1r9BY7d0Jx29ZIcd0J"]
 };
 // MAGYAR DOWNLOAD LINKEK
 var mlink = {
@@ -123,5 +124,5 @@ if (mobil()) {
         }
     });
 }
-
 $("#yui_image").attr("src", "../media/yui-btn.png");
+$("h5").attr("onclick", "createFileExplorer(this)")
