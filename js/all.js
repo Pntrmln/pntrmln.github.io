@@ -146,16 +146,16 @@ function checkMobileB(){
     }
 }
 var d_count = 0;
-var fooldal = false;
+var fooldal = true;
 function checkSettings(){
     if (oldal == "index" || oldal == '') {
-        fooldal = true;
         try {
             checkMobile();
             timeWrite();
             checkLang();
         } catch (error) {
             console.log('Ez nem a főoldal!');
+            fooldal = false;
         }
     }
     checkMobileB();
@@ -170,6 +170,7 @@ function checkSettings(){
     if (localStorage.getItem('csik_szin') != null) {
         changeColor();
     }
+    oldN();
 }
 function changeDesign(){
     if (d_count % 2 == 0) {
@@ -189,10 +190,8 @@ function changeDesign(){
     }
 }
 function changeToHor(){
-    if (oldal == "index") {
-        $("#rc").hide();
-        $("#index_for_mobile").show();
-        $("#index_for_mobile > #nothing-div").addClass("mt-5");
+    if (oldal == "index" || oldal == "osszefoglalok/index") {
+        $('<style>#ket_div{flex-direction:column;align-items:center;text-align:center;}main{overflow-x:hidden;}</style>').appendTo("head");
     }
     if (oldal == "contact" || oldal == "social") {
         $("#fuggo_des").hide();
@@ -246,10 +245,35 @@ function showMenu(){
         }
     }
 }
-window.addEventListener("keydown", (event) => {
-    if (event.defaultPrevented) {
-        return;
+function createPopup(event){
+    $("#popup").show();
+    if (event == "discord"){
+        $("#popup > h4").html("DISCORD");
+        $("#popup > p").html('<span lang="hu">A Discord nevem:</span><span lang="en">My Discord name is:</span><br><b>pntrmln</b><br><br><span lang="hu">Ha nem tudod, hogyan adj hozzá barátként, akkor kattints <u onclick="window.open(&#39;https://support.discord.com/hc/en-us/articles/218344397-How-do-I-add-friends-on-Discord&#39;)">ide</u>.</span><span lang="en">If you do not know how to add friends on Discord, click <u onclick="window.open(&#39;https://support.discord.com/hc/en-us/articles/218344397-How-do-I-add-friends-on-Discord&#39;)">here</u>.</span>')
+    } else {
+        throw new Error("Ismeretlen esemeny megadva! [fn: createPopup]")
     }
+    showCorrectLang();
+}
+function hidePopup(){
+    $("#popup").hide();
+}
+var nyilOldalak = ["social.html", "index.html", "japanese.html", "osszefoglalok/index.html"];
+var oldNum;
+function oldN(){
+    if (localStorage.getItem("oldNum") == null || oldal == "index" && fooldal || oldal == "" && fooldal){
+        oldNum = 1;
+    } else if (oldal == "social"){
+        oldNum = 0;
+    } else if (oldal == "japanese"){
+        oldNum = 2;
+    } else {
+        oldNum = 3;
+    }
+    console.log(oldNum);
+}
+window.addEventListener("keydown", (event) => {
+    if (event.defaultPrevented) return;
     switch (event.key) {
         case "l":
             languageChange();
@@ -258,14 +282,24 @@ window.addEventListener("keydown", (event) => {
             showMenu();
             break;
         case "s":
-            if (sdb % 2 == 0){
-                Settings('on', event);
-            } else {
-                Settings('off', event);
-            }
+            if (sdb % 2 == 0) Settings('on', event);
+            else Settings('off', event);
             break;            
-        default:
-            return
+        case "ArrowRight":
+            oldNum++;
+            if (oldNum > 3) oldNum = 0;
+            localStorage.setItem("oldNum", oldNum);
+            if (oldal == "index" && !fooldal) window.location.href = "../" + nyilOldalak[oldNum];
+            else window.location.href = nyilOldalak[oldNum];
+            break;
+        case "ArrowLeft":
+            oldNum--;
+            if (oldNum < 0) oldNum = 3;
+            localStorage.setItem("oldNum", oldNum);
+            if (oldal == "index" && !fooldal) window.location.href = "../" + nyilOldalak[oldNum];
+            else window.location.href = nyilOldalak[oldNum];
+            break;
+        default: return
     }
   event.preventDefault();
 });

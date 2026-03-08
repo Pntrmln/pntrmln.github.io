@@ -251,3 +251,40 @@ br{
 #jsalert{
     margin-top: 15px;
 }
+#popup{
+    background-color: #464646;
+    z-index: 9999;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    display: none;
+    border: 1px solid var(--beallitott_szin);
+}
+#popup h4{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#popup h4, #popup i{
+    margin-top: 5px;
+}
+#popup i{
+    float: right;
+    margin-right: 5px;
+    color: white;
+}
+#popup p{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 530px) {
+    #popup{
+        width: 90vw;
+    }
+}

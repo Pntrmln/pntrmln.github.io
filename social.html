@@ -26,13 +26,13 @@
             <h1 id="mh1" class="mb-5"><span lang="hu">Linkek és kapcsolat</span><span lang="en">Links and contact</span></h1>
             <div id="viz_des" class="mb-5">
                 <ul>
-                    <li onclick="Redir('discord')"><i class="fa-brands fa-discord fa-2x"></i><br>Discord</li>
+                    <li onclick="createPopup('discord')"><i class="fa-brands fa-discord fa-2x"></i><br>Discord</li>
                     <hr style="color: red;">
                     <li onclick="Redir('github')"><i class="fa-brands fa-github fa-2x"></i><br>GitHub</li>
                     <hr style="color: red;">
                     <li onclick="Redir('spotify')"><i class="fa-brands fa-spotify fa-2x"></i><br>Spotify</li>
                     <hr style="color: red;">
-                    <li onclick="Redir('mail')"><i class="fa-solid fa-envelope fa-2x"></i><br>contact@pntrmln.hu</li>
+                    <li onclick="Redir('mail')"><i class="fa-solid fa-envelope fa-2x"></i><br>E-mail</li>
                     <hr style="color: red;">
                     <li onclick="Redir('steam')"><i class="fa-brands fa-steam fa-2x"></i><br>Steam</li>
                     <hr style="color: red;">
@@ -41,13 +41,18 @@
             </div>
             <div id="fuggo_des">
                 <ul id="alahuzas">
-                    <li onclick="Redir('discord')"><i class="fa-brands fa-discord fa-2x"></i><br>Discord</li>
+                    <li onclick="createPopup('discord')"><i class="fa-brands fa-discord fa-2x"></i><br>Discord</li>
                     <li onclick="Redir('github')"><i class="fa-brands fa-github fa-2x"></i><br>GitHub</li>
                     <li onclick="Redir('spotify')"><i class="fa-brands fa-spotify fa-2x"></i><br>Spotify</li>
-                    <li onclick="Redir('mail')"><i class="fa-solid fa-envelope fa-2x"></i><br>contact@pntrmln.hu</li>
+                    <li onclick="Redir('mail')"><i class="fa-solid fa-envelope fa-2x"></i><br>E-mail</li>
                     <li onclick="Redir('steam')"><i class="fa-brands fa-steam fa-2x"></i><br>Steam</li>
                     <li id="last_e" onclick="Redir('instagram')"><i class="fa-brands fa-instagram fa-2x"></i><br>Instagram</li>
                 </ul>
+            </div>
+            <div id="popup" class="text-center">
+                <h4>ERROR</h4>
+                <i class="fa-solid fa-xmark" onclick="hidePopup()"></i>
+                <p>Ezt nem kéne látnod. / <br> You are not supposed to see this.</p>
             </div>
         </div>
     </main>
