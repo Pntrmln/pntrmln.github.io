@@ -6,7 +6,7 @@ Tekintsd meg a weboldalam a www.pntrmln.hu oldalon!
 - A változások folyamatosan fognak kikerülni, a V1.4.[x] verziószámok alatt.
 #### Lokáció és funkcionalitásbeli változtatások:
 - ~~Az 'Anime' oldal helyét átveszi a 'Japán' oldal. Az 'Anime' megszűnésre fog kerülni. A megnézett animéim a MAL oldalamon lesznek elérhetők.~~
-- A 'Linkek és kapcsolat' oldalon a 'Discord' link nem pastebin oldalra fog átvinni.
+- ~~A 'Linkek és kapcsolat' oldalon a 'Discord' link nem pastebin oldalra fog átvinni.~~
 - ~~JavaScript betöltetlenségével kapcsolatos visszajelzés~~
 - ~~Shortcutok az oldalon~~
 - (AI gomb -> kérdés feltétele az összefoglaló dokumentummal kapcsolatban)
