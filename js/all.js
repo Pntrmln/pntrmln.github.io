@@ -305,3 +305,6 @@ window.addEventListener("keydown", (event) => {
 });
 $("#yui_image").attr("src", "media/yui-btn.png");
 $("#jsalert").css("display", "none");
+
+// Megváltozott -> FA hozzáadása az összes oldalhoz
+$('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/fontawesome.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/solid.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/brands.css"/>').appendTo("head");
