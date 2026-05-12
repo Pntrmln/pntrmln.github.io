@@ -245,19 +245,19 @@ function showMenu(){
         }
     }
 }
-function createPopup(event){
+function managePopup(event){
     $("#popup").show();
     if (event == "discord"){
         $("#popup > h4").html("DISCORD");
         $("#popup > p").html('<span lang="hu">A Discord nevem:</span><span lang="en">My Discord name is:</span><br><b>pntrmln</b><br><br><span lang="hu">Ha nem tudod, hogyan adj hozzá barátként, akkor kattints <u onclick="window.open(&#39;https://support.discord.com/hc/en-us/articles/218344397-How-do-I-add-friends-on-Discord&#39;)">ide</u>.</span><span lang="en">If you do not know how to add friends on Discord, click <u onclick="window.open(&#39;https://support.discord.com/hc/en-us/articles/218344397-How-do-I-add-friends-on-Discord&#39;)">here</u>.</span>')
+    } else if (event == "hide"){
+        $("#popup").hide();
     } else {
         throw new Error("Ismeretlen esemeny megadva! [fn: createPopup]")
     }
     showCorrectLang();
 }
-function hidePopup(){
-    $("#popup").hide();
-}
+// Váltás az oldalak között
 var nyilOldalak = ["social.html", "index.html", "japanese.html", "osszefoglalok/index.html"];
 var oldNum;
 function oldN(){
@@ -286,13 +286,35 @@ window.addEventListener("keydown", (event) => {
             else Settings('off', event);
             break;            
         case "ArrowRight":
+            oldalRedir("jobb");
+            break;
+        case "ArrowLeft":
+            oldalRedir("bal");
+            break;
+        default: return
+    }
+  event.preventDefault();
+});
+var kezdet = 0;
+var veg = 0;
+addEventListener("touchstart", (event) => { 
+    kezdet = event.touches[0].clientX;
+});
+addEventListener("touchend", (event) => { 
+    veg = event.changedTouches[0].clientX;
+    if (veg - kezdet > 200) oldalRedir("bal");
+    if (veg - kezdet < -200) oldalRedir("jobb");
+});
+function oldalRedir(irany){
+    switch (irany){
+        case "jobb":
             oldNum++;
             if (oldNum > 3) oldNum = 0;
             localStorage.setItem("oldNum", oldNum);
             if (oldal == "index" && !fooldal) window.location.href = "../" + nyilOldalak[oldNum];
             else window.location.href = nyilOldalak[oldNum];
             break;
-        case "ArrowLeft":
+        case "bal":
             oldNum--;
             if (oldNum < 0) oldNum = 3;
             localStorage.setItem("oldNum", oldNum);
@@ -301,8 +323,8 @@ window.addEventListener("keydown", (event) => {
             break;
         default: return
     }
-  event.preventDefault();
-});
+}
+
 $("#yui_image").attr("src", "media/yui-btn.png");
 $("#jsalert").css("display", "none");
 

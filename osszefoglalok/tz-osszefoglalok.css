@@ -4,21 +4,13 @@
     margin-right: 10px;
     border-radius: 10px;
 }
-#sor2{
-    background: repeating-linear-gradient(45deg,#464646,#464646 10px,#ffcc00 10px,#ffcc00 20px);
-}
-#sor2 h4, #sor2 i{
-    color: tomato !important;
-    background-color: #464646;
-    border-radius: 10px;
+.column:hover{
+    background-color: #727272;
 }
 @media only screen and (max-width: 400px) {
     .column{
         width: 60vw;
     }
-}
-#fcm{
-    border-right: 1px solid red;
 }
 .column h4{
     margin-top: 10px;
@@ -111,4 +103,7 @@ button{
 }
 .column h5, #fajlkezelo h3{
     margin-top: 5px;
+}
+i{
+    color: white;
 }

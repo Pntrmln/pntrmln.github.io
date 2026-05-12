@@ -9,6 +9,12 @@ h1, h2, h3, h4, h5, h6, p, a, th, td, li, select, option, button{
     font-family: "Fira Sans", sans-serif !important;
     color: white;
 }
+button{
+    background-color: #464646 !important;
+}
+button:hover{
+    background-color: #727272 !important;
+}
 .alert p{
     color: var(--bs-warning-text-emphasis);
     margin: 0;
@@ -95,6 +101,9 @@ footer h6{
     left: 0;
     width: 80px;
     margin-left: 46%;
+}
+#settings button{
+    border: 1px solid var(--beallitott_szin) !important;
 }
 #main_a, footer h6 {
     position: absolute;
@@ -216,6 +225,12 @@ a:not(:hover), .fa-language:not(:hover), #n_main:not(:hover), .fa-bars:not(:hove
 #menupontok a{
     margin-top: -8px;
 }
+#menupontok i:hover{
+    color: white;
+}
+#menupontok i:not(:hover){
+    color: white;
+}
 main h1{
     margin-top: 15vh;
 }
@@ -287,4 +302,12 @@ br{
     #popup{
         width: 90vw;
     }
+}
+#popup p span u:hover{
+    animation: none;
+    color: white;
+    text-decoration-color: var(--beallitott_szin);
+}
+#popup p span u:not(:hover){
+    animation: none;
 }

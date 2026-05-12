@@ -3,10 +3,6 @@
     background-position: center;
     background-size: 100%;
 }
-@keyframes btn_hover {
-    from {background-color: white;}
-    to {background-color: #c4c4c4;}
-}
 #project-div{
     display: flex;
     justify-content: center;
