@@ -11,6 +11,7 @@ h1, h2, h3, h4, h5, h6, p, a, th, td, li, select, option, button{
 }
 button{
     background-color: #464646 !important;
+    border: 1px solid var(--beallitott_szin) !important;
 }
 button:hover{
     background-color: #727272 !important;

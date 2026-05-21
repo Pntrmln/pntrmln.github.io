@@ -4,7 +4,7 @@
     margin-right: 10px;
     border-radius: 10px;
 }
-.column:hover{
+#tantargyak div:hover{
     background-color: #727272;
 }
 @media only screen and (max-width: 400px) {

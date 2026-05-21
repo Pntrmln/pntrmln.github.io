@@ -206,7 +206,7 @@ function changeColor(){
         $("head > style").eq(-1).remove();
     }
     if (oldalak.includes(oldal[0]) || oldalak.includes(oldal)){
-        $('<style>::selection{background-color: ' + szin + '; color: black;}:-moz-selection{ background-color:' + szin + '; color: black;} button { border: none !important;} .alert { border: none; } table, tr, td { border-color: #dee2e6 !important;} .table-group-divider { border-color: #000 !important;}</style>').appendTo("head");
+        $('<style>::selection{background-color: ' + szin + '; color: black;}:-moz-selection{ background-color:' + szin + '; color: black;} .alert { border: none; } table, tr, td { border-color: #dee2e6 !important;} .table-group-divider { border-color: #000 !important;}</style>').appendTo("head");
     }
     $("body").get(0).style.setProperty("--beallitott_szin", szin);
     if (!customcss_set) {

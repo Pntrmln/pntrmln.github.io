@@ -49,7 +49,7 @@ function createFileExplorer(lecke){
             html_code += lecke.innerHTML + '.pdf"'; // A lecke neve -> ez alapján megtalálja a fájlt
             html_code += 'height="100%" width="100%" frameBorder="0" scrolling="auto"></iframe> <h5>Előnézet</h5> </div> <div class="column text-center">';
             html_code += '<h4>Összefoglaló címe:<br>' + lecke.innerHTML + "</h4>";
-            html_code += '<button class="btn btn-primary" onclick="window.open(&#39;' + oldal + "/" + lecke.innerHTML + '.pdf&#39;)"><i class="fa-solid fa-file-pdf"></i> Megnyitás</button>';
+            html_code += '<button class="btn btn-primary" onclick="window.open(&#39;' + oldal + "/" + lecke.innerHTML + '.pdf&#39;)"><i class="fa-solid fa-file"></i> Megnyitás</button>';
             html_code += '<button class="btn btn-success"><i class="fa-solid fa-arrow-down-to-line"></i><a href=';
             if (oldal == 'tortenelem') { // download link megszerzése
                 html_code += tlink[lecke.innerHTML];
