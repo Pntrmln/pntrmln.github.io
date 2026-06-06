@@ -2,7 +2,7 @@
 
 Tekintsd meg a weboldalam a www.pntrmln.hu oldalon!
 
-## V1.5
+## V1.5.[x]
 Az 1.5-ös verzióban várható:
 - Különböző témák a weboldalon ünnepekre.
 - Egy új aloldal arra, hogy megosszam a gondolataimat, és egyéb tartalmakat.
