@@ -1,7 +1,5 @@
-// Navbar betöltése
-$("nav").append(' <a><i class="fa-solid fa-bars fa-2x" onclick="showMenu()" title="Menü"></i></a> <a href="index.html" id="main_a"><h3 id="n_main">Pntrmln<br> <p id="gh">.hu</p></h3></a> <a><i class="fa-solid fa-language fa-2x" onclick="languageChange()" title="English | Magyar"></i></a>')
-$("nav").after(' <div class="navbar text-center" id="menupontok"> <a href="social.html"> <i class="fa-solid fa-users"> </i> <p class="mpont_pc"><span lang="hu">Linkek és kapcsolat</span><span lang="en">Links and contact</span></p> </a> <a href="japanese.html"> <i class="fa-solid fa-torii-gate"></i>  <p class="mpont_pc"><span lang="hu">Japán tanulás</span><span lang="en">Learning Japanese</span></p> </a> <a href="osszefoglalok/index.html"> <i class="fa-solid fa-file"> </i>  <p class="mpont_pc"><span lang="hu">Összefoglalók</span><span lang="en">Exam PDFs</span></p> </a></div>');
-// Footer betöltése
+$("nav").append('<a><i class="fa-solid fa-bars fa-2x" onclick="showMenu()" title="Menü"></i></a> <a href="index.html" id="main_a"><h3 id="n_main">Pntrmln<br> <p id="gh">.hu</p></h3></a> <a><i class="fa-solid fa-language fa-2x" onclick="languageChange()" title="English | Magyar"></i></a></div>')
+$("nav").after(' <div class="navbar text-center" id="menupontok"> <a href="social.html"> <i class="fa-solid fa-users"> </i> <p class="mpont_pc"><span lang="hu">Linkek és kapcsolat</span><span lang="en">Links and contact</span></p> </a> <a href="japanese.html"> <i class="fa-solid fa-torii-gate"></i>  <p class="mpont_pc"><span lang="hu">Japán tanulás</span><span lang="en">Learning Japanese</span></p> </a> <a href="osszefoglalok/index.html"> <i class="fa-solid fa-file"> </i>  <p class="mpont_pc"><span lang="hu">Összefoglalók</span><span lang="en">Exam PDFs</span></p> </a>');
 $("footer").append('<h6><span lang="hu">Készítette: Pintér Milán, 2026</span><span lang="en">Created by Milán Pintér, 2026</span></h6> <div class="navbar" id="footer_nav"> <a href="" onclick="Settings(&#39;on&#39;, event)"><i class="fa-solid fa-gear"></i></a> <a href="privacy.html"><i class="fa-solid fa-lock"></i></a> </div>')
 var magyar;
 var oldal = location.href.split("/").slice(-1).toString();
@@ -31,6 +29,7 @@ if (localStorage.getItem('csik_szin') == null) {
 }
 console.log(localStorage.getItem('nyelv'));
 console.log(localStorage.getItem('save'));
+console.log(localStorage.getItem("dyn_des"));
 
 function showCorrectLang(){
     $(document).ready(function() {
@@ -113,9 +112,11 @@ function Settings(allapot, e){
         gombszoveg = "Függőleges";
         gombszoveg_en = "Vertical";
     }
+    let chckd = "";
+    if (localStorage.getItem("dyn_des") == "true") chckd += "checked";
     if (allapot == 'on'){
         sdb++;
-        $("footer").before('<div id="settings" class="text-center"> <h3><span lang="hu">Beállítások</span><span lang="en">Settings</span></h3> <h5 class="mb-5"><span lang="hu">Szabd testre ezt az oldalt!</span><span lang="en">Customize this site!</span></h5> <div id="menupont"> <p><span lang="hu">Az oldal elemeinek elrendezése:</span><span lang="en">The layout of the elements:&emsp;&emsp;&#8201;</span></p> <button id="desbtn" class="btn btn-secondary" onclick="changeDesign()"><span lang="hu">' + gombszoveg + '</span><span lang="en">' + gombszoveg_en + '</span></button> <p class="desc"><span lang="hu">Megváltoztatja több oldal elrendezését.&emsp;&emsp;</span><span lang="en">Changes the layout of multiple pages.&emsp;&emsp;&emsp;</span></p><br> <p><span lang="hu">Az oldal színe:</span><span lang="en">Color of site:&ensp;&#8201;</span></p> <input type="color" value="#ff0000" id="color_changer"> <p class="desc"><span lang="hu">Megváltoztatja az oldal másodlagos (alapból piros) színét.</span><span lang="en">Changes the website&#39;s secondary (originally red) color.</span></p> </div> <button class="btn btn-danger" onclick="Settings(&#39;off&#39;, event)"><span lang="hu">Kilépés</span><span lang="en">Quit</span></button> </div>'); // &#39;off&#39;
+        $("footer").before('<div id="settings" class="text-center"><h3><span lang="hu">Beállítások</span><span lang="en">Settings</span></h3><h5 class="mb-5"><span lang="hu">Szabd testre ezt az oldalt!</span><span lang="en">Customize this site!</span></h5><div id="menupont"><p><span lang="hu">Az oldal elemeinek elrendezése:</span><span lang="en">The layout of the elements:&emsp;&emsp;&#8201;</span></p><button id="desbtn" class="btn btn-secondary" onclick="changeDesign()"><span lang="hu">' + gombszoveg + '</span><span lang="en">' + gombszoveg_en + '</span></button><p class="desc"><span lang="hu">Megváltoztatja több oldal elrendezését.&emsp;&emsp;</span><span lang="en">Changes the layout of multiple pages.&emsp;&emsp;&emsp;</span></p><br><p><span lang="hu">Az oldal színe:</span><span lang="en">Color of site:&ensp;&#8201;</span></p><input type="color" value="#ff0000" id="color_changer"><p class="desc"><span lang="hu">Megváltoztatja az oldal másodlagos (alapból piros) színét.</span><span lang="en">Changes the website&#39;s secondary (originally red) color.</span></p><br><p><span lang="hu">Témaváltoztatás:&emsp;&#8201;&#8201;</span><span lang="en">Theme change:&emsp;&emsp;&ensp;</span></p><input type="checkbox" onchange="setDynamicDesign()" ' + chckd + '><p class="desc"><span lang="hu">&emsp;&emsp;&emsp;&ensp;Az oldal témája dinamikusan változik.</span><span lang="en">&emsp;&emsp;&emsp;&#8201;The website&#39;s theme is dinamically changing.</span></p></div><button class="btn btn-danger" onclick="Settings(&#39;off&#39;, event)"><span lang="hu">Kilépés</span><span lang="en">Quit</span></button></div>'); // &#39;off&#39;
         $("#settings").show();
         if (mobil()){
             $("#settings > h5").removeClass("mb-5");
@@ -146,7 +147,7 @@ function checkMobileB(){
     }
 }
 var d_count = 0;
-var fooldal = true;
+var osszefoglalok_fooldal = false;
 function checkSettings(){
     if (oldal == "index" || oldal == '') {
         try {
@@ -155,7 +156,7 @@ function checkSettings(){
             checkLang();
         } catch (error) {
             console.log('Ez nem a főoldal!');
-            fooldal = false;
+            osszefoglalok_fooldal = true;
         }
     }
     checkMobileB();
@@ -167,10 +168,12 @@ function checkSettings(){
         changeToHor();
     }
     console.log(localStorage.getItem('csik_szin'));
-    if (localStorage.getItem('csik_szin') != null) {
-        changeColor();
-    }
+    changeColor();
     oldN();
+    if (localStorage.getItem("dyn_des") == null){
+        localStorage.setItem("dyn_des", "true");
+    }
+    changeDynamicDesign();
 }
 function changeDesign(){
     if (d_count % 2 == 0) {
@@ -257,11 +260,53 @@ function managePopup(event){
     }
     showCorrectLang();
 }
-// Váltás az oldalak között
+function changeDynamicDesign(){
+    let datum = new Date();
+    let unnep_nev;
+    if (datum.getMonth() == 5){
+        unnep_nev = "pride";
+    } else if (datum.getMonth() == 9 && datum.getDate() == 31){
+        unnep_nev = "halloween";
+    } else if (datum.getMonth() == 11 && datum.getDate() == 31 || datum.getMonth() == 0 && datum.getDate() == 1){
+        unnep_nev = "newyear";
+    } else if (datum.getMonth() == 2 && datum.getDate() == 15){
+        unnep_nev = "march15";
+    } else if (datum.getMonth() == 7 && datum.getDate() == 20){
+        unnep_nev = "august20";
+    } else if (datum.getMonth() == 9 && datum.getDate() == 23){
+        unnep_nev = "october23";
+    } else if (datum.getMonth() == 11 && datum.getDate() >= 24 && datum.getDate() <= 26) {
+        unnep_nev = "christmas";
+    } else {
+        unnep_nev = null;
+    }
+    if (localStorage.getItem("dyn_des") == "true"){
+        $("footer").before('<section id="dyn_imgs"></section>');
+        if (osszefoglalok_fooldal || oldal == "tortenelem" || oldal == "magyar"){
+            $("<link rel='stylesheet' href='../css/" + unnep_nev + ".css'>").appendTo("head");
+            $("<img src='../media/" + unnep_nev + ".png' id='dyn_kep'>").appendTo("#dyn_imgs").on("error", function() {$(this).remove();});
+            $("<img src='../media/" + unnep_nev + "2.png' id='dyn_kep2'>").appendTo("#dyn_imgs").on("error", function() {$(this).remove();});
+        } else {
+            $("<link rel='stylesheet' href='css/" + unnep_nev + ".css'>").appendTo("head");
+            $("<img src='media/" + unnep_nev + ".png' id='dyn_kep'>").appendTo("#dyn_imgs").on("error", function() {$(this).remove();});
+            $("<img src='media/" + unnep_nev + "2.png' id='dyn_kep2'>").appendTo("#dyn_imgs").on("error", function() {$(this).remove();});
+        }
+    }
+}
+function setDynamicDesign(){
+    if (localStorage.getItem("dyn_des") == "false"){
+        localStorage.setItem("dyn_des", "true");
+        changeDynamicDesign();
+    } else {
+        localStorage.setItem("dyn_des", "false");
+        $("head > link").eq(-1).remove();
+        $("#dyn_imgs").remove();
+    }
+}
 var nyilOldalak = ["social.html", "index.html", "japanese.html", "osszefoglalok/index.html"];
 var oldNum;
 function oldN(){
-    if (localStorage.getItem("oldNum") == null || oldal == "index" && fooldal || oldal == "" && fooldal){
+    if (localStorage.getItem("oldNum") == null || oldal == "index" && !osszefoglalok_fooldal || oldal == "" && !osszefoglalok_fooldal){
         oldNum = 1;
     } else if (oldal == "social"){
         oldNum = 0;
@@ -280,16 +325,17 @@ window.addEventListener("keydown", (event) => {
             break;
         case "m":
             showMenu();
+            console.log(oldal != "tortenelem");
             break;
         case "s":
             if (sdb % 2 == 0) Settings('on', event);
             else Settings('off', event);
-            break;            
+            break;
         case "ArrowRight":
-            oldalRedir("jobb");
+            if (oldal != "tortenelem" && oldal != "magyar") oldalRedir("jobb");
             break;
         case "ArrowLeft":
-            oldalRedir("bal");
+            if (oldal != "tortenelem" && oldal != "magyar") oldalRedir("bal");
             break;
         default: return
     }
@@ -302,8 +348,8 @@ addEventListener("touchstart", (event) => {
 });
 addEventListener("touchend", (event) => { 
     veg = event.changedTouches[0].clientX;
-    if (veg - kezdet > 200) oldalRedir("bal");
-    if (veg - kezdet < -200) oldalRedir("jobb");
+    if (veg - kezdet > 200 && oldal != "tortenelem" && oldal != "magyar") oldalRedir("bal");
+    if (veg - kezdet < -200 && oldal != "tortenelem" && oldal != "magyar") oldalRedir("jobb");
 });
 function oldalRedir(irany){
     switch (irany){
@@ -311,22 +357,19 @@ function oldalRedir(irany){
             oldNum++;
             if (oldNum > 3) oldNum = 0;
             localStorage.setItem("oldNum", oldNum);
-            if (oldal == "index" && !fooldal) window.location.href = "../" + nyilOldalak[oldNum];
+            if (oldal == "index" && osszefoglalok_fooldal) window.location.href = "../" + nyilOldalak[oldNum];
             else window.location.href = nyilOldalak[oldNum];
             break;
         case "bal":
             oldNum--;
             if (oldNum < 0) oldNum = 3;
             localStorage.setItem("oldNum", oldNum);
-            if (oldal == "index" && !fooldal) window.location.href = "../" + nyilOldalak[oldNum];
+            if (oldal == "index" && osszefoglalok_fooldal) window.location.href = "../" + nyilOldalak[oldNum];
             else window.location.href = nyilOldalak[oldNum];
             break;
         default: return
     }
 }
-
 $("#yui_image").attr("src", "media/yui-btn.png");
 $("#jsalert").css("display", "none");
-
-// Megváltozott -> FA hozzáadása az összes oldalhoz
 $('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/fontawesome.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/solid.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/brands.css"/>').appendTo("head");

@@ -1,0 +1,11 @@
+nav, footer{
+    border-color: #F7E7CE !important;
+}
+#dyn_kep{
+    width: 6%;
+    margin-left: 10px;
+}
+#dyn_kep2{
+    width: 8%;
+    margin-right: 10px;
+}

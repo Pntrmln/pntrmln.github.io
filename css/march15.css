@@ -1,0 +1,16 @@
+nav, footer{
+        border-image: linear-gradient(
+        to right,
+        #CE2939 0%, #CE2939 33.3%,
+        #FFFFFF 33.3%, #FFFFFF 66.6%,
+        #477050 66.6%, #477050 100%
+    ) 1;
+}
+#dyn_kep{
+    width: 6%;
+    margin-left: 10px;
+}
+#dyn_kep2{
+    width: 6%;
+    margin-right: 10px;
+}

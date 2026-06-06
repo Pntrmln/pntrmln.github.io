@@ -75,6 +75,7 @@ footer h6{
     margin: 0;
 }
 #settings{
+    user-select: none;
     z-index: 9999999999;
     width: 800px;
     position: absolute;
@@ -106,6 +107,11 @@ footer h6{
 #settings button{
     border: 1px solid var(--beallitott_szin) !important;
 }
+#settings input[type=checkbox]{
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+}
 #main_a, footer h6 {
     position: absolute;
     left: 50%;
@@ -114,6 +120,12 @@ footer h6{
 }
 table{
     table-layout: fixed;
+}
+#projtable{
+    width: 300px;
+}
+#projtable tr td{
+    padding: 5px;
 }
 td{
     vertical-align: middle;
@@ -261,7 +273,7 @@ main h1{
         padding: 0 !important;
     }
 }
-br{
+br, #dyn_kep, #dyn_kep2{
     user-select: none;
 }
 #jsalert{
@@ -311,4 +323,9 @@ br{
 }
 #popup p span u:not(:hover){
     animation: none;
+}
+#dyn_imgs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
