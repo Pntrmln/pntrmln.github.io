@@ -1,6 +1,6 @@
 $("nav").append('<a><i class="fa-solid fa-bars fa-2x" onclick="showMenu()" title="Menü"></i></a> <a href="index.html" id="main_a"><h3 id="n_main">Pntrmln<br> <p id="gh">.hu</p></h3></a> <a><i class="fa-solid fa-language fa-2x" onclick="languageChange()" title="English | Magyar"></i></a></div>')
 $("nav").after(' <div class="navbar text-center" id="menupontok"> <a href="social.html"> <i class="fa-solid fa-users"> </i> <p class="mpont_pc"><span lang="hu">Linkek és kapcsolat</span><span lang="en">Links and contact</span></p> </a> <a href="japanese.html"> <i class="fa-solid fa-torii-gate"></i>  <p class="mpont_pc"><span lang="hu">Japán tanulás</span><span lang="en">Learning Japanese</span></p> </a> <a href="osszefoglalok/index.html"> <i class="fa-solid fa-file"> </i>  <p class="mpont_pc"><span lang="hu">Összefoglalók</span><span lang="en">Exam PDFs</span></p> </a>');
-$("footer").append('<h6><span lang="hu">Készítette: Pintér Milán, 2026</span><span lang="en">Created by Milán Pintér, 2026</span></h6> <div class="navbar" id="footer_nav"> <a href="" onclick="Settings(&#39;on&#39;, event)"><i class="fa-solid fa-gear"></i></a> <a href="privacy.html"><i class="fa-solid fa-lock"></i></a> </div>')
+$("footer").append('<h6><span lang="hu">Készítette: Pintér Milán, 2026</span><span lang="en">Created by Milán Pintér, 2025</span></h6><div class="navbar" id="footer_nav"><a href="" onclick="Settings(event)"><i class="fa-solid fa-gear"></i></a><a href="privacy.html"><i class="fa-solid fa-lock"></i></a></div>')
 var magyar;
 var oldal = location.href.split("/").slice(-1).toString();
 var fxd = "";
@@ -100,8 +100,10 @@ function languageChange(){
     }
 }
 var sdb = 0;
-function Settings(allapot, e){
+function Settings(e){
     e.preventDefault()
+    sdb++;
+    console.log(sdb);
     let irany = localStorage.getItem('des');
     var gombszoveg;
     var gombszoveg_en;
@@ -114,23 +116,18 @@ function Settings(allapot, e){
     }
     let chckd = "";
     if (localStorage.getItem("dyn_des") == "true") chckd += "checked";
-    if (allapot == 'on'){
-        sdb++;
-        $("footer").before('<div id="settings" class="text-center"><h3><span lang="hu">Beállítások</span><span lang="en">Settings</span></h3><h5 class="mb-5"><span lang="hu">Szabd testre ezt az oldalt!</span><span lang="en">Customize this site!</span></h5><div id="menupont"><p><span lang="hu">Az oldal elemeinek elrendezése:</span><span lang="en">The layout of the elements:&emsp;&emsp;&#8201;</span></p><button id="desbtn" class="btn btn-secondary" onclick="changeDesign()"><span lang="hu">' + gombszoveg + '</span><span lang="en">' + gombszoveg_en + '</span></button><p class="desc"><span lang="hu">Megváltoztatja több oldal elrendezését.&emsp;&emsp;</span><span lang="en">Changes the layout of multiple pages.&emsp;&emsp;&emsp;</span></p><br><p><span lang="hu">Az oldal színe:</span><span lang="en">Color of site:&ensp;&#8201;</span></p><input type="color" value="#ff0000" id="color_changer"><p class="desc"><span lang="hu">Megváltoztatja az oldal másodlagos (alapból piros) színét.</span><span lang="en">Changes the website&#39;s secondary (originally red) color.</span></p><br><p><span lang="hu">Témaváltoztatás:&emsp;&#8201;&#8201;</span><span lang="en">Theme change:&emsp;&emsp;&ensp;</span></p><input type="checkbox" onchange="setDynamicDesign()" ' + chckd + '><p class="desc"><span lang="hu">&emsp;&emsp;&emsp;&ensp;Az oldal témája dinamikusan változik.</span><span lang="en">&emsp;&emsp;&emsp;&#8201;The website&#39;s theme is dinamically changing.</span></p></div><button class="btn btn-danger" onclick="Settings(&#39;off&#39;, event)"><span lang="hu">Kilépés</span><span lang="en">Quit</span></button></div>'); // &#39;off&#39;
+    if (sdb % 2 != 0){
+        $("footer").before('<div id="settings" class="text-center"><h3><span lang="hu">Beállítások</span><span lang="en">Settings</span></h3><h5 class="mb-5"><span lang="hu">Szabd testre ezt az oldalt!</span><span lang="en">Customize this site!</span></h5><div id="menupont"><div class="row"><div class="col-5"><p><span lang="hu">Az oldal elemeinek elrendezése:</span><span lang="en">The layout of the elements:</span></p></div><div class="col-2"><button id="desbtn" class="btn btn-secondary" onclick="changeDesign()"><span lang="hu">' + gombszoveg + '</span><span lang="en">' + gombszoveg_en + '</span></button></div><div class="col-5"><p class="desc"><span lang="hu">Megváltoztatja több oldal elrendezését.</span><span lang="en">Changes the layout of multiple pages.</span></p></div></div><div class="row"><div class="col-5"><p><span lang="hu">Az oldal színe:</span><span lang="en">Color of site:</span></p></div><div class="col-2"><input type="color" value="#ff0000" id="color_changer"></div><div class="col-5"><p class="desc"><span lang="hu">Megváltoztatja a csíkok, körvonalak, stb. színét.</span><span lang="en">Changes the color of borders, lines, etc.</span></p></div></div><div class="row"><div class="col-5"><p><span lang="hu">Témaváltoztatás:</span><span lang="en">Theme change:</span></p></div><div class="col-2"><input type="checkbox" onchange="setDynamicDesign()" ' + chckd + '></div><div class="col-5"><p class="desc"><span lang="hu">Az oldal témája dinamikusan változik.</span><span lang="en">The website&#39;s theme is dinamically changing.</span></p></div></div></div><button id="kilepes_btn" class="btn btn-danger" onclick="Settings(event)"><span lang="hu">Kilépés</span><span lang="en">Quit</span></button></div>'); // &#39;off&#39;
         $("#settings").show();
         if (mobil()){
-            $("#settings > h5").removeClass("mb-5");
-            $("#menupont > p").eq(0).remove();
-            $("#menupont > p").eq(0).remove();
-            $("#menupont > button").remove();
-            $("#menupont > br").remove();
-            $("#settings").css("height", "350px");
+            $("#menupont > div").eq(0).remove();
+            $("#menupont > div").removeClass("row").addClass("col");
+            $("#menupont > div > div").removeClass("col-2").removeClass("col-5").addClass("row");
         }
         changeColor();
         showCorrectLang();
     } else {
-        $("#settings").hide();
-        sdb++;
+        $("#settings").remove();
     }
 }
 function checkMobileB(){
@@ -328,8 +325,7 @@ window.addEventListener("keydown", (event) => {
             console.log(oldal != "tortenelem");
             break;
         case "s":
-            if (sdb % 2 == 0) Settings('on', event);
-            else Settings('off', event);
+            Settings(event);
             break;
         case "ArrowRight":
             if (oldal != "tortenelem" && oldal != "magyar") oldalRedir("jobb");

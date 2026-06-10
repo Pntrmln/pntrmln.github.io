@@ -72,6 +72,9 @@ section i, #fajlkezelo h3 i{
     top: 0;
     z-index: 1;
 }
+.dropdown:hover{
+    cursor: pointer;
+}
 .dropdown-content {
     display: none;
     background-color: #464646;
@@ -84,6 +87,10 @@ section i, #fajlkezelo h3 i{
     max-height: 90px;
     overflow-y: auto;
     overflow-x: hidden;
+}
+.dropdown-content h5:hover{
+    text-decoration: underline;
+    text-decoration-color: var(--beallitott_szin);
 }
 button a{
     text-decoration: none;

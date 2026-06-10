@@ -84,33 +84,58 @@ footer h6{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: left;
     display: none;
     border: 1px solid red;
     border-radius: 10px;
-
+}
+@media only screen and (max-width: 800px) {
+    #settings{
+        width: calc(100vw - 20px) !important;
+        height: 600px;
+    }
+}
+#settings p, #settings input, #settings button{
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+@media only screen and (max-width: 800px) {
+    #settings input{
+        margin: 0 auto;    
+    }
+    #kilepes_btn{
+        top: 35% !important;
+    }
 }
 #settings h3{
     margin-top: 10px;
 }
-#settings p{
-    margin-left: 30px;
-}
-#settings .btn-danger{
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 10px;
-    left: 0;
-    width: 80px;
-    margin-left: 46%;
-}
-#settings button{
-    border: 1px solid var(--beallitott_szin) !important;
-}
 #settings input[type=checkbox]{
     width: 20px;
-    height: 20px;
-    margin-top: 2px;
+}
+#menupont{
+    display: block;
+}
+#menupont button{
+    height: 40px;
+    width: 108px;
+}
+#menupont input{
+    border-radius: 8px;
+    width: 108px;
+    height: 40px;
+    border: none;
+    padding: 0;
+}
+#kilepes_btn{
+    height: 40px;
+    width: 108px;
+    margin-top: auto;
+}
+.desc{
+    font-size: small;
 }
 #main_a, footer h6 {
     position: absolute;
@@ -161,54 +186,6 @@ a:hover, .fa-language:hover, #n_main:hover, .fa-bars:hover{
 }
 a:not(:hover), .fa-language:not(:hover), #n_main:not(:hover), .fa-bars:not(:hover){
     animation: link_unhover 0.5s forwards;
-}
-#menupont{
-    display: flex;
-    margin-right: auto;
-    flex-wrap: wrap;
-}
-#menupont button{
-    margin-top: -7px;
-    height: 100%;
-    width: 108px;
-    margin-left: 10px;
-}
-#menupont input{
-    border-radius: 8px;
-    width: 108px;
-    height: 40px;
-    margin-top: -7px;
-    margin-left: 139px;
-    border: none;
-    padding: 0;
-}
-.desc{
-    font-size: small;
-}
-@media only screen and (max-width: 800px) {
-    #settings{
-        width: calc(100vw - 20px) !important;
-        height: 600px;
-    }
-    #menupont{
-        display: block;
-    }
-    #menupont input{
-        margin: 0;
-    }
-    #menupont button{
-        margin-left: 0;
-    }
-    #menupont p{
-        margin: 0;
-        padding: 10px;
-    }
-    #settings .btn-danger{
-        position: relative;
-        margin: 0;
-        width: 108px;
-        margin-top: 80px;
-    }
 }
 .alert{
     display: flex;
