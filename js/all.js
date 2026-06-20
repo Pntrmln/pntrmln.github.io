@@ -103,11 +103,9 @@ var sdb = 0;
 function Settings(e){
     e.preventDefault()
     sdb++;
-    console.log(sdb);
-    let irany = localStorage.getItem('des');
     var gombszoveg;
     var gombszoveg_en;
-    if (irany == "víz"){
+    if (d_count % 2 != 0){
         gombszoveg = "Vízszintes";
         gombszoveg_en = "Horizontal";
     } else {
@@ -115,7 +113,7 @@ function Settings(e){
         gombszoveg_en = "Vertical";
     }
     let chckd = "";
-    if (localStorage.getItem("dyn_des") == "true") chckd += "checked";
+    if (localStorage.getItem("dyn_des") == "true" || localStorage.getItem("dyn_des") == undefined) chckd += "checked";
     if (sdb % 2 != 0){
         $("footer").before('<div id="settings" class="text-center"><h3><span lang="hu">Beállítások</span><span lang="en">Settings</span></h3><h5 class="mb-5"><span lang="hu">Szabd testre ezt az oldalt!</span><span lang="en">Customize this site!</span></h5><div id="menupont"><div class="row"><div class="col-5"><p><span lang="hu">Az oldal elemeinek elrendezése:</span><span lang="en">The layout of the elements:</span></p></div><div class="col-2"><button id="desbtn" class="btn btn-secondary" onclick="changeDesign()"><span lang="hu">' + gombszoveg + '</span><span lang="en">' + gombszoveg_en + '</span></button></div><div class="col-5"><p class="desc"><span lang="hu">Megváltoztatja több oldal elrendezését.</span><span lang="en">Changes the layout of multiple pages.</span></p></div></div><div class="row"><div class="col-5"><p><span lang="hu">Az oldal színe:</span><span lang="en">Color of site:</span></p></div><div class="col-2"><input type="color" value="#ff0000" id="color_changer"></div><div class="col-5"><p class="desc"><span lang="hu">Megváltoztatja a csíkok, körvonalak, stb. színét.</span><span lang="en">Changes the color of borders, lines, etc.</span></p></div></div><div class="row"><div class="col-5"><p><span lang="hu">Témaváltoztatás:</span><span lang="en">Theme change:</span></p></div><div class="col-2"><input type="checkbox" onchange="setDynamicDesign()" ' + chckd + '></div><div class="col-5"><p class="desc"><span lang="hu">Az oldal témája dinamikusan változik.</span><span lang="en">The website&#39;s theme is dinamically changing.</span></p></div></div></div><button id="kilepes_btn" class="btn btn-danger" onclick="Settings(event)"><span lang="hu">Kilépés</span><span lang="en">Quit</span></button></div>'); // &#39;off&#39;
         $("#settings").show();
@@ -132,7 +130,6 @@ function Settings(e){
 }
 function checkMobileB(){
     if (mobil()) {
-        $('<style>#footer_nav{padding: 0 !important; margin-top: 10px}footer h6{width:100%}</style>').appendTo("head");
         $(".mpont_pc").css("display", "none");
         if (oldal == "contact" || oldal == "social") {
             $("main").css("margin-top", "0");
@@ -201,6 +198,10 @@ function changeToHor(){
 var customcss_set = false;
 function changeColor(){
     let szin = localStorage.getItem('csik_szin');
+    if (szin == null || szin == undefined){
+        szin = "#ff0000";
+        localStorage.setItem('csik_szin', '#ff0000');
+    }
     $("body *").css("border-color", szin);
     if (customcss_set) { // LAG ELLEN -> NE LEGYEN KURVA SOK STYLE ELEMENT
         $("head > style").eq(-1).remove();
@@ -253,7 +254,7 @@ function managePopup(event){
     } else if (event == "hide"){
         $("#popup").hide();
     } else {
-        throw new Error("Ismeretlen esemeny megadva! [fn: createPopup]")
+        throw new Error("Ismeretlen esemeny megadva! [fn: managePopup]")
     }
     showCorrectLang();
 }
@@ -332,6 +333,7 @@ window.addEventListener("keydown", (event) => {
             break;
         case "ArrowLeft":
             if (oldal != "tortenelem" && oldal != "magyar") oldalRedir("bal");
+            else oldalRedir("rTO");
             break;
         default: return
     }
@@ -346,6 +348,7 @@ addEventListener("touchend", (event) => {
     veg = event.changedTouches[0].clientX;
     if (veg - kezdet > 200 && oldal != "tortenelem" && oldal != "magyar") oldalRedir("bal");
     if (veg - kezdet < -200 && oldal != "tortenelem" && oldal != "magyar") oldalRedir("jobb");
+    if (veg - kezdet > 200 && oldal == "toretenelem" || oldal == "magyar") oldalRedir("rTO");
 });
 function oldalRedir(irany){
     switch (irany){
@@ -363,6 +366,8 @@ function oldalRedir(irany){
             if (oldal == "index" && osszefoglalok_fooldal) window.location.href = "../" + nyilOldalak[oldNum];
             else window.location.href = nyilOldalak[oldNum];
             break;
+        case "rTO":
+            window.location.href = "index.html";
         default: return
     }
 }

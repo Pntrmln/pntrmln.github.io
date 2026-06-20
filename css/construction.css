@@ -44,7 +44,7 @@ img{
 audio{
     display: none;
 }
-.fa-play, .fa-pause{
+.fa-play, .fa-pause, .fa-volume{
     color: var(--beallitott_szin);    
     margin-top: 3px;
 }
@@ -55,6 +55,15 @@ audio{
     margin: auto;
     display: none;
     border-radius: 10px;
+}
+.left{
+    white-space: nowrap;
+    overflow: hidden;
+}
+.left p{
+    white-space:nowrap;
+    display:inline;
+    width:auto;
 }
 #apdiv p{
     font-size: x-large;
@@ -68,4 +77,13 @@ audio{
 }
 .right {
   width: 10%;
+}
+input[type="range"]{
+    transform: rotate(-90deg);
+    display: none;
+    accent-color: var(--beallitott_szin);
+    position: absolute;
+}
+#copyright{
+    font-size: small !important;
 }

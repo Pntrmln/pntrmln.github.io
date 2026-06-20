@@ -12,6 +12,8 @@ function Redir(site){
         window.open('https://bunpro.jp/share/Pntrmln');
     } else if (site == 'mail') {
         window.location.href = "mailto:contact@pntrmln.hu";
+    } else if (site == 'bluesky'){
+        window.open("https://bsky.app/profile/pntrmln.bsky.social");
     } else {
         window.location.href = "404.html";
     }
