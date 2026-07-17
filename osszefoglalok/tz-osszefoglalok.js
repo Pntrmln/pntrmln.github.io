@@ -23,7 +23,7 @@ var mlink = {
     "Magyar költők és műveik":["https://drive.google.com/uc?export=download&id=1WUrW-pO5k34E9-9BZpSDMlPnMPdZ41BS"],
     "A szöveg":["https://drive.google.com/uc?export=download&id=15Prp--ESpPQBSCjAvJQMVYfSAnDF-Jac"],
     "A romantika kora":["https://drive.google.com/uc?export=download&id=1Nb6RnCpxmBEWxpCl5NOa2pg211M6tmE7"],
-    "A felvilágosodás kora":["https://drive.google.com/uc?export=download&id=1h6ZNqAvhZsDm-7mG-mFXLnbhRTPtBkez"],
+    "A felvilágosodás kora":["https://downgit.github.io/#/home?url=https://github.com/Pntrmln/pntrmln.github.io/blob/main/osszefoglalok/magyar/A felvilágosodás kora.pdf"],
     "Csokonai költészete":["https://drive.google.com/uc?export=download&id=1cIgaR2ZWg7NEzTCblmravW81uMQsBZKe"],
     // 2025/26
     "Magyar belső vizsga":["https://drive.google.com/uc?export=download&id=10zCplxXMvxoHjtXunnWto-O-rTKPMwO6"],
