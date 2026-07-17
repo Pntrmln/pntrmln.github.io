@@ -99,7 +99,7 @@ button a{
 button{
     margin-right: 5px;
 }
-#figyelem{
+.figyelem{
     color: red;
     font-weight: bold;
 }
@@ -114,4 +114,7 @@ button{
 }
 i{
     color: white;
+}
+#download_warn{
+    color: red;
 }

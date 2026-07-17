@@ -1,6 +1,6 @@
 $("nav").append('<a><i class="fa-solid fa-bars fa-2x" onclick="showMenu()" title="Menü"></i></a> <a href="index.html" id="main_a"><h3 id="n_main">Pntrmln<br> <p id="gh">.hu</p></h3></a> <a><i class="fa-solid fa-language fa-2x" onclick="languageChange()" title="English | Magyar"></i></a></div>')
 $("nav").after(' <div class="navbar text-center" id="menupontok"> <a href="social.html"> <i class="fa-solid fa-users"> </i> <p class="mpont_pc"><span lang="hu">Linkek és kapcsolat</span><span lang="en">Links and contact</span></p> </a> <a href="japanese.html"> <i class="fa-solid fa-torii-gate"></i>  <p class="mpont_pc"><span lang="hu">Japán tanulás</span><span lang="en">Learning Japanese</span></p> </a> <a href="osszefoglalok/index.html"> <i class="fa-solid fa-file"> </i>  <p class="mpont_pc"><span lang="hu">Összefoglalók</span><span lang="en">Exam PDFs</span></p> </a>');
-$("footer").append('<h6><span lang="hu">Készítette: Pintér Milán, 2026</span><span lang="en">Created by Milán Pintér, 2026</span></h6><div class="navbar" id="footer_nav"><a href="" onclick="Settings(event)"><i class="fa-solid fa-gear"></i></a><a href="privacy.html"><i class="fa-solid fa-lock"></i></a></div>')
+$("footer").append('<h6><span lang="hu">Készítette: Pintér Milán, <span id="ftr_ev"></span></span><span lang="en">Created by Milán Pintér, 2026</span></h6><div class="navbar" id="footer_nav"><a href="" onclick="Settings(event)"><i class="fa-solid fa-gear"></i></a><a href="privacy.html"><i class="fa-solid fa-lock"></i></a></div>')
 var magyar;
 var oldal = location.href.split("/").slice(-1).toString();
 var fxd = "";
@@ -257,9 +257,9 @@ function managePopup(event){
         throw new Error("Ismeretlen esemeny megadva! [fn: managePopup]")
     }
     showCorrectLang();
-}
+}    
+var datum = new Date();
 function changeDynamicDesign(){
-    let datum = new Date();
     let unnep_nev;
     if (datum.getMonth() == 5){
         unnep_nev = "pride";
@@ -348,7 +348,7 @@ addEventListener("touchend", (event) => {
     veg = event.changedTouches[0].clientX;
     if (veg - kezdet > 200 && oldal != "tortenelem" && oldal != "magyar") oldalRedir("bal");
     if (veg - kezdet < -200 && oldal != "tortenelem" && oldal != "magyar") oldalRedir("jobb");
-    if (veg - kezdet > 200 && oldal == "toretenelem" || oldal == "magyar") oldalRedir("rTO");
+    if (veg - kezdet > 200 && oldal == "tortenelem" || veg - kezdet > 200 && oldal == "magyar") oldalRedir("rTO");
 });
 function oldalRedir(irany){
     switch (irany){
@@ -371,6 +371,7 @@ function oldalRedir(irany){
         default: return
     }
 }
+$("#ftr_ev").text(datum.getFullYear());
 $("#yui_image").attr("src", "media/yui-btn.png");
 $("#jsalert").css("display", "none");
 $('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/fontawesome.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/solid.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/brands.css"/>').appendTo("head");

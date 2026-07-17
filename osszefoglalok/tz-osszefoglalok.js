@@ -38,8 +38,14 @@ if (oldal.endsWith("html")){
     oldal = oldal.slice(0, -5); // .html levágása
 } 
 function createFileExplorer(lecke){
+    let link = "";
+    if (oldal == 'tortenelem') { // download link megszerzése
+        link += tlink[lecke.innerHTML];
+    } else {
+        link += mlink[lecke.innerHTML];
+    }
     if (mobil()) {
-        window.open(oldal + "/" + lecke.innerHTML + ".pdf");
+        window.location.href=`${link}`;
     }
     else {
         if (bezarva) {
@@ -51,11 +57,7 @@ function createFileExplorer(lecke){
             html_code += '<h4>Összefoglaló címe:<br>' + lecke.innerHTML + "</h4>";
             html_code += '<button class="btn btn-primary" onclick="window.open(&#39;' + oldal + "/" + lecke.innerHTML + '.pdf&#39;)"><i class="fa-solid fa-file"></i> Megnyitás</button>';
             html_code += '<button class="btn btn-success"><i class="fa-solid fa-arrow-down-to-line"></i><a href=';
-            if (oldal == 'tortenelem') { // download link megszerzése
-                html_code += tlink[lecke.innerHTML];
-            } else {
-                html_code += mlink[lecke.innerHTML];
-            }
+            html_code += link;
             html_code += '> Letöltés</a></button>';
             html_code += '<p><span id="figyelem">FIGYELEM!</span> <br>A témazáró napjáig több, újabb verzió jelenhet meg, <br>így nem ajánlott semelyik fájl letöltése.</p>'
             html_code += '</div></div></div>'
@@ -85,20 +87,18 @@ function showDropdown(tanev){
         opencount[1] += 1;
     }
     if (opencount[0] % 2 != 0) {
-        $("#jtnh4").html('Jelenlegi tanév:<i class="fa-solid fa-caret-down"></i>');
-        $("#jtn_content").css("display", "none");
-        $("#jtnsect").css("overflow-y", "hidden");
+        $("#jtnh4 > i").removeClass("fa-caret-up").addClass("fa-caret-down");
+        $("#jtn_content").hide();
     } else {
-        $("#jtnh4").html('Jelenlegi tanév:<i class="fa-solid fa-caret-up"></i>');
-        $("#jtn_content").css("display", "block");
+        $("#jtnh4 > i").removeClass("fa-caret-down").addClass("fa-caret-up");
+        $("#jtn_content").show();
     }
     if (opencount[1] % 2 != 0) {
-        $("#ktnh4").html('Korábbi tanévek:<i class="fa-solid fa-caret-down"></i>');
-        $("#ktn_content").css("display", "none");
-        $("#ktnsect").css("overflow-y", "hidden");
+        $("#ktnh4 > i").removeClass("fa-caret-up").addClass("fa-caret-down");
+        $("#ktn_content").hide();
     } else {
-        $("#ktnh4").html('Korábbi tanévek:<i class="fa-solid fa-caret-up"></i>');
-        $("#ktn_content").css("display", "block");
+        $("#ktnh4 > i").removeClass("fa-caret-down").addClass("fa-caret-up");
+        $("#ktn_content").show();
     }
 }
 if (mobil()) {
@@ -127,4 +127,4 @@ if (mobil()) {
     });
 }
 $("#yui_image").attr("src", "../media/yui-btn.png");
-$("h5").attr("onclick", "createFileExplorer(this)")
+$("h5").attr("onclick", "createFileExplorer(this)");
