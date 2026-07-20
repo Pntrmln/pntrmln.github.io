@@ -36,7 +36,7 @@ function createFileExplorer(lecke){
             html_code += 'height="100%" width="100%" frameBorder="0" scrolling="auto"></iframe> <h5>Előnézet</h5> </div> <div class="column text-center">';
             html_code += '<h4>Összefoglaló címe:<br>' + lecke.innerHTML + "</h4>";
             html_code += '<button class="btn btn-primary" onclick="window.open(&#39;' + oldal + "/" + lecke.innerHTML + '.pdf&#39;)"><i class="fa-solid fa-file"></i> Megnyitás</button>';
-            html_code += `<button class="btn btn-success" onclick="PDFLetoltes('${link}','${lecke.innerHTML}')"><i class="fa-solid fa-arrow-down-to-line"></i>`;
+            html_code += `<button class="btn btn-success" onclick="PDFLetoltes('${link}')"><i class="fa-solid fa-arrow-down-to-line"></i>`;
             html_code += 'Letöltés</a></button>';
             html_code += '<p><span id="figyelem">FIGYELEM!</span> <br>A témazáró napjáig több, újabb verzió jelenhet meg, <br>így nem ajánlott semelyik fájl letöltése.</p>'
             html_code += '</div></div></div>'
