@@ -19,7 +19,7 @@ async function PDFLetoltes(link) {
     a.click();
     a.remove();
 
-    URL.revokeObjectURL(blobURL);
+    setTimeout(() => URL.revokeObjectURL(blobURL), 1000);
 }
 
 function createFileExplorer(lecke){
