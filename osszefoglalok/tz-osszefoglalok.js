@@ -7,13 +7,13 @@ if (oldal.endsWith("html")){
     oldal = oldal.slice(0, -5); // .html levágása
 }
 
-async function PDFLetoltes(link, lecke) {
+async function PDFLetoltes(link) {
     let valasz = await fetch(link);
     let blob = await valasz.blob();
     let blobURL = URL.createObjectURL(blob);
     let a = document.createElement("a");
     a.href = blobURL;
-    a.download = lecke;
+    a.download = link.split("/").at(-1);
 
     document.body.appendChild(a);
     a.click();
@@ -25,7 +25,7 @@ async function PDFLetoltes(link, lecke) {
 function createFileExplorer(lecke){
     let link = `/osszefoglalok/${oldal}/${lecke.innerHTML}.pdf`;
     if (mobil()) {
-        PDFLetoltes(link, lecke.innerHTML);
+        PDFLetoltes(link);
     }
     else {
         if (bezarva) {
