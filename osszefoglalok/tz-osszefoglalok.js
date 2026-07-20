@@ -15,10 +15,14 @@ async function PDFLetoltes(link) {
     
     let a = document.createElement("a");
     a.href = blobURL;
-    a.download = decodeURIComponent(link.split("/").at(-1));
-    
+    a.download = link.split("/").at(-1);
+
     document.body.appendChild(a);
-    a.click();
+    a.dispatchEvent(new MouseEvent("click", {
+        bubbles: true,
+        cancelable: true,
+        view: window
+    }));
 
     setTimeout(() => {
         a.remove();
