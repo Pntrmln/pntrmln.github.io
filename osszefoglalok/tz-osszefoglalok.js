@@ -27,7 +27,7 @@ var mlink = {
     "Csokonai költészete":["https://drive.google.com/uc?export=download&id=1cIgaR2ZWg7NEzTCblmravW81uMQsBZKe"],
     // 2025/26
     "Magyar belső vizsga":["https://drive.google.com/uc?export=download&id=10zCplxXMvxoHjtXunnWto-O-rTKPMwO6"],
-    "A 19. század második felének magyar irodalma":["https://drive.google.com/uc?export=download&id=1BEUtlXehCN9K9z_QWkF2uEDARe5larJA"]
+    "A 19. század második felének magyar irodalma":["/osszefoglalok/magyar/A 19. század második felének magyar irodalma.pdf"]
 }
 // Változók a Fájlkezelő kezeléséhez
 var oldal = location.href.split("/").slice(-1).toString();
@@ -45,7 +45,31 @@ function createFileExplorer(lecke){
         link += mlink[lecke.innerHTML];
     }
     if (mobil()) {
-        window.location.href=`${link}`;
+    console.log(link);
+
+    async function PDFLetoltes() {
+        const valasz = await fetch(link);
+
+        if (!valasz.ok) {
+            console.log("Download failed:", valasz.status);
+            return;
+        }
+
+        const blob = await valasz.blob();
+        const blobURL = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = blobURL;
+        a.download = "A 19. század második felének magyar irodalma.pdf";
+
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        URL.revokeObjectURL(blobURL);
+    }
+
+    PDFLetoltes();
     }
     else {
         if (bezarva) {
