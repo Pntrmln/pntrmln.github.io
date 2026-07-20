@@ -10,13 +10,13 @@ if (oldal.endsWith("html")){
 async function PDFLetoltes(link) {
     let valasz = await fetch(link);
     let blob = await valasz.blob();
-    let downloadBlob = new Blob([rawBlob], { type: 'application/octet-stream' });
+    let downloadBlob = new Blob([blob], { type: 'application/octet-stream' });
     let blobURL = URL.createObjectURL(downloadBlob);    
     
     let a = document.createElement("a");
     a.href = blobURL;
-    a.download = link.split("/").at(-1);
-
+    a.download = decodeURIComponent(link.split("/").at(-1));
+    
     document.body.appendChild(a);
     a.click();
 
