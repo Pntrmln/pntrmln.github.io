@@ -16,46 +16,41 @@ async function PDFLetoltes(link) {
     let a = document.createElement("a");
     a.href = blobURL;
     a.download = link.split("/").at(-1);
+    a.click();
+    a.remove();
 
-    document.body.appendChild(a);
-    a.dispatchEvent(new MouseEvent("click", {
-        bubbles: true,
-        cancelable: true,
-        view: window
-    }));
-
-    setTimeout(() => {
-        a.remove();
-        URL.revokeObjectURL(blobURL);
-    }, 1000);
+    URL.revokeObjectURL(blobURL);
 }
 
 function createFileExplorer(lecke){
     let link = `/osszefoglalok/${oldal}/${lecke.innerHTML}.pdf`;
-    if (mobil()) {
-        PDFLetoltes(link);
-    }
-    else {
-        if (bezarva) {
-            let html_code = "";
-            html_code += '<div id="fajlkezelo"> <h3>Fájlkezelő <i class="fa-solid fa-xmark" onclick="closeFileExplorer()"></i></h3> <div class="row"> <div class="column text-center"> <iframe src=';
-            html_code += '"' + oldal + "/"; // tortenelem vagy magyar
-            html_code += lecke.innerHTML + '.pdf"'; // A lecke neve -> ez alapján megtalálja a fájlt
-            html_code += 'height="100%" width="100%" frameBorder="0" scrolling="auto"></iframe> <h5>Előnézet</h5> </div> <div class="column text-center">';
-            html_code += '<h4>Összefoglaló címe:<br>' + lecke.innerHTML + "</h4>";
-            html_code += '<button class="btn btn-primary" onclick="window.open(&#39;' + oldal + "/" + lecke.innerHTML + '.pdf&#39;)"><i class="fa-solid fa-file"></i> Megnyitás</button>';
-            html_code += `<button class="btn btn-success" onclick="PDFLetoltes('${link}')"><i class="fa-solid fa-arrow-down-to-line"></i>`;
-            html_code += 'Letöltés</a></button>';
-            html_code += '<p><span id="figyelem">FIGYELEM!</span> <br>A témazáró napjáig több, újabb verzió jelenhet meg, <br>így nem ajánlott semelyik fájl letöltése.</p>'
-            html_code += '</div></div></div>'
-            $("footer").before(html_code);
-            // Egyéb:
-            bezarva = false;
+    if (!/firefox|fxios/i.test(navigator.userAgent)){
+        if (mobil()) {
+            PDFLetoltes(link);
         } else {
-            utolso = lecke;
-            auto_close = true;
-            closeFileExplorer();
+            if (bezarva) {
+                let html_code = "";
+                html_code += '<div id="fajlkezelo"> <h3>Fájlkezelő <i class="fa-solid fa-xmark" onclick="closeFileExplorer()"></i></h3> <div class="row"> <div class="column text-center"> <iframe src=';
+                html_code += '"' + oldal + "/"; // tortenelem vagy magyar
+                html_code += lecke.innerHTML + '.pdf"'; // A lecke neve -> ez alapján megtalálja a fájlt
+                html_code += 'height="100%" width="100%" frameBorder="0" scrolling="auto"></iframe> <h5>Előnézet</h5> </div> <div class="column text-center">';
+                html_code += '<h4>Összefoglaló címe:<br>' + lecke.innerHTML + "</h4>";
+                html_code += '<button class="btn btn-primary" onclick="window.open(&#39;' + oldal + "/" + lecke.innerHTML + '.pdf&#39;)"><i class="fa-solid fa-file"></i> Megnyitás</button>';
+                html_code += `<button class="btn btn-success" onclick="PDFLetoltes('${link}')"><i class="fa-solid fa-arrow-down-to-line"></i>`;
+                html_code += 'Letöltés</a></button>';
+                html_code += '<p><span id="figyelem">FIGYELEM!</span> <br>A témazáró napjáig több, újabb verzió jelenhet meg, <br>így nem ajánlott semelyik fájl letöltése.</p>'
+                html_code += '</div></div></div>'
+                $("footer").before(html_code);
+                // Egyéb:
+                bezarva = false;
+            } else {
+                utolso = lecke;
+                auto_close = true;
+                closeFileExplorer();
+            }
         }
+    } else {
+        managePopup("firefox");
     }
 }
 function closeFileExplorer(){

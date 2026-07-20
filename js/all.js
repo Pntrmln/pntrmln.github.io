@@ -253,7 +253,11 @@ function managePopup(event){
         $("#popup > p").html('<span lang="hu">A Discord nevem:</span><span lang="en">My Discord name is:</span><br><b>pntrmln</b><br><br><span lang="hu">Ha nem tudod, hogyan adj hozzá barátként, akkor kattints <u onclick="window.open(&#39;https://support.discord.com/hc/en-us/articles/218344397-How-do-I-add-friends-on-Discord&#39;)">ide</u>.</span><span lang="en">If you do not know how to add friends on Discord, click <u onclick="window.open(&#39;https://support.discord.com/hc/en-us/articles/218344397-How-do-I-add-friends-on-Discord&#39;)">here</u>.</span>')
     } else if (event == "hide"){
         $("#popup").hide();
-    } else {
+    } else if (event == "firefox"){
+        $("#popup > h4").html('<span lang="hu">BÖNGÉSZŐ PROBLÉMA</span><span lang="en">BROWSER ISSUE</span>');
+        $("#popup > p").html('<span lang="hu">Kérlek válts böngészőt a weboldal megfelelő működéséhez.</span><span lang="en">Please change browsers to make the website work as intended.</span>')
+    } 
+    else {
         throw new Error("Ismeretlen esemeny megadva! [fn: managePopup]")
     }
     showCorrectLang();
