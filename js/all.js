@@ -280,14 +280,16 @@ function changeDynamicDesign(){
     }
     if (localStorage.getItem("dyn_des") == "true"){
         $("footer").before('<section id="dyn_imgs"></section>');
-        if (osszefoglalok_fooldal || oldal == "tortenelem" || oldal == "magyar"){
-            $("<link rel='stylesheet' href='../css/" + unnep_nev + ".css'>").appendTo("head");
-            $("<img src='../media/" + unnep_nev + ".png' id='dyn_kep'>").appendTo("#dyn_imgs").on("error", function() {$(this).remove();});
-            $("<img src='../media/" + unnep_nev + "2.png' id='dyn_kep2'>").appendTo("#dyn_imgs").on("error", function() {$(this).remove();});
-        } else {
-            $("<link rel='stylesheet' href='css/" + unnep_nev + ".css'>").appendTo("head");
-            $("<img src='media/" + unnep_nev + ".png' id='dyn_kep'>").appendTo("#dyn_imgs").on("error", function() {$(this).remove();});
-            $("<img src='media/" + unnep_nev + "2.png' id='dyn_kep2'>").appendTo("#dyn_imgs").on("error", function() {$(this).remove();});
+        if (unnep_nev != null){
+            if (osszefoglalok_fooldal || oldal == "tortenelem" || oldal == "magyar"){
+                $("<link rel='stylesheet' href='../css/" + unnep_nev + ".css'>").appendTo("head");
+                $("<img src='../media/" + unnep_nev + ".png' id='dyn_kep'>").appendTo("#dyn_imgs").on("error", function() {$(this).remove();});
+                $("<img src='../media/" + unnep_nev + "2.png' id='dyn_kep2'>").appendTo("#dyn_imgs").on("error", function() {$(this).remove();});
+            } else {
+                $("<link rel='stylesheet' href='css/" + unnep_nev + ".css'>").appendTo("head");
+                $("<img src='media/" + unnep_nev + ".png' id='dyn_kep'>").appendTo("#dyn_imgs").on("error", function() {$(this).remove();});
+                $("<img src='media/" + unnep_nev + "2.png' id='dyn_kep2'>").appendTo("#dyn_imgs").on("error", function() {$(this).remove();});
+            }
         }
     }
 }
