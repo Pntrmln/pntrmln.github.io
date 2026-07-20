@@ -10,16 +10,20 @@ if (oldal.endsWith("html")){
 async function PDFLetoltes(link) {
     let valasz = await fetch(link);
     let blob = await valasz.blob();
-    let blobURL = URL.createObjectURL(blob);
+    let downloadBlob = new Blob([rawBlob], { type: 'application/octet-stream' });
+    let blobURL = URL.createObjectURL(downloadBlob);    
+    
     let a = document.createElement("a");
     a.href = blobURL;
     a.download = link.split("/").at(-1);
 
     document.body.appendChild(a);
     a.click();
-    a.remove();
 
-    setTimeout(() => URL.revokeObjectURL(blobURL), 1000);
+    setTimeout(() => {
+        a.remove();
+        URL.revokeObjectURL(blobURL);
+    }, 1000);
 }
 
 function createFileExplorer(lecke){
