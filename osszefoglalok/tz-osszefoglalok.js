@@ -108,5 +108,6 @@ if (mobil()) {
         }
     });
 }
+$("#navigator_data").text(navigator.userAgent);
 $("#yui_image").attr("src", "../media/yui-btn.png");
 $("h5").attr("onclick", "createFileExplorer(this)");
