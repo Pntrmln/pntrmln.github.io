@@ -24,7 +24,7 @@ async function PDFLetoltes(link) {
 
 function createFileExplorer(lecke){
     let link = `/osszefoglalok/${oldal}/${lecke.innerHTML}.pdf`;
-    if (!/firefox|fxios/i.test(navigator.userAgent || !/FBAN|FBAV|Messenger/i.test(navigator.userAgent))){
+    if (!/firefox|fxios/i.test(navigator.userAgent) || !/FBAN|FBAV|Messenger/i.test(navigator.userAgent)){
         if (mobil()) {
             PDFLetoltes(link);
         } else {
