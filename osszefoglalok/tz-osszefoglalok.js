@@ -31,8 +31,8 @@ function createFileExplorer(lecke){
             if (bezarva) {
                 let html_code = "";
                 html_code += '<div id="fajlkezelo"> <h3>Fájlkezelő <i class="fa-solid fa-xmark" onclick="closeFileExplorer()"></i></h3> <div class="row"> <div class="column text-center"> <iframe src=';
-                html_code += '"' + oldal + "/"; // tortenelem vagy magyar
-                html_code += lecke.innerHTML + '.pdf"'; // A lecke neve -> ez alapján megtalálja a fájlt
+                html_code += '"' + oldal + "/";
+                html_code += lecke.innerHTML + '.pdf"';
                 html_code += 'height="100%" width="100%" frameBorder="0" scrolling="auto"></iframe> <h5>Előnézet</h5> </div> <div class="column text-center">';
                 html_code += '<h4>Összefoglaló címe:<br>' + lecke.innerHTML + "</h4>";
                 html_code += '<button class="btn btn-primary" onclick="window.open(&#39;' + oldal + "/" + lecke.innerHTML + '.pdf&#39;)"><i class="fa-solid fa-file"></i> Megnyitás</button>';
@@ -108,6 +108,4 @@ if (mobil()) {
         }
     });
 }
-$("#navigator_data").text(navigator.userAgent);
-$("#yui_image").attr("src", "../media/yui-btn.png");
 $("h5").attr("onclick", "createFileExplorer(this)");

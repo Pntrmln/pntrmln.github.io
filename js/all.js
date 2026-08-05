@@ -352,9 +352,9 @@ addEventListener("touchstart", (event) => {
 });
 addEventListener("touchend", (event) => { 
     veg = event.changedTouches[0].clientX;
-    if (veg - kezdet > 200 && oldal != "tortenelem" && oldal != "magyar") oldalRedir("bal");
-    if (veg - kezdet < -200 && oldal != "tortenelem" && oldal != "magyar") oldalRedir("jobb");
-    if (veg - kezdet > 200 && oldal == "tortenelem" || veg - kezdet > 200 && oldal == "magyar") oldalRedir("rTO");
+    if (veg - kezdet > 150 && oldal != "tortenelem" && oldal != "magyar") oldalRedir("bal");
+    if (veg - kezdet < -150 && oldal != "tortenelem" && oldal != "magyar") oldalRedir("jobb");
+    if (veg - kezdet > 150 && oldal == "tortenelem" || veg - kezdet > 150 && oldal == "magyar") oldalRedir("rTO");
 });
 function oldalRedir(irany){
     switch (irany){
@@ -378,6 +378,5 @@ function oldalRedir(irany){
     }
 }
 $("#ftr_ev").text(datum.getFullYear());
-$("#yui_image").attr("src", "media/yui-btn.png");
-$("#jsalert").css("display", "none");
 $('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/fontawesome.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/solid.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/brands.css"/>').appendTo("head");
+$("#jsalert").css("display", "none");

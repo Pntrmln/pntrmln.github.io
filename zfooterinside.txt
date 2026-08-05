@@ -1,0 +1,5 @@
+        <h6><span lang="hu">Készítette: Pintér Milán, 2025</span><span lang="en">Created by Milán Pintér, 2026</span></h6>
+        <div class="navbar" id="footer_nav">
+            <a href="" onclick="Settings(event)"><i class="fa-solid fa-gear"></i></a>
+            <a href="privacy.html"><i class="fa-solid fa-lock"></i></a>
+        </div>

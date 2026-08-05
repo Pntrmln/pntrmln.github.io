@@ -1,8 +1,3 @@
-#yui_hatter{
-    background-image: url(../media/yui-btn.png);
-    background-position: center;
-    background-size: 100%;
-}
 #project-div{
     display: flex;
     justify-content: center;
