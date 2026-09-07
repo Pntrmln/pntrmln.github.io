@@ -377,6 +377,6 @@ function oldalRedir(irany){
         default: return
     }
 }
+$('<link rel="stylesheet" href="css/all-fa.css"><link rel="stylesheet" href="css/solid-fa.css"><link rel="stylesheet" href="css/brands-fa.css">').appendTo("head");
 $("#ftr_ev").text(datum.getFullYear());
-$('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/fontawesome.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/solid.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/brands.css"/>').appendTo("head");
 $("#jsalert").css("display", "none");
