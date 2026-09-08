@@ -74,4 +74,4 @@ $(".left").each(function(){
     mar.data('interval',setInterval(mar.marquee,1000/60));
 });
 
-$('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/fontawesome.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/solid.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rizmyabdulla/fontawesome-pro@main/releases/v7.2.0/css/brands.css"/>').appendTo("head");
+$('<link rel="stylesheet" href="css/all-fa.css"><link rel="stylesheet" href="css/solid-fa.css"><link rel="stylesheet" href="css/brands-fa.css">').appendTo("head");
