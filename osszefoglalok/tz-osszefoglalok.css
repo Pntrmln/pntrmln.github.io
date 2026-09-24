@@ -35,6 +35,17 @@
         margin-right: 0;
     }
 }
+#rovid{
+    display: none;
+}
+@media (max-width: 1250px){
+    #hosszu{
+        display: none;
+    }
+    #rovid{
+        display: block;
+    }
+}
 #tantargyak div{
     height: 100px;
 }

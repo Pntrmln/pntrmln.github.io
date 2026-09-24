@@ -168,6 +168,7 @@ function checkSettings(){
         localStorage.setItem("dyn_des", "true");
     }
     changeDynamicDesign();
+    addFa();
 }
 function changeDesign(){
     if (d_count % 2 == 0) {
@@ -377,6 +378,10 @@ function oldalRedir(irany){
         default: return
     }
 }
-$('<link rel="stylesheet" href="css/all-fa.css"><link rel="stylesheet" href="css/solid-fa.css"><link rel="stylesheet" href="css/brands-fa.css">').appendTo("head");
+function addFa(){
+    if (!osszefoglalok_fooldal && oldal != "tortenelem" && oldal != "magyar"){
+        $('<link rel="stylesheet" href="css/all-fa.css"><link rel="stylesheet" href="css/solid-fa.css"><link rel="stylesheet" href="css/brands-fa.css">').appendTo("head");
+    }
+}
 $("#ftr_ev").text(datum.getFullYear());
 $("#jsalert").css("display", "none");
